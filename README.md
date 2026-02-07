@@ -4,7 +4,7 @@
 
 - **Oficina:** [caracore-ru](https://github.com/chmulato/caracore-ru) (código-fonte e desenvolvimento)
 - **Matriz (delivery):** [caracore.com.br/delivery/ru/](https://caracore.com.br/delivery/ru/)
-- **Lançamento:** 18 de Junho de 2026
+- **Preço:** R$ 29,90 · **Lançamento:** 18 de Junho de 2026
 
 ## Conteúdo desta loja
 
