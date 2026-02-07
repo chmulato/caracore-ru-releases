@@ -21,7 +21,7 @@ A pasta `docs/` é a raiz do site da loja (configurar GitHub Pages → Source: b
 | [index.html](docs/index.html) | Balcão: o que é RU Soberano, download, links |
 | [download.html](docs/download.html) | Instruções de download e versão |
 | [licenca-uso.html](docs/licenca-uso.html) | Licença FREE × SOVEREIGN e disclaimer do kernel |
-| [canal-feedback.html](docs/canal-feedback.html) | E-mail, WhatsApp, Telegram |
+| [canal-feedback.html](docs/canal-feedback.html) | E-mail suporte@caracore.com.br, Telegram ou WhatsApp +55 (41) 9 9909-7797. Não atendemos ligações telefônicas. |
 | [manual-tecnico.html](docs/manual-tecnico.html) | PFD, calibração do reator, apêndice antropologia industrial |
 
 ## Alinhamento
