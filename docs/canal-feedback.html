@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canal de Feedback — RU Soberano | Cara Core Informática</title>
+    <meta name="description" content="Suporte e feedback do RU Soberano: e-mail, WhatsApp e Telegram. Não atendemos ligações telefônicas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-dark: #0a0c0e; --bg-card: #13171c; --text-primary: #e6edf3; --text-secondary: #8b949e; --accent-cyan: #06b6d4; --accent-green: #059669; --whatsapp: #25d366; --telegram: #0088cc; --border: #2d333b; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text-primary); background: var(--bg-dark); min-height: 100vh; padding: 0 20px 40px; }
+        .wrapper { max-width: 640px; margin: 0 auto; }
+        .breadcrumb { font-size: 0.85rem; margin-bottom: 24px; padding-top: 16px; }
+        .breadcrumb a { color: var(--accent-cyan); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { color: var(--text-secondary); }
+        header { padding: 40px 0 32px; text-align: center; border-bottom: 1px solid var(--border); }
+        header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+        header .subtitle { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
+        .intro { margin: 28px 0 24px; padding: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; font-size: 0.95rem; color: var(--text-primary); }
+        .intro p { margin-bottom: 10px; }
+        .intro p:last-child { margin-bottom: 0; }
+        .intro strong { color: var(--accent-cyan); }
+        .no-phone { margin: 16px 0; padding: 12px 16px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 8px; font-size: 0.9rem; color: var(--text-secondary); }
+        .no-phone strong { color: #f59e0b; }
+        .channels { display: flex; flex-direction: column; gap: 16px; margin: 28px 0; }
+        .channel-card { display: block; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; text-decoration: none; color: inherit; transition: border-color 0.2s, box-shadow 0.2s; }
+        .channel-card:hover { border-color: var(--accent-cyan); box-shadow: 0 0 20px rgba(6, 182, 212, 0.15); }
+        .channel-card.whatsapp:hover { border-color: var(--whatsapp); }
+        .channel-card.telegram:hover { border-color: var(--telegram); }
+        .channel-card .icon { font-size: 1.75rem; margin-bottom: 8px; }
+        .channel-card .title { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        .channel-card .desc { font-size: 0.9rem; color: var(--text-secondary); }
+        .lgpd { margin: 28px 0; padding: 16px 20px; background: rgba(5, 150, 105, 0.08); border: 1px solid rgba(5, 150, 105, 0.35); border-radius: 10px; font-size: 0.85rem; color: var(--text-secondary); }
+        .lgpd strong { color: var(--accent-green); }
+        .back { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .back a { color: var(--accent-cyan); text-decoration: none; font-weight: 600; }
+        .back a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="breadcrumb" aria-label="Navegação">
+            <a href="https://caracore.com.br/portfolio.html">Cara Core Informática</a>
+            <span> · </span>
+            <a href="index.html">RU Soberano — Loja</a>
+            <span> · </span>
+            <span>Canal de feedback</span>
+        </nav>
+        <header>
+            <h1>Canal de Feedback — RU Soberano</h1>
+            <p class="subtitle">Sugestões, dúvidas e relatos sobre o simulador PFR e o kernel Langmuir-Hinshelwood. Atendimento por e-mail, WhatsApp ou Telegram.</p>
+        </header>
+        <section class="intro">
+            <p><strong>Este canal está aberto</strong> para quem usa ou avalia o RU Soberano (reator catalítico PFR, console de engenharia, relatórios de operação).</p>
+            <p>Envie pelo <strong>WhatsApp</strong>, <strong>Telegram</strong> ou <strong>e-mail</strong>: dúvidas técnicas, feedback sobre o kernel de cálculo, sugestões ou pedidos de informação sobre o lançamento (18/Junho/2026) e a licença SOVEREIGN.</p>
+        </section>
+        <div class="no-phone"><strong>Não atendemos ligações telefônicas.</strong> Utilize apenas e-mail, WhatsApp ou Telegram.</div>
+        <section class="channels">
+            <a href="mailto:suporte@caracore.com.br?subject=Feedback%20RU%20Soberano" class="channel-card email" target="_blank" rel="noopener">
+                <div class="icon">✉️</div>
+                <div class="title">E-mail — suporte@caracore.com.br</div>
+                <div class="desc">Assunto sugerido: &quot;Feedback RU Soberano&quot;. Para dúvidas técnicas, sugestões e informações sobre lançamento e licença.</div>
+            </a>
+            <a href="https://wa.me/5541999097797?text=Olá%2C%20vim%20pelo%20portal%20RU%20Soberano%20para%20feedback%20%2F%20dúvida%20técnica." class="channel-card whatsapp" target="_blank" rel="noopener">
+                <div class="icon">💬</div>
+                <div class="title">WhatsApp — +55 (41) 9 9909-7797</div>
+                <div class="desc">Envie sua mensagem. Resposta em horário comercial. Não atendemos ligações.</div>
+            </a>
+            <a href="https://t.me/chmulato" class="channel-card telegram" target="_blank" rel="noopener">
+                <div class="icon">✈️</div>
+                <div class="title">Telegram — @chmulato</div>
+                <div class="desc">Canal e mensagens para dúvidas, feedback e informações sobre o RU Soberano e a licença SOVEREIGN.</div>
+            </a>
+        </section>
+        <div class="lgpd"><strong>Privacidade (LGPD):</strong> Seus dados são usados apenas para resposta e melhoria do produto. Não vendemos nem expomos dados pessoais. O tratamento segue a Lei Geral de Proteção de Dados.</div>
+        <nav class="back">
+            <a href="index.html">← Voltar ao portal</a>
+        </nav>
+    </div>
+</body>
+</html>
