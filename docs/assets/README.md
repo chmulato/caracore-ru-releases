@@ -1,24 +1,24 @@
 # Assets da Loja Cara Core RU
 
-Estrutura usada por todas as páginas da loja (index, download, licenca-uso, canal-feedback, manual-tecnico).
+Todas as páginas HTML da loja utilizam **apenas** os recursos desta pasta: `docs/assets/css`, `docs/assets/js`, `docs/assets/img`.
 
 ## Estrutura
 
 ```
 assets/
 ├── css/
-│   └── loja.css      # Variáveis CSS (:root), logo, breadcrumb, footer, utilitários
+│   └── loja.css      # Estilos de todas as páginas (index, download, licenca-uso, canal-feedback, manual-tecnico)
 ├── js/
-│   └── loja.js       # Script compartilhado (ex.: scroll suave para âncoras)
+│   └── loja.js       # Script compartilhado (scroll suave para âncoras)
 ├── img/
-│   └── caracore_ru.png   # Logo/marca da loja
-└── README.md         # Este ficheiro
+│   └── caracore_ru.png   # Imagem do manual técnico (apêndice Antropologia Industrial)
+└── README.md
 ```
 
 ## Uso nas páginas
 
-- **CSS:** `<link rel="stylesheet" href="assets/css/loja.css">`
+- **CSS:** `<link rel="stylesheet" href="assets/css/loja.css">` (obrigatório em todas)
 - **JS:** `<script src="assets/js/loja.js"></script>` (antes de `</body>`)
-- **Imagem:** `<img src="assets/img/caracore_ru.png" alt="Cara Core RU" class="loja-logo" width="160" height="48">`
+- **Imagens:** `<img src="assets/img/nome.png" alt="...">` (ex.: `assets/img/caracore_ru.png` no manual técnico)
 
-As páginas continuam a poder definir estilos inline ou em `<style>` para layout específico; `loja.css` garante variáveis e elementos comuns.
+Cada página define uma classe no `<body>` para escopo de estilos (ex.: `page-index`, `page-download`, `page-licenca`, `page-canal`, `page-manual`). Não se usam blocos `<style>` inline; todo o CSS está em `loja.css`.
