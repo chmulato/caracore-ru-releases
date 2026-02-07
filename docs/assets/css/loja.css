@@ -1,0 +1,55 @@
+/* Loja Cara Core RU — assets compartilhados */
+/* Todas as páginas: index, download, licenca-uso, canal-feedback, manual-tecnico */
+
+:root {
+    --bg-dark: #1a1d21;
+    --bg-card: #252a30;
+    --bg-elevated: #2d333b;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-gold: #d4a853;
+    --border: #373e47;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-dark);
+    min-height: 100vh;
+}
+
+/* Logo / marca da loja */
+.loja-logo {
+    display: block;
+    max-height: 48px;
+    width: auto;
+    margin-bottom: 16px;
+}
+.loja-logo-inline {
+    height: 28px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Breadcrumb comum */
+.loja-breadcrumb { font-size: 0.85rem; margin-bottom: 24px; padding-top: 16px; }
+.loja-breadcrumb a { color: var(--accent-blue); text-decoration: none; }
+.loja-breadcrumb a:hover { text-decoration: underline; }
+.loja-breadcrumb span { color: var(--text-secondary); }
+
+/* Footer comum */
+.loja-footer { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-secondary); }
+.loja-footer p { margin-bottom: 8px; }
+.loja-footer a { color: var(--accent-blue); text-decoration: none; }
+.loja-footer a:hover { text-decoration: underline; }
+
+/* Utilitários */
+.loja-wrapper { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; }
+.loja-wrapper-narrow { max-width: 720px; margin: 0 auto; padding: 0 20px 40px; }

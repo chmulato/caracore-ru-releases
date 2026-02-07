@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RU Soberano — Loja e Releases | Reator PFR | Cara Core Informática</title>
-    <meta name="description" content="RU Soberano: produto em evolução, sem propaganda enganosa. Como um ovo de chocolate top — cheio de surpresas. Kernel industrial, nostalgia 1991 e engenharia 2026.">
+    <title>RU Soberano — Reator Catalítico PFR | Cara Core Informática</title>
+    <meta name="description" content="RU Soberano: a história do Restaurante Universitário aplicada à Engenharia Química. Reator PFR, Langmuir-Hinshelwood, 1991→2026. R$ 29,90 · Lançamento 18/Junho/2026.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/loja.css">
     <style>
         :root {
             --bg-dark: #1a1d21;
@@ -34,19 +35,38 @@
         .breadcrumb a { color: var(--accent-blue); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
         .breadcrumb span { color: var(--text-secondary); }
+        .hero-cover { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 40px 36px; margin-bottom: 32px; border-left: 4px solid var(--accent-gold); }
+        .hero-cover .hero-title { font-size: 1.6rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 16px; line-height: 1.3; letter-spacing: -0.02em; }
+        .hero-cover .hero-body { font-size: 1rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 20px; }
+        .hero-cover .hero-body strong { color: var(--text-primary); }
+        .hero-cover .no-demo { font-size: 0.95rem; color: var(--accent-gold); font-style: italic; margin-top: 16px; }
+        .launch-badge { display: inline-block; background: rgba(63, 185, 80, 0.2); color: var(--accent-green); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+        .cta-buttons { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 24px; }
+        .cta-btn { display: inline-block; padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: opacity 0.2s, background 0.2s; }
+        .cta-btn-primary { background: var(--accent-green); color: #0d1117; border: none; }
+        .cta-btn-primary:hover { opacity: 0.95; filter: brightness(1.08); }
+        .cta-btn-secondary { background: transparent; color: var(--accent-blue); border: 2px solid var(--accent-blue); }
+        .cta-btn-secondary:hover { background: rgba(88, 166, 255, 0.12); }
+        .section-title { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin: 40px 0 16px; }
+        .segments { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 32px; }
+        .segment-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 24px; border-top: 3px solid var(--accent-gold); }
+        .segment-card h3 { font-size: 1rem; font-weight: 600; color: var(--accent-gold); margin-bottom: 8px; }
+        .segment-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+        .value-block { background: rgba(212, 168, 83, 0.08); border: 1px solid rgba(212, 168, 83, 0.35); border-radius: 8px; padding: 24px 28px; margin: 32px 0; }
+        .value-block p { font-size: 0.95rem; color: var(--text-primary); line-height: 1.7; }
+        .value-block .price-note { font-size: 0.9rem; color: var(--accent-gold); margin-top: 12px; }
+        .credibility-banner { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin: 32px 0; text-align: center; }
+        .credibility-banner p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; }
+        .credibility-banner a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
+        .credibility-banner a:hover { text-decoration: underline; }
         .aviso-evolucao { background: rgba(212, 168, 83, 0.12); border: 1px solid var(--accent-gold); border-radius: 8px; padding: 14px 20px; margin-bottom: 28px; }
         .aviso-evolucao-texto { font-size: 0.9rem; color: var(--text-primary); line-height: 1.6; margin: 0; }
         .aviso-evolucao-texto strong { color: var(--accent-gold); }
-        header { padding: 48px 0 40px; text-align: center; border-bottom: 1px solid var(--border); }
-        header h1 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px; }
-        header .subtitle { font-size: 1rem; font-weight: 400; color: var(--text-secondary); max-width: 640px; margin: 0 auto; line-height: 1.65; }
-        header .tagline { font-size: 0.95rem; font-weight: 500; color: var(--accent-gold); max-width: 640px; margin: 16px auto 0; line-height: 1.6; }
-        .methodology { margin: 40px 0 48px; }
-        .methodology .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; }
+        .methodology .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; margin-top: 20px; }
+        .methodology .card.card-differential { border-left: 4px solid var(--accent-gold); }
         .methodology .card h2 { font-size: 1rem; font-weight: 600; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px; }
         .methodology .card p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
         .methodology .card p strong { color: var(--text-primary); }
-        .methodology .card.card-differential { margin-top: 20px; border-left: 4px solid var(--accent-green); }
         .nav-section-title { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 20px; }
         .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
         .nav-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 24px; text-decoration: none; color: inherit; transition: border-color 0.2s, background 0.2s; display: flex; flex-direction: column; align-items: flex-start; }
@@ -55,17 +75,6 @@
         .nav-card .icon svg { width: 100%; height: 100%; }
         .nav-card h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
         .nav-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.55; }
-        .hero-cta { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 32px 36px; margin-bottom: 40px; border-left: 4px solid var(--accent-gold); }
-        .hero-cta .hero-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-gold); margin-bottom: 10px; }
-        .hero-cta .hero-title { font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; line-height: 1.4; }
-        .hero-cta .hero-desc { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.65; }
-        .hero-cta .cta-buttons { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-        .hero-cta .cta-btn { display: inline-block; padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: opacity 0.2s, background 0.2s; }
-        .hero-cta .cta-btn-primary { background: var(--accent-green); color: #0d1117; border: none; }
-        .hero-cta .cta-btn-primary:hover { opacity: 0.95; filter: brightness(1.08); }
-        .hero-cta .cta-btn-secondary { background: transparent; color: var(--accent-blue); border: 2px solid var(--accent-blue); }
-        .hero-cta .cta-btn-secondary:hover { background: rgba(88, 166, 255, 0.12); }
-        .launch-badge { display: inline-block; background: rgba(63, 185, 80, 0.2); color: var(--accent-green); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; }
         footer { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-secondary); }
         footer p { margin-bottom: 8px; }
         footer a { color: var(--accent-blue); text-decoration: none; }
@@ -77,64 +86,87 @@
         <nav class="breadcrumb" aria-label="Navegação">
             <a href="https://caracore.com.br/portfolio.html">Cara Core Informática</a>
             <span> · </span>
-            <a href="https://caracore.com.br/delivery/ru/">Delivery RU (matriz)</a>
+            <a href="https://caracore.com.br/portfolio.html#ru-soberano">Portfólio</a>
             <span> · </span>
-            <span>RU Soberano — Loja</span>
+            <a href="https://caracore.com.br/delivery/ru/">RU Soberano — Delivery</a>
+            <span> · </span>
+            <span>Loja</span>
         </nav>
 
         <section class="aviso-evolucao" aria-label="Transparência sobre o produto">
             <p class="aviso-evolucao-texto"><strong>Produto em evolução.</strong> Aceitamos reportes de falhas e dicas para melhorar — sem propaganda enganosa. Como um ovo de chocolate top: cheio de surpresas para quebrar a cabeça.</p>
         </section>
 
-        <section class="hero-cta" aria-label="A história do RU e a Engenharia Química">
+        <section class="hero-cover" aria-label="Capa">
             <span class="launch-badge">Lançamento: 18 de Junho de 2026 · R$ 29,90</span>
-            <p class="hero-label">O conto real da aplicação</p>
-            <h2 class="hero-title">A história do Restaurante Universitário — e o que ela tem a ver com a Engenharia Química.</h2>
-            <p class="hero-desc">O pessoal vai esperar um <strong>Café Mania 2.0</strong> — e será surpreendido com <strong>material sério de engenharia</strong>. Um professor emérito dizia que o RU era o melhor laboratório de Engenharia Química que conhecera: a fila, o buffet e a saída contam a mesma história que a catálise heterogênea e o tempo de residência contam na teoria. O <strong>RU Soberano</strong> traz esse conto à vida em 3D — reator PFR, Lord OIDC e a jornada de 35 anos (1991 → 2026). <strong>Não é grátis:</strong> jornada completa R$ 29,90; degustação FREE até o Buffet.</p>
+            <h1 class="hero-title">RU Soberano — A história do RU e a Engenharia Química</h1>
+            <p class="hero-body">O pessoal vai esperar um <strong>Café Mania 2.0</strong> — e será surpreendido com <strong>material sério de engenharia</strong>. Um professor emérito dizia que o RU era o melhor laboratório de Engenharia Química que conhecera: a fila, o buffet e a saída contam a mesma história que a catálise heterogênea e o tempo de residência contam na teoria.</p>
+            <p class="hero-body">O <strong>RU Soberano</strong> traz esse conto à vida: reator PFR, Lord OIDC e a jornada de 35 anos (1991 → 2026). Em 1991, as decisões no RU da UFPR eram tomadas por engenheiros com HP48SX no bolso e o rigor do quadro verde na mente — resgatamos o kernel original dessa era.</p>
+            <p class="no-demo"><strong>Não é grátis:</strong> jornada completa R$ 29,90; degustação FREE até o Buffet.</p>
             <div class="cta-buttons">
                 <a href="licenca-uso.html" class="cta-btn cta-btn-primary">Acessar Inteligência de Processo + Memorial RU — R$ 29,90</a>
                 <a href="download.html" class="cta-btn cta-btn-secondary">Degustação FREE — Baixar e experimentar até o Buffet</a>
+                <a href="canal-feedback.html" class="cta-btn cta-btn-secondary">Canal de feedback</a>
                 <a href="https://caracore.com.br/delivery/ru/" class="cta-btn cta-btn-secondary" target="_blank" rel="noopener">Apresentação (matriz)</a>
             </div>
         </section>
 
-        <header>
-            <h1>RU Soberano — Loja e Releases</h1>
-            <p class="subtitle">A história do Restaurante Universitário aplicada à Engenharia Química: fila = feedstream, buffet = sítio ativo, catálise Langmuir-Hinshelwood. Simulador 3D que une o conto real (UFPR, 1991) à teoria de reatores e à Cena Final (2026). Vitrine de releases; o foco da venda é o conto real da aplicação.</p>
-            <p class="tagline">Oficina: caracore-ru · Loja: caracore-ru-releases · R$ 29,90 · Lançamento 18/Junho/2026.</p>
-        </header>
+        <p class="section-title">Para quem é este produto</p>
+        <div class="segments">
+            <div class="segment-card">
+                <h3>O Veterano</h3>
+                <p>Reviva a precisão. Onde o balanço de massa era lei.</p>
+            </div>
+            <div class="segment-card">
+                <h3>O Acadêmico</h3>
+                <p>Estude pela fonte original. O nível de detalhamento que as startups modernas esqueceram.</p>
+            </div>
+            <div class="segment-card">
+                <h3>O Ingressante Soberano</h3>
+                <p>Entenda como os mestres pensavam. Construa sua base sobre rocha, não sobre areia.</p>
+            </div>
+        </div>
+
+        <div class="value-block">
+            <p><strong>Por que R$ 29,90?</strong> Um valor simbólico para manter a chama da soberania técnica acesa. A Cara Core não vende software; entrega títulos de propriedade intelectual. Ao adquirir, você não compra um "trial" — você assina um termo de compromisso com a excelência da engenharia clássica.</p>
+            <p class="price-note">O peso do nosso portfólio em toda a rede de lojas Cara Core é o selo de garantia final. Nossa engenharia é o nosso cartão de visitas. O RU 1991 é para quem já sabe o que procura: a origem da soberania.</p>
+        </div>
+
+        <div class="credibility-banner">
+            <p>Um produto com o selo de qualidade <strong>Cara Core Informática</strong>. Conheça nossas outras oficinas e lojas: <a href="https://caracore.com.br/portfolio.html" target="_blank" rel="noopener">caracore.com.br/portfolio</a></p>
+        </div>
 
         <section class="methodology">
             <div class="card card-differential">
                 <h2>Expectativa × realidade</h2>
-                <p>O pessoal vai esperar um <strong>Café Mania 2.0</strong> — e será surpreendido com <strong>material sério de engenharia</strong>. O foco da venda é o <strong>conto real da aplicação</strong>: o Restaurante Universitário como laboratório de Engenharia Química. A fila, o buffet e a saída traduzem catálise, tempo de residência e regeneração do catalisador. Quem compra leva a narrativa (Lord OIDC, 1991 → 2026, Cena Final) e o simulador PFR com kernel Langmuir-Hinshelwood.</p>
+                <p>O pessoal vai esperar um <strong>Café Mania 2.0</strong> — e será surpreendido com <strong>material sério de engenharia</strong>. O foco é o <strong>conto real da aplicação</strong>: o Restaurante Universitário como laboratório de Engenharia Química. A fila, o buffet e a saída traduzem catálise, tempo de residência e regeneração do catalisador. Quem compra leva a narrativa (Lord OIDC, 1991 → 2026, Cena Final) e o simulador PFR com kernel Langmuir-Hinshelwood. R$ 29,90; lançamento 18 de Junho de 2026.</p>
             </div>
             <div class="card">
-                <h2>Valor técnico</h2>
-                <p>Reator PFR, feedstream, τ, θ, regeneração. Data Sheet (RMSE), snapshot de estado, relatório de operação. Manual técnico (PFD, calibração) e <a href="licenca-uso.html" style="color: var(--accent-blue);">licença FREE × SOVEREIGN</a>.</p>
+                <h2>Oficina e loja</h2>
+                <p><strong>Oficina:</strong> caracore-ru. <strong>Loja:</strong> caracore-ru-releases (esta vitrine) — download, degustação FREE até o Buffet, licença, manual técnico e canal de feedback. Apresentação oficial na <a href="https://caracore.com.br/delivery/ru/" style="color: var(--accent-blue);">matriz (delivery/ru)</a>.</p>
             </div>
             <div class="card">
-                <h2>Matriz e oficina</h2>
-                <p>Apresentação completa na <a href="https://caracore.com.br/delivery/ru/" style="color: var(--accent-blue);">matriz (delivery/ru)</a>. Oficina: caracore-ru. Nesta loja: download, compra (R$ 29,90), canal de feedback e manual técnico.</p>
+                <h2>Valor técnico (apoio)</h2>
+                <p>Reator PFR, balanço de massa, perfil de conversão (X vs z), RMSE, snapshot de estado e relatório de operação. Uso do kernel para fins profissionais sob responsabilidade do operador; manual técnico e disclaimer na loja.</p>
             </div>
         </section>
 
         <p class="nav-section-title">Links</p>
         <div class="nav-grid">
-            <a href="download.html" class="nav-card" title="Download e releases">
+            <a href="download.html" class="nav-card" title="Download e degustação FREE">
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-                <h3>Download — RU Soberano</h3>
-                <p>Instruções de download, versão e releases (Windows EXE quando publicados). Lançamento 18/Junho/2026.</p>
+                <h3>Download — Degustação FREE até o Buffet</h3>
+                <p>Executável Windows (Soberania_RU_v1.0_CaraCore.exe). Baixar e experimentar até o Buffet; jornada completa R$ 29,90.</p>
             </a>
-            <a href="licenca-uso.html" class="nav-card" title="Licença e disclaimer">
+            <a href="licenca-uso.html" class="nav-card" title="Licença e compromisso">
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
                 <h3>Licença de uso</h3>
-                <p>Degustação FREE (até o Buffet) × SOVEREIGN (jornada completa, R$ 29,90). Disclaimer do kernel de cálculo para fins profissionais.</p>
+                <p>Acesso ao RU Soberano mediante license.key. Inteligência de Processo + Memorial RU. Disclaimer do kernel para fins profissionais.</p>
             </a>
             <a href="manual-tecnico.html" class="nav-card" title="Manual técnico">
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>
                 <h3>Manual técnico</h3>
-                <p>PFD, instruções de calibração do reator, arquitetura L-H. Apêndice: antropologia industrial.</p>
+                <p>PFD, calibração do reator, arquitetura L-H. Apêndice: antropologia industrial.</p>
             </a>
             <a href="canal-feedback.html" class="nav-card" title="Suporte e feedback">
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
@@ -143,8 +175,13 @@
             </a>
             <a href="https://caracore.com.br/delivery/ru/" class="nav-card" title="Matriz (delivery)" target="_blank" rel="noopener">
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-                <h3>Apresentação (matriz)</h3>
-                <p>Chamada oficial, oficina · loja, lançamento 18/Junho/2026 — delivery/ru.</p>
+                <h3>Apresentação (matriz delivery/ru)</h3>
+                <p>Chamada oficial do RU Soberano, oficina · loja, lançamento 18/Junho/2026.</p>
+            </a>
+            <a href="MIRROR_DELIVERY.md" class="nav-card" title="Alinhamento oficina · loja">
+                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
+                <h3>Alinhamento oficina · loja</h3>
+                <p>Regras de espelho e lançamento (MIRROR_DELIVERY).</p>
             </a>
             <a href="https://github.com/chmulato/caracore-ru-releases" class="nav-card" target="_blank" rel="noopener" title="Repositório da loja">
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></span>
@@ -154,9 +191,10 @@
         </div>
 
         <footer>
-            <p><a href="https://caracore.com.br/portfolio.html">Cara Core Informática — Portfólio</a> · <a href="https://caracore.com.br/delivery/ru/">Delivery RU (matriz)</a> · <a href="https://github.com/chmulato/caracore-ru-releases" target="_blank" rel="noopener">caracore-ru-releases</a></p>
+            <p><a href="https://caracore.com.br/portfolio.html#ru-soberano">Cara Core Informática — Portfólio</a> · <a href="canal-feedback.html">Canal de feedback</a> · <a href="https://caracore.com.br/delivery/ru/">Delivery RU (matriz)</a></p>
             <p>RU Soberano — Reator catalítico PFR. R$ 29,90 · Lançamento 18/Junho/2026. Oficina: caracore-ru · Loja: caracore-ru-releases.</p>
         </footer>
     </div>
+    <script src="assets/js/loja.js"></script>
 </body>
 </html>

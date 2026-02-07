@@ -1,6 +1,6 @@
 # caracore-ru-releases
 
-**Loja** (vitrine e releases) do **RU Soberano** — Reator Catalítico PFR, simulador com cinética Langmuir-Hinshelwood. Ecossistema Cara Core Informática.
+**Loja** (vitrine e releases) do **RU 1991** — Patrimônio digital: o kernel original do RU da UFPR (1991) resgatado para 2026. Reator PFR, Quadro Verde, HP48SX. Ecossistema Cara Core Informática. **A Engenharia não tem degustação.**
 
 - **Oficina:** [caracore-ru](https://github.com/chmulato/caracore-ru) (código-fonte e desenvolvimento)
 - **Matriz (delivery):** [caracore.com.br/delivery/ru/](https://caracore.com.br/delivery/ru/)
@@ -8,9 +8,9 @@
 
 ## Conteúdo desta loja
 
-- **Vitrine:** apresentação do produto, download, licença e canal de feedback
-- **Releases:** quando publicados, instalador Windows (RU_Soberano.exe) e artefatos na aba [Releases](https://github.com/chmulato/caracore-ru-releases/releases)
-- **Documentação:** manual técnico (PFD, calibração), licença de uso (FREE × SOVEREIGN)
+- **Vitrine:** RU 1991 — Onde a Matemática Encontrou o Reator; segmentação (Veterano, Acadêmico, Ingressante Soberano); download, licença e canal de feedback
+- **Releases:** quando publicados, instalador Windows (**Soberania_RU_v1.0_CaraCore.exe**) e artefatos na aba [Releases](https://github.com/chmulato/caracore-ru-releases/releases)
+- **Documentação:** manual técnico (PFD, calibração), licença de uso (acesso mediante license.key), Manifesto do RU 1991
 
 ## Páginas (GitHub Pages)
 

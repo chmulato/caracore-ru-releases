@@ -6,6 +6,7 @@
   <title>Manual Técnico — Reator PFR e Calibração | RU Soberano | Cara Core Informática</title>
   <meta name="description" content="Diagrama de fluxo de processo (PFD), instruções de calibração do reator e arquitetura L-H. Cara Core Informática." />
   <meta name="theme-color" content="#0b1220" />
+  <link rel="stylesheet" href="assets/css/loja.css">
   <style>
     :root {
       --bg: #0b1220;
@@ -42,6 +43,9 @@
     .back { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(148,163,184,0.2); }
     .back a { color: var(--link); text-decoration: none; font-weight: 600; }
     .back a:hover { text-decoration: underline; }
+    .contexto-epoca { margin: 1.5rem 0; text-align: center; }
+    .contexto-epoca img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(148,163,184,0.25); }
+    .contexto-epoca .caption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
   </style>
 </head>
 <body>
@@ -49,7 +53,9 @@
     <nav class="breadcrumb" aria-label="Navegação">
       <a href="https://caracore.com.br/portfolio.html">Cara Core Informática</a>
       <span> · </span>
-      <a href="index.html">RU Soberano — Loja</a>
+      <a href="https://caracore.com.br/delivery/ru/">RU Soberano — Delivery</a>
+      <span> · </span>
+      <a href="index.html">Loja</a>
       <span> · </span>
       <span>Manual técnico</span>
     </nav>
@@ -122,6 +128,10 @@
 
     <div class="appendix">
       <h2>Apêndice — Antropologia Industrial (curiosidades)</h2>
+      <figure class="contexto-epoca" aria-label="Contexto de época RU — formação clássica e simulador 2026">
+        <img src="assets/img/caracore_ru.png" alt="RU 1991: onde a matemática encontrou o reator — contexto de época, formação clássica e evolução para o simulador 2026." width="800" height="auto" />
+        <figcaption class="caption">Contexto de época: do quadro e do rigor de 1991 ao kernel e ao Quadro Verde em 2026. Cara Core Informática.</figcaption>
+      </figure>
       <p>
         A narrativa do <strong>Lord OIDC</strong> e do Restaurante Universitário (RU) é tratada aqui como <em>antropologia industrial</em>:
         o RU como “melhor laboratório de Engenharia Química” na visão de um professor emérito, a fila como análogo da catálise
@@ -139,5 +149,6 @@
       <a href="index.html">← Voltar ao portal</a> · <a href="licenca-uso.html">Licença de uso</a> · <a href="download.html">Download</a>
     </nav>
   </div>
+  <script src="assets/js/loja.js"></script>
 </body>
 </html>
