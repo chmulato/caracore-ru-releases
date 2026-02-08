@@ -2,12 +2,14 @@
 
 Este arquivo espelha as regras de alinhamento entre **matriz** (delivery/ru no site Cara Core) e **esta loja** (caracore-ru-releases / docs). A **matriz** é o diretório `delivery/ru` em cara-core-site; esta pasta é a vitrine de releases.
 
+**Regra da loja:** esta vitrine **não contém links para fora do GitHub**. Contatos (e-mail, WhatsApp, Telegram) são exibidos como texto para cópia; links de navegação apontam apenas para páginas desta loja ou para repositórios/releases no GitHub.
+
 ## Regra: apresentação na Matriz; oficina e loja no ecossistema
 
 - **Oficina** (código-fonte e desenvolvimento): **caracore-ru**.
-- **Loja** (vitrine e releases): **caracore-ru-releases** — esta pasta (docs): download, degustação FREE até o Buffet, licença, manual técnico, canal de feedback. Alinhada ao lançamento de 18/Junho/2026.
-- **Apresentação (delivery):** na **Matriz** Cara Core Informática: `https://caracore.com.br/delivery/ru/`.
-- **Lançamento:** 18 de Junho de 2026.
+- **Loja** (vitrine e releases): **caracore-ru-releases** — esta pasta (docs): download, ambientação RETRO (gratuita), simulador de reator (R$ 29,90), licença, manual técnico, canal de feedback. Alinhada à disponibilidade de 18/Junho/2026.
+- **Apresentação (delivery):** na matriz Cara Core Informática (referência interna; não linkada a partir desta loja).
+- **Disponibilidade:** 18 de Junho de 2026.
 
 ## Espelho e alinhamento
 

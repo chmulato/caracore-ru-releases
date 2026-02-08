@@ -63,6 +63,9 @@ body.page-canal .wrapper { max-width: 640px; }
 .hero-cover .hero-body { font-size: 1rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 20px; }
 .hero-cover .hero-body strong { color: var(--text-primary); }
 .hero-cover .no-demo { font-size: 0.95rem; color: var(--accent-gold); font-style: italic; margin-top: 16px; }
+.hero-cover .hero-contexto-epoca { margin: 20px 0 24px; text-align: center; }
+.hero-cover .hero-contexto-epoca img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+.hero-cover .hero-contexto-caption { font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px; line-height: 1.5; }
 .launch-badge { display: inline-block; background: rgba(63, 185, 80, 0.2); color: var(--accent-green); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
 .cta-buttons { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 24px; }
 .cta-btn { display: inline-block; padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: opacity 0.2s, background 0.2s; }
