@@ -1,0 +1,33 @@
+---
+description: Memória da loja RU Soberano — caracore-ru-releases; vitrine, um executável dois modos, lançamento 18/Junho/2026
+alwaysApply: true
+---
+
+# Memória da Loja — caracore-ru-releases
+
+## Repositório e papel
+- **caracore-ru-releases**: loja (vitrine e releases) do **RU Soberano**. Código do site em `docs/` (GitHub Pages). Oficina: **caracore-ru**. Matriz: **cara-core-site/delivery/ru/**.
+- **Alinhamento:** mensagem e datas espelhadas na matriz; regras em `docs/MIRROR_DELIVERY.md`. Padrão completo na oficina: `caracore-ru/PADRÃO_LOJA_CARACORE_RU.md`.
+
+## Mensagem de produto (fixa)
+- **Um executável, dois modos.** Gratuito: **sala RETRO** — visor HP48SX, console DOS, Quadro Verde, 5 Atos (F1–F5), Dossiê (F10); estudo do Balanço de Massa do **Prof. Soccol** (UFPR 1991). Pago **R$ 29,90:** **simulador completo** (Cápsula, Inteligência de Processo + Memorial RU, narrativa 1991 → 2026), ativado com `license.key`.
+- **Lançamento: 18 de junho de 2026.** Executável: `Soberania_RU_v1.0_CaraCore.exe`. Versão loja: 1.0.0 (`VERSION`).
+
+## Estrutura do site (docs/)
+- **index.html** — Balcão: RU Soberano, um executável dois modos, sala RETRO × simulador completo, CTAs, segmentos, links.
+- **download.html** — Instruções de download; um exe, dois modos; Código de Solicitação (CC-XXXX-XXXX) e `license.key` (mesma pasta do .exe ou `config/`).
+- **licenca-uso.html** — Licença de uso, um executável dois modos, disclaimer do kernel, propriedade intelectual.
+- **manual-tecnico.html** — PFD, calibração do reator, apêndice antropologia industrial (Prof. Soccol, sala RETRO).
+- **canal-feedback.html** — E-mail suporte@caracore.com.br, Telegram, WhatsApp +55 (41) 9 9909-7797. Não atendemos ligações.
+- **MIRROR_DELIVERY.md** — Regras de espelho com a matriz.
+
+## Padrão de páginas
+- **Breadcrumb:** Cara Core Informática · Delivery RU — Loja · [página].
+- **Rodapé:** Cara Core Informática · Canal de feedback. RU Soberano — R$ 29,90 · Lançamento 18 de junho de 2026. Oficina: caracore-ru · Loja: caracore-ru-releases.
+- **Assets:** `docs/assets/css/loja.css`, `docs/assets/js/loja.js`, `docs/assets/img/caracore_ru.png` (aluno Prof. Soccol, RETRO, Balanço de Massa).
+- **Tema:** escuro (--bg-dark, --bg-card), accent gold, verde, azul. Fonte Inter.
+
+## Convenções
+- Não incluir links para fora do GitHub nos conteúdos da loja (exceto matriz como referência textual). Contatos como texto para cópia.
+- Ao alterar mensagem ou datas, manter alinhado com a matriz e com `CONTEXTO_RU.md` na oficina.
+- Proposta surpresa Biotecnologia: banner/links em index; documento na oficina `caracore-ru/docs/BIOTECNOLOGIA.md`.
