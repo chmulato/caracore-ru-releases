@@ -7,9 +7,9 @@ Este arquivo espelha as regras de alinhamento entre **matriz** (delivery/ru no s
 ## Regra: apresentação na Matriz; oficina e loja no ecossistema
 
 - **Oficina** (código-fonte e desenvolvimento): **caracore-ru**.
-- **Loja** (vitrine e releases): **caracore-ru-releases** — esta pasta (docs): download, sala RETRO (gratuita), simulador completo (R$ 29,90, license.key), licença, manual técnico, canal de feedback. Lançamento 18 de junho de 2026.
+- **Loja** (vitrine e releases): **caracore-ru-releases** — esta pasta (docs): download, sala RETRO (gratuita), simulador completo (R$ 29,90, license.key), licença, manual técnico, canal de feedback. Lançamento 18 de junho de 2027.
 - **Apresentação (delivery):** na matriz Cara Core Informática (referência interna; não linkada a partir desta loja).
-- **Disponibilidade:** 18 de junho de 2026.
+- **Disponibilidade:** 18 de junho de 2027.
 
 ## Espelho e alinhamento
 

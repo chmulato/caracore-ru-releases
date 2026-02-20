@@ -4,7 +4,7 @@
 
 - **Oficina:** [caracore-ru](https://github.com/chmulato/caracore-ru) (código-fonte e desenvolvimento)
 - **Matriz (delivery):** [caracore.com.br/delivery/ru/](https://caracore.com.br/delivery/ru/)
-- **Preço:** R$ 29,90 (simulador completo) · **Lançamento:** 18 de junho de 2026
+- **Preço:** R$ 29,90 (simulador completo) · **Lançamento:** 18 de junho de 2027
 
 ## O que é o RU Soberano
 
@@ -40,4 +40,4 @@ Esta loja espelha a **chamada** da matriz (delivery/ru). Apresentação completa
 
 ---
 
-© Cara Core Informática · RU Soberano · Lançamento 18 de junho de 2026
+© Cara Core Informática · RU Soberano · Lançamento 18 de junho de 2027
