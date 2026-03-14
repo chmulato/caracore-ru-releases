@@ -41,3 +41,9 @@ Esta loja espelha a **chamada** da matriz (delivery/ru). Apresentação completa
 ---
 
 © Cara Core Informática · RU Soberano · Lançamento 18 de junho de 2027
+
+## Licenca
+
+Este repositorio segue licenciamento proprietario institucional da Cara Core Informatica.
+Consulte [LICENSE](LICENSE).
+
