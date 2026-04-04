@@ -1,120 +1,124 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manual Técnico — Reator PFR e Calibração | RU Soberano | Cara Core Informática</title>
-  <meta name="description" content="Diagrama de fluxo de processo (PFD), instruções de calibração do reator e arquitetura L-H. Cara Core Informática." />
+  <title>Manual TÃ©cnico â€” Reator PFR e CalibraÃ§Ã£o | RU Soberano | Cara Core InformÃ¡tica</title>
+  <meta name="description" content="Diagrama de fluxo de processo (PFD), instruÃ§Ãµes de calibraÃ§Ã£o do reator e arquitetura L-H. Cara Core InformÃ¡tica." />
   <meta name="theme-color" content="#0b1220" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/css/loja.css">
   <link rel="stylesheet" href="assets/evolution-status/evolution-status.css">
+  <link rel="stylesheet" href="/assets/caracore-core-typography.css">
+  <link rel="stylesheet" href="/assets/caracore-institutional-components.css">
 </head>
 <body class="page-manual">
   <div class="container">
-    <nav class="breadcrumb" aria-label="Navegação">
-      <a href="index.html">Cara Core Informática</a>
-      <span> · </span>
-      <a href="index.html">Delivery RU — Loja</a>
-      <span> · </span>
-      <span>Manual técnico</span>
+    <nav class="breadcrumb" aria-label="NavegaÃ§Ã£o">
+      <a href="index.html">Cara Core InformÃ¡tica</a>
+      <span> Â· </span>
+      <a href="index.html">Delivery RU â€” Loja</a>
+      <span> Â· </span>
+      <span>Manual tÃ©cnico</span>
     </nav>
 
-    <h1>Manual Técnico — Diagrama de Fluxo de Processo e Calibração do Reator</h1>
-    <p class="meta">Cara Core Informática · Reator catalítico PFR · Langmuir-Hinshelwood</p>
+    <h1>Manual TÃ©cnico â€” Diagrama de Fluxo de Processo e CalibraÃ§Ã£o do Reator</h1>
+    <p class="meta">Cara Core InformÃ¡tica Â· Reator catalÃ­tico PFR Â· Langmuir-Hinshelwood</p>
 
     <h2>1. Diagrama de Fluxo de Processo (PFD)</h2>
     <p class="lead">
-      O processo da unidade piloto é representado pelo fluxo de identidades (feedstream) através do reator PFR,
-      com instrumentação de τ (tempo de residência), θ (cobertura) e conversão X.
+      O processo da unidade piloto Ã© representado pelo fluxo de identidades (feedstream) atravÃ©s do reator PFR,
+      com instrumentaÃ§Ã£o de Ï„ (tempo de residÃªncia), Î¸ (cobertura) e conversÃ£o X.
     </p>
     <div class="pfd-box" role="figure" aria-label="PFD simplificado">
-      <span class="node">Alimentação (F0)</span>
-      <span class="arrow">→</span>
-      <span class="node">Válvula de controle</span>
-      <span class="arrow">→</span>
+      <span class="node">AlimentaÃ§Ã£o (F0)</span>
+      <span class="arrow">â†’</span>
+      <span class="node">VÃ¡lvula de controle</span>
+      <span class="arrow">â†’</span>
       <span class="node">Reator PFR (catalisador)</span>
-      <span class="arrow">→</span>
-      <span class="node">Saída (convertido + residual)</span>
+      <span class="arrow">â†’</span>
+      <span class="node">SaÃ­da (convertido + residual)</span>
       <br /><br />
       <strong>Instrumentos:</strong>
-      <span class="node">τ (holdup/throughput)</span>
-      <span class="node">θ_occupied (sítio)</span>
-      <span class="node">X (conversão)</span>
+      <span class="node">Ï„ (holdup/throughput)</span>
+      <span class="node">Î¸_occupied (sÃ­tio)</span>
+      <span class="node">X (conversÃ£o)</span>
       <span class="node">Gibbs (estado)</span>
     </div>
     <p>
-      Equação de desempenho: <code>r_auth = k · η · θ_identidades · θ_sítio_livre · regeneração</code>.
-      O PFR opera em regime contínuo; a posição adimensional <em>z</em> varia de 0 (entrada) a 1 (saída).
+      EquaÃ§Ã£o de desempenho: <code>r_auth = k Â· Î· Â· Î¸_identidades Â· Î¸_sÃ­tio_livre Â· regeneraÃ§Ã£o</code>.
+      O PFR opera em regime contÃ­nuo; a posiÃ§Ã£o adimensional <em>z</em> varia de 0 (entrada) a 1 (saÃ­da).
     </p>
 
-    <h2>2. Instruções de Calibração do Reator</h2>
+    <h2>2. InstruÃ§Ãµes de CalibraÃ§Ã£o do Reator</h2>
     <p>
-      Antes da operação da unidade piloto, verifique os parâmetros do kernel e a telemetria.
+      Antes da operaÃ§Ã£o da unidade piloto, verifique os parÃ¢metros do kernel e a telemetria.
     </p>
-    <h3>2.1 Parâmetros de calibração</h3>
+    <h3>2.1 ParÃ¢metros de calibraÃ§Ã£o</h3>
     <ul>
-      <li><strong>k</strong> (constante cinética): valor padrão 0,45 min⁻¹; ajuste conforme caracterização do catalisador.</li>
-      <li><strong>η</strong> (eficiência do sítio ativo): 0–1; padrão 0,85.</li>
-      <li><strong>Regeneração</strong>: dependente da ação do operador (tecla B no simulador); calibrar decay temporal conforme procedimento.</li>
-      <li><strong>F0</strong> (fluxo de alimentação): em mol/min ou u.a.; conferir com vazão real ou telemetria.</li>
+      <li><strong>k</strong> (constante cinÃ©tica): valor padrÃ£o 0,45 minâ»Â¹; ajuste conforme caracterizaÃ§Ã£o do catalisador.</li>
+      <li><strong>Î·</strong> (eficiÃªncia do sÃ­tio ativo): 0â€“1; padrÃ£o 0,85.</li>
+      <li><strong>RegeneraÃ§Ã£o</strong>: dependente da aÃ§Ã£o do operador (tecla B no simulador); calibrar decay temporal conforme procedimento.</li>
+      <li><strong>F0</strong> (fluxo de alimentaÃ§Ã£o): em mol/min ou u.a.; conferir com vazÃ£o real ou telemetria.</li>
     </ul>
-    <h3>2.2 Sequência de calibração</h3>
+    <h3>2.2 SequÃªncia de calibraÃ§Ã£o</h3>
     <ol>
-      <li>Carregar <code>parametros.yaml</code> (ou equivalente) com k, η, temperatura de operação e capacidade do reator.</li>
-      <li>Executar ciclo de referência com telemetria ativa; verificar RMSE entre simulação e modelo teórico L-H no Data Sheet.</li>
-      <li>Confirmar que o painel «Cálculo de Incerteza» do console exibe precisão da integração numérica dentro da faixa aceitável.</li>
-      <li>Registrar snapshot de estado após estabilização para rastreabilidade.</li>
+      <li>Carregar <code>parametros.yaml</code> (ou equivalente) com k, Î·, temperatura de operaÃ§Ã£o e capacidade do reator.</li>
+      <li>Executar ciclo de referÃªncia com telemetria ativa; verificar RMSE entre simulaÃ§Ã£o e modelo teÃ³rico L-H no Data Sheet.</li>
+      <li>Confirmar que o painel Â«CÃ¡lculo de IncertezaÂ» do console exibe precisÃ£o da integraÃ§Ã£o numÃ©rica dentro da faixa aceitÃ¡vel.</li>
+      <li>Registrar snapshot de estado apÃ³s estabilizaÃ§Ã£o para rastreabilidade.</li>
     </ol>
     <h3>2.3 Limites operacionais</h3>
     <p>
-      θ_occupied = 1 implica envenenamento do catalisador (r_auth = 0). Manter regeneração efetiva e monitorar Gibbs (Fome / Estável / Crítico).
+      Î¸_occupied = 1 implica envenenamento do catalisador (r_auth = 0). Manter regeneraÃ§Ã£o efetiva e monitorar Gibbs (Fome / EstÃ¡vel / CrÃ­tico).
     </p>
 
     <h2>3. Arquitetura de Reatores Bio-Inspirados</h2>
     <p>
-      A gestão de identidade é modelada como reator catalítico: feedstream, τ, θ e regeneração determinam a conversão.
+      A gestÃ£o de identidade Ã© modelada como reator catalÃ­tico: feedstream, Ï„, Î¸ e regeneraÃ§Ã£o determinam a conversÃ£o.
       Telemetria, Data Sheet (RMSE) e Snapshot de Estado permitem auditoria e conformidade industrial.
     </p>
 
-    <h2>4. Motor de Telemetria e Relatório de Operação</h2>
+    <h2>4. Motor de Telemetria e RelatÃ³rio de OperaÃ§Ã£o</h2>
     <p>
-      O <strong>Relatório de Operação de Unidade Piloto</strong> contém
-      tabelas de balanço de massa, gráficos de seletividade e energia de ativação aparente. Não é um diário do RU;
-      o Estudo de Caso RU aparece apenas como anexo histórico quando aplicável.
+      O <strong>RelatÃ³rio de OperaÃ§Ã£o de Unidade Piloto</strong> contÃ©m
+      tabelas de balanÃ§o de massa, grÃ¡ficos de seletividade e energia de ativaÃ§Ã£o aparente. NÃ£o Ã© um diÃ¡rio do RU;
+      o Estudo de Caso RU aparece apenas como anexo histÃ³rico quando aplicÃ¡vel.
     </p>
 
     <hr />
 
     <div class="appendix">
-      <h2>Apêndice — Antropologia Industrial (curiosidades)</h2>
-      <figure class="contexto-epoca" aria-label="Aluno do Prof. Soccol — ambientação RETRO, estudo do Balanço de Massa">
-        <img src="assets/img/caracore_ru.png" alt="Aluno do Prof. Soccol na ambientação RETRO (UFPR 1991): estudo do Balanço de Massa na Engenharia Química — contexto de época e produto Cara Core RU." width="800" height="auto" />
-        <figcaption class="caption">A imagem representa um <strong>aluno do Prof. Soccol</strong> no contexto da <strong>ambientação RETRO</strong> (sala de aula UFPR, 1991) e do <strong>estudo do Balanço de Massa</strong> na Engenharia Química. Cara Core Informática.</figcaption>
+      <h2>ApÃªndice â€” Antropologia Industrial (curiosidades)</h2>
+      <figure class="contexto-epoca" aria-label="Aluno do Prof. Soccol â€” ambientaÃ§Ã£o RETRO, estudo do BalanÃ§o de Massa">
+        <img src="assets/img/caracore_ru.png" alt="Aluno do Prof. Soccol na ambientaÃ§Ã£o RETRO (UFPR 1991): estudo do BalanÃ§o de Massa na Engenharia QuÃ­mica â€” contexto de Ã©poca e produto Cara Core RU." width="800" height="auto" />
+        <figcaption class="caption">A imagem representa um <strong>aluno do Prof. Soccol</strong> no contexto da <strong>ambientaÃ§Ã£o RETRO</strong> (sala de aula UFPR, 1991) e do <strong>estudo do BalanÃ§o de Massa</strong> na Engenharia QuÃ­mica. Cara Core InformÃ¡tica.</figcaption>
       </figure>
       <p>
-        A narrativa do <strong>Lord OIDC</strong> e do Restaurante Universitário (RU) é tratada aqui como <em>antropologia industrial</em>:
-        o RU como “melhor laboratório de Engenharia Química” na visão de um professor emérito, a fila como análogo da catálise
-        e da validação OIDC (1991 → 2026). O produto oferece um único executável em dois modos: <strong>sala RETRO</strong> (visor HP48SX, console DOS, Quadro Verde, 5 Atos, estudo do Balanço de Massa do Prof. Soccol — gratuito) e <strong>simulador completo</strong> (Cápsula, R$ 29,90, license.key). Este apêndice é apenas informativo e não faz parte do procedimento de calibração nem do PFD da unidade piloto.
+        A narrativa do <strong>Lord OIDC</strong> e do Restaurante UniversitÃ¡rio (RU) Ã© tratada aqui como <em>antropologia industrial</em>:
+        o RU como â€œmelhor laboratÃ³rio de Engenharia QuÃ­micaâ€ na visÃ£o de um professor emÃ©rito, a fila como anÃ¡logo da catÃ¡lise
+        e da validaÃ§Ã£o OIDC (1991 â†’ 2026). O produto oferece um Ãºnico executÃ¡vel em dois modos: <strong>sala RETRO</strong> (visor HP48SX, console DOS, Quadro Verde, 5 Atos, estudo do BalanÃ§o de Massa do Prof. Soccol â€” gratuito) e <strong>simulador completo</strong> (CÃ¡psula, R$ 29,90, license.key). Este apÃªndice Ã© apenas informativo e nÃ£o faz parte do procedimento de calibraÃ§Ã£o nem do PFD da unidade piloto.
       </p>
       <p>
-        Referências à Cena Final, Torre Localhost e licença SOVEREIGN constam em documentação comercial e no dossiê da Cara Core.
+        ReferÃªncias Ã  Cena Final, Torre Localhost e licenÃ§a SOVEREIGN constam em documentaÃ§Ã£o comercial e no dossiÃª da Cara Core.
       </p>
     </div>
 
-    <p class="meta mt2">© Cara Core Informática · Manual Técnico v1.0 · Reator PFR</p>
+    <p class="meta mt2">Â© Cara Core InformÃ¡tica Â· Manual TÃ©cnico v1.0 Â· Reator PFR</p>
 
     <nav class="back">
-      <a href="index.html">← Voltar ao portal</a> · <a href="licenca-uso.html">Licença de uso</a> · <a href="download.html">Download</a>
+      <a href="index.html">â† Voltar ao portal</a> Â· <a href="licenca-uso.html">LicenÃ§a de uso</a> Â· <a href="download.html">Download</a>
     </nav>
     <footer class="page-footer">
-      <p><a href="index.html">Cara Core Informática</a> · <a href="canal-feedback.html">Canal de feedback</a></p>
-      <p>RU Soberano — R$ 29,90 · Lançamento 18 de junho de 2026. Oficina: caracore-ru · Loja: caracore-ru-releases.</p>
+      <p><a href="index.html">Cara Core InformÃ¡tica</a> Â· <a href="canal-feedback.html">Canal de feedback</a></p>
+      <p>RU Soberano â€” R$ 29,90 Â· LanÃ§amento 18 de junho de 2026. Oficina: caracore-ru Â· Loja: caracore-ru-releases.</p>
     </footer>
   </div>
   <script src="assets/js/loja.js"></script>
-  <div class="evo-beta-wrap" aria-hidden="true"><span class="evo-beta-badge" title="Versão de teste oficial">Seed<span class="evo-beta-tooltip">Esta é uma versão oficial de teste da Cara Core Informática para parceiros do Plano Premium+.</span></span></div>
-  <footer class="evo-roadmap-footer" role="contentinfo"><p class="evo-roadmap-title">Próximos passos</p><ul class="evo-roadmap-list"><li>Domínio próprio <span class="evo-roadmap-tag">Março/2026</span></li><li>Integração PIX nativa</li><li>IA para estoque</li></ul></footer>
+  <div class="evo-beta-wrap" aria-hidden="true"><span class="evo-beta-badge" title="VersÃ£o de teste oficial">Seed<span class="evo-beta-tooltip">Esta Ã© uma versÃ£o oficial de teste da Cara Core InformÃ¡tica para parceiros do Plano Premium+.</span></span></div>
+  <footer class="evo-roadmap-footer" role="contentinfo"><p class="evo-roadmap-title">PrÃ³ximos passos</p><ul class="evo-roadmap-list"><li>DomÃ­nio prÃ³prio <span class="evo-roadmap-tag">MarÃ§o/2026</span></li><li>IntegraÃ§Ã£o PIX nativa</li><li>IA para estoque</li></ul></footer>
   <div class="evo-feedback-fab"><a href="canal-feedback.html" class="evo-feedback-btn" aria-label="Canal de feedback"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Sugira uma melhoria</a></div>
 </body>
 </html>
+
+
