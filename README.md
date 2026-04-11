@@ -3,7 +3,7 @@
 **Loja** (vitrine e releases) do **RU Soberano** — Ferramenta de aprendizado que une a história do Restaurante Universitário à Engenharia Química (UFPR 1991 → 2026). Ecossistema Cara Core Informática.
 
 - **Oficina:** [caracore-ru](https://github.com/chmulato/caracore-ru) (código-fonte e desenvolvimento)
-- **Matriz (delivery):** [caracore.com.br/delivery/ru/](https://caracore.com.br/delivery/ru/)
+- **Matriz (delivery):** [caracore.com.br/delivery/ru/](https://www.caracore.com.br/delivery/ru/)
 - **Preço:** R$ 29,90 (simulador completo) · **Lançamento:** 18 de junho de 2027
 
 ## O que é o RU Soberano
@@ -36,7 +36,7 @@ A pasta `docs/` é a raiz do site da loja (GitHub Pages → Source: branch main 
 
 ## Alinhamento
 
-Esta loja espelha a **chamada** da matriz (delivery/ru). Apresentação completa e contexto do ecossistema ficam em [caracore.com.br/delivery/ru/](https://caracore.com.br/delivery/ru/).
+Esta loja espelha a **chamada** da matriz (delivery/ru). Apresentação completa e contexto do ecossistema ficam em [caracore.com.br/delivery/ru/](https://www.caracore.com.br/delivery/ru/).
 
 ---
 

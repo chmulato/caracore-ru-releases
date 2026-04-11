@@ -44,9 +44,9 @@ Painel de Controle > Programas > Programas e Recursos > desinstalar RU Soberano.
 
 - Pagina de download: ../download.html
 - Licenca: ../licenca-uso.html
-- Suporte: https://caracore.com.br
+- Suporte: https://www.caracore.com.br
 
 ---
 
 > Versao: v1.0.0 (previsto)
-> Cara Core Informatica — https://caracore.com.br
+> Cara Core Informatica — https://www.caracore.com.br
