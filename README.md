@@ -32,11 +32,15 @@ A pasta `docs/` é a raiz do site da loja (GitHub Pages → Source: branch main 
 | [licenca-uso.html](docs/licenca-uso.html) | Licença de uso, um executável dois modos, disclaimer do kernel |
 | [manual-tecnico.html](docs/manual-tecnico.html) | PFD, calibração do reator, apêndice antropologia industrial |
 | [canal-feedback.html](docs/canal-feedback.html) | E-mail suporte@caracore.com.br, Telegram ou WhatsApp +55 (41) 9 9909-7797. Não atendemos ligações telefônicas. |
-| [MIRROR_DELIVERY.md](docs/MIRROR_DELIVERY.md) | Regras de espelho e alinhamento com a matriz |
+| [mirror-delivery.html](docs/mirror-delivery.html) | Regras de espelho e alinhamento com a matriz |
+| [validacao-alinhamento-ru.html](docs/validacao-alinhamento-ru.html) | Validação de alinhamento entre matriz, loja e oficina |
+| [fluxo-mensagens-vendas.html](docs/fluxo-mensagens-vendas.html) | Fluxo de mensagens de venda e pós-venda |
 
 ## Alinhamento
 
 Esta loja espelha a **chamada** da matriz (delivery/ru). A vitrine publicada para o público está em **[ru.caracore.com.br](https://ru.caracore.com.br/)** (mesmo conteúdo em `docs/` no GitHub Pages).
+
+Atualizacao de memoria (25/04/2026): documentos de conteudo publicados em `docs/` ficam em HTML; Markdown interno foi removido da vitrine. CSS da loja centralizado em `docs/assets/css`. Breadcrumb redundante da home removido e bloco de Biotecnologia ajustado para leitura com texto branco.
 
 ---
 
