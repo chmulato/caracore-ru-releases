@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://ru.caracore.com.br/">
+    <title>Validação de Alinhamento — RU Soberano | Cara Core Informática</title>
+    <meta name="description" content="Validação de alinhamento entre matriz, oficina e memória do RU Soberano.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/loja.css">
+    <link rel="stylesheet" href="assets/css/evolution-status.css">
+    <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
+    <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
+</head>
+<body class="page-download">
+    <div class="wrapper">
+        <nav class="breadcrumb" aria-label="Navegação">
+            <a href="index.html">RU Soberano</a>
+            <span> · </span>
+            <span>Validação de alinhamento</span>
+        </nav>
+
+        <header>
+            <h1>Validação de alinhamento — RU Soberano</h1>
+            <p>Matriz, delivery, oficina e memória</p>
+        </header>
+
+        <section class="card">
+            <p><strong>Data:</strong> 2026-02-08</p>
+            <p><strong>Referência:</strong> <code>caracore-ru</code> (oficina), <code>docs/memoria-projeto.txt</code>, <code>CONTEXTO_RU.md</code>, <code>STATUS_ATUAL.TXT</code>.</p>
+        </section>
+
+        <section class="card">
+            <h2>1. Oferta e mensagem</h2>
+            <ul>
+                <li><strong>FREE:</strong> Ambientação RETRO (sala de aula UFPR 1991) para estudo do <strong>Balanço de Massa</strong> do <strong>Prof. Soccol</strong> na Engenharia Química.</li>
+                <li><strong>Pago (R$ 29,90):</strong> simulador de reator, jornada completa, narrativa Lord OIDC (1991 → 2026), kernel e artefatos. Ativação com <code>license.key</code>.</li>
+                <li><strong>Data:</strong> disponível a partir de <strong>18 de junho de 2026</strong>. Produto pronto na garagem.</li>
+                <li><strong>Reator:</strong> em definição na garagem; não fixar “reator PFR” como produto fechado na comunicação.</li>
+                <li><strong>Imagem:</strong> <code>caracore_ru.png</code> = aluno do Prof. Soccol; ambientação RETRO, Balanço de Massa.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>2. O que está alinhado</h2>
+            <h3>2.1 Ecossistema</h3>
+            <ul>
+                <li>Card RU: DES, RU como laboratório didático, fluxo, filas, throughput e tempo de residência.</li>
+                <li>Oferta gratuita: ambientação RETRO (sala UFPR 1991, Balanço de Massa).</li>
+                <li>Oferta paga: simulador de reator, jornada completa, narrativa Lord OIDC (1991 → 2026), 3D.</li>
+                <li>Data: 18 de junho de 2026.</li>
+                <li>Sem fixar PFR no card.</li>
+            </ul>
+
+            <h3>2.2 Delivery RU</h3>
+            <ul>
+                <li>Aviso de evolução, hero, CTA, metodologia, oficina e loja alinhados.</li>
+                <li>Mensagem FREE = RETRO; pago = simulador de reator (R$ 29,90).</li>
+                <li>Proposta biotecnologia “em desenho”, ciclo O₂ e link para ambientação RETRO.</li>
+                <li>Links para caracore-ru-releases, canal-feedback e portfólio corretos.</li>
+            </ul>
+
+            <h3>2.3 Código</h3>
+            <ul>
+                <li>Entrada: <code>python run_soberana.py</code> → dashboard PyWebView.</li>
+                <li>Build exe: <code>build_soberania_exe.bat</code> → <code>dist/Soberania_RU_v1.0_CaraCore.exe</code>.</li>
+                <li>Estrutura: <code>dashboard/</code>, <code>src/</code>, <code>ru3d/</code>, <code>aulas/</code>, <code>docs/</code>, <code>simulador_3d/</code>.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>3. Desalinhamento encontrado e correção</h2>
+            <h3>3.1 Título da página delivery</h3>
+            <p><strong>Problema:</strong> o título fixava “Reator Catalítico PFR”, mas a memória pedia não fixar “reator PFR” como produto fechado.</p>
+            <p><strong>Correção recomendada:</strong> usar um título que não fixe PFR, por exemplo <code>RU Soberano — Simulador de reator e ambientação RETRO | Cara Core Informática</code>.</p>
+
+            <h3>3.2 Card “Valor técnico”</h3>
+            <p>A menção técnica/educacional a PFR é aceitável; a regra é não usar PFR como nome do produto ou chamada comercial. Opcionalmente, suavizar para “Reator (PFR e correlatos), balanço de massa...”.</p>
+        </section>
+
+        <section class="card">
+            <h2>4. Resumo</h2>
+            <ul>
+                <li><strong>Ecossistema:</strong> alinhado.</li>
+                <li><strong>Delivery RU:</strong> conteúdo alinhado.</li>
+                <li><strong>Título delivery:</strong> corrigir para não fixar PFR como produto.</li>
+                <li><strong>Memória + CONTEXTO_RU:</strong> referência única para build, exe, oferta, data e regra “não fixar PFR”.</li>
+            </ul>
+            <p>Correções aplicadas em <code>delivery/ru/index.html</code>: título e card “Valor técnico”.</p>
+        </section>
+
+        <footer>
+            <p><a href="index.html">RU Soberano</a> · <a href="mirror-delivery.html">Espelho e alinhamento</a></p>
+        </footer>
+    </div>
+    <script src="assets/js/loja.js"></script>
+</body>
+</html>

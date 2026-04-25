@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://ru.caracore.com.br/">
+    <title>Instalação — RU Soberano | Cara Core Informática</title>
+    <meta name="description" content="Guia de instalação Windows do RU Soberano.">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/loja.css">
+    <link rel="stylesheet" href="../assets/css/evolution-status.css">
+    <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
+    <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
+</head>
+<body class="page-download">
+    <div class="wrapper">
+        <nav class="breadcrumb" aria-label="Navegação">
+            <a href="../index.html">RU Soberano</a>
+            <span> · </span>
+            <span>Instalação</span>
+        </nav>
+
+        <header>
+            <h1>RU Soberano — Instalação Windows</h1>
+            <p><strong>Lançamento previsto: 18/06/2027.</strong> Este guia será atualizado quando o instalador for publicado.</p>
+        </header>
+
+        <section class="card">
+            <h2>Arquivos previstos para esta entrega</h2>
+            <ul>
+                <li><code>SoberaniaRU.exe</code></li>
+                <li><code>checksum.sha256</code></li>
+                <li><code>checksum.md5</code></li>
+                <li><code>instalacao.html</code> (este guia)</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Validação de integridade</h2>
+            <p>No PowerShell, na pasta de artefatos:</p>
+            <pre><code>Get-FileHash -Path .\SoberaniaRU.exe -Algorithm SHA256
+Get-FileHash -Path .\SoberaniaRU.exe -Algorithm MD5</code></pre>
+            <p>Compare os valores com os arquivos <code>checksum.sha256</code> e <code>checksum.md5</code>.</p>
+        </section>
+
+        <section class="card">
+            <h2>Requisitos</h2>
+            <ul>
+                <li>Windows 10 ou superior (64 bits).</li>
+                <li>500 MB de espaço livre.</li>
+                <li>Conexão com internet, necessária para ativação de licença.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Execução</h2>
+            <ol>
+                <li>Execute <code>SoberaniaRU.exe</code> em duplo clique.</li>
+                <li>Conclua o assistente de instalação.</li>
+                <li>Abra o atalho criado no Desktop para iniciar o simulador de reator.</li>
+            </ol>
+        </section>
+
+        <section class="card">
+            <h2>Licença</h2>
+            <ul>
+                <li>Ambientação RETRO: gratuita.</li>
+                <li>Simulador de reator: R$ 29,90 (chave de licença incluída no pacote).</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Desinstalação</h2>
+            <p>Painel de Controle &gt; Programas &gt; Programas e Recursos &gt; desinstalar RU Soberano.</p>
+        </section>
+
+        <section class="card">
+            <h2>Canal oficial</h2>
+            <ul>
+                <li><a href="../download.html">Página de download</a></li>
+                <li><a href="../licenca-uso.html">Licença</a></li>
+                <li><a href="../canal-feedback.html">Suporte da loja RU</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Versão: v1.0.0 (previsto) · Cara Core Informática — <a href="https://ru.caracore.com.br/">ru.caracore.com.br</a></p>
+        </footer>
+    </div>
+    <script src="../assets/js/loja.js"></script>
+</body>
+</html>
