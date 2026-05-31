@@ -38,7 +38,7 @@ A pasta `docs/` é a raiz do site da loja (GitHub Pages → Source: branch main 
 
 ## Alinhamento
 
-Esta loja espelha a **chamada** da matriz (delivery/ru). A vitrine publicada para o público está em **[ru.caracore.com.br](https://ru.caracore.com.br/)** (mesmo conteúdo em `docs/` no GitHub Pages).
+Esta loja espelha a **chamada** da matriz (<a href="https://www.caracore.com.br/portfolio.html#caracore-ru">portfólio #caracore-ru</a>). A vitrine publicada para o público está em **[ru.caracore.com.br](https://ru.caracore.com.br/)** (mesmo conteúdo em `docs/` no GitHub Pages).
 
 Atualizacao de memoria (25/04/2026): documentos de conteudo publicados em `docs/` ficam em HTML; Markdown interno foi removido da vitrine. CSS da loja centralizado em `docs/assets/css`. Breadcrumb redundante da home removido e bloco de Biotecnologia ajustado para leitura com texto branco.
 
