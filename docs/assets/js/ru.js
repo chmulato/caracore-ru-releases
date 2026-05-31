@@ -1,6 +1,5 @@
 /**
- * RU Soberano — Delivery (cara-core-site/delivery/ru)
- * Script compartilhado para páginas que utilizam assets/js.
+ * RU Soberano — Loja ru.caracore.com.br. Matriz: portfolio.html#caracore-ru.
  */
 'use strict';
 
