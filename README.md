@@ -1,19 +1,20 @@
 # caracore-ru-releases
 
-**Loja** (vitrine e releases) do **RU Soberano** — Ferramenta de aprendizado que une a história do Restaurante Universitário à Engenharia Química (UFPR 1991 → 2026). Ecossistema Cara Core Informática.
+**Loja** (vitrine e releases) do **RU Soberano & BioReator 4.0** — Da história da Engenharia Química na UFPR (1991) à estação de trabalho de bioinsumos industriais. Ecossistema Cara Core Informática.
 
 - **Oficina:** [caracore-ru](https://github.com/chmulato/caracore-ru) (código-fonte e desenvolvimento)
 - **Loja (site público):** [ru.caracore.com.br](https://ru.caracore.com.br/)
-- **Preço:** R$ 29,90 (simulador completo) · **Lançamento:** 18 de junho de 2027
+- **Linha Educativa (RU Soberano):** Gratuito (sala RETRO) · R$ 29,90 (simulador completo) · Lançamento: 18 de junho de 2027
+- **Linha Industrial (BioReator 4.0):** Garagem **1.0.0** Community · Windows x64 · JDK 25 · EXE e MSI na oficina, sem arquivo nesta loja
 
-## O que é o RU Soberano
+## O que encontramos nesta loja
 
-Um único executável, dois modos:
+Dois pilares complementares de engenharia:
 
-| Modo | Descrição |
-|------|-----------|
-| **Gratuito** | Sala RETRO: visor HP48SX, console DOS, Quadro Verde, 5 Atos (F1–F5), exportação de Dossiê (F10). Estudo do Balanço de Massa do Prof. Soccol (UFPR 1991). |
-| **Pago (R$ 29,90)** | Simulador completo (Cápsula): Inteligência de Processo + Memorial RU, narrativa 1991 → 2026. Ativação com `license.key`. |
+| Produto | O que é | Formato | Status |
+|---|---|---|---|
+| **RU Soberano (Didático)** | Estudo do Balanço de Massa do Prof. Soccol (UFPR 1991), visor HP48SX, console DOS, 5 Atos (F1–F5) e Memorial RU. | Executável Windows (Free / R$ 29,90) | Pronto na garagem (18/06/2027) |
+| **BioReator 4.0** | Estação desktop de bioinsumos, no estilo do Minerador 4.0. Community: *Bradyrhizobium japonicum* em batelada, histórico e CSV. Pro sem preço e sem PIX. | Pacote de oficina 1.0.0 (`BioReator40.exe` e `BioReator40-1.0.0.msi`), sem download nesta loja | Garagem |
 
 ## Conteúdo desta loja
 
@@ -28,7 +29,9 @@ A pasta `docs/` é a raiz do site da loja (GitHub Pages → Source: branch main 
 | Página | Descrição |
 |--------|-----------|
 | [index.html](docs/index.html) | Balcão: o que é RU Soberano, sala RETRO × simulador completo, download, links |
-| [download.html](docs/download.html) | Instruções de download; um exe, dois modos; Código de Solicitação e license.key |
+| [download.html](docs/download.html) | Instruções do RU; edições do BioReator 4.0 em `#bioreator40` |
+| [manual-bioreator.html](docs/manual-bioreator.html) | Manual do operador do BioReator 4.0 |
+| [artifacts/bioreator-1.0.0.txt](docs/artifacts/bioreator-1.0.0.txt) | Versão, bytes e SHA-256 do pacote de oficina 1.0.0 |
 | [licenca-uso.html](docs/licenca-uso.html) | Licença de uso, um executável dois modos, disclaimer do kernel |
 | [manual-tecnico.html](docs/manual-tecnico.html) | PFD, calibração do reator, apêndice antropologia industrial |
 | [canal-feedback.html](docs/canal-feedback.html) | E-mail suporte@caracore.com.br, Telegram ou WhatsApp +55 (41) 9 9909-7797. Não atendemos ligações telefônicas. |

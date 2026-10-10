@@ -1,0 +1,22 @@
+BioReator 4.0 — pacote de oficina 1.0.0
+editionDefault: community
+runtime: JDK 25 embutido (jlink)
+plataforma: Windows x64
+assinatura: sem certificado digital
+builtAt: 2026-10-10T20:40:10-03:00
+publicDownload: false
+mavenOficina: br.ufpr.caracore:ru-free:1.0.0-SNAPSHOT
+
+A loja https://ru.caracore.com.br/ não hospeda estes arquivos.
+O RU Soberano permanece na versão de loja 1.0.0, com lançamento em 18/06/2027.
+
+BioReator40/BioReator40.exe
+bytes: 524800
+sha256: 378efe2eb3fd32e4fb5aa167d860ca86df11d45f9b31af53c0d5e65470611c38
+
+msi/BioReator40-1.0.0.msi
+bytes: 72658944
+sha256: 8efc60902c5ba6c37096401f02ba180b545f4dce754247e4a51ea1e96905995e
+
+Fonte: caracore-ru/target/bioreator-dist/RELEASE_MANIFEST.json
+Medição daquela máquina: partida 3821 ms, memória 175,4 MB. Os limites internos de 2,5 s e 120 MB não foram atingidos.
