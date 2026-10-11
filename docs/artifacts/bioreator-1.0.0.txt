@@ -8,21 +8,30 @@ publicDownload: true
 release: https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.0.0
 mavenOficina: br.ufpr.caracore:ru-free:1.0.0-SNAPSHOT
 
-O download público é a release bioreator-1.0.0 deste repositório.
+Página da release: https://github.com/chmulato/caracore-ru-releases/releases
+Tag: https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.0.0
 O RU Soberano permanece na versão de loja 1.0.0, com lançamento em 18/06/2027.
-O BioReator40.exe fica dentro do ZIP e não abre sozinho.
 
-msi/BioReator40-1.0.0.msi
+tipo: instalador
+formato: MSI
+arquivo: BioReator40-1.0.0.msi
 bytes: 72658944
 sha256: 8efc60902c5ba6c37096401f02ba180b545f4dce754247e4a51ea1e96905995e
+url: https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0.msi
 
-zip/BioReator40-1.0.0-windows-x64.zip
+tipo: pasta portátil
+formato: ZIP
+arquivo: BioReator40-1.0.0-windows-x64.zip
 bytes: 73594305
 sha256: 49e83e5361b77ca8bc1bd854e6acaf77ce50404380b5d84229e15816dad5405a
+url: https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0-windows-x64.zip
 
-BioReator40/BioReator40.exe
+tipo: lançador
+formato: EXE
+arquivo: BioReator40.exe
 bytes: 524800
 sha256: 378efe2eb3fd32e4fb5aa167d860ca86df11d45f9b31af53c0d5e65470611c38
+local: dentro do ZIP. Não é um download separado.
 
 Fonte: caracore-ru/target/bioreator-dist/RELEASE_MANIFEST.json
 Medição daquela máquina: partida 3821 ms, memória 175,4 MB. Os limites internos de 2,5 s e 120 MB não foram atingidos.
