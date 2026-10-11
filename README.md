@@ -31,6 +31,7 @@ A pasta `docs/` é a raiz do site da loja (GitHub Pages → Source: branch main 
 | [index.html](docs/index.html) | Balcão: o que é RU Soberano, sala RETRO × simulador completo, download, links |
 | [download.html](docs/download.html) | Instruções do RU; edições do BioReator 4.0 em `#bioreator40` |
 | [manual-bioreator.html](docs/manual-bioreator.html) | Manual do operador do BioReator 4.0 |
+| [exemplo-bioreator.html](docs/exemplo-bioreator.html) | Carga de referência e leitura da batelada |
 | [artifacts/bioreator-1.0.0.txt](docs/artifacts/bioreator-1.0.0.txt) | Versão, bytes e SHA-256 do pacote de oficina 1.0.0 |
 | [licenca-uso.html](docs/licenca-uso.html) | Licença de uso, um executável dois modos, disclaimer do kernel |
 | [manual-tecnico.html](docs/manual-tecnico.html) | PFD, calibração do reator, apêndice antropologia industrial |

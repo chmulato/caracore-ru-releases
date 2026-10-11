@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://ru.caracore.com.br/">
+    <title>Exemplo de batelada — BioReator 4.0 | Cara Core Informática</title>
+    <meta name="description" content="Exemplo da carga de referência do BioReator 4.0: Bradyrhizobium em batelada, 100 L, e a leitura de biomassa, substrato e oxigênio.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/loja.css">
+    <link rel="stylesheet" href="assets/css/evolution-status.css">
+    <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
+    <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
+</head>
+<body class="page-download">
+    <div class="wrapper">
+        <nav class="breadcrumb" aria-label="Navegação">
+            <a href="index.html">RU Soberano</a>
+            <span> · </span>
+            <a href="manual-bioreator.html">Manual do BioReator 4.0</a>
+            <span> · </span>
+            <span>Exemplo</span>
+        </nav>
+        <header>
+            <h1>Exemplo de batelada — BioReator 4.0</h1>
+            <p>Carga de referência da edição <strong>Community</strong>, pacote de oficina 1.0.0. Os números são a leitura do simulador, não uma medição de planta.</p>
+        </header>
+
+        <section class="card">
+            <h2>A carga que a Community abre</h2>
+            <p>O perfil fica em <em>Bradyrhizobium japonicum</em> e o regime em batelada. O tanque tem 100 L, com 75% de volume de trabalho: <strong>75 L</strong> de caldo. A aeração é 1 vvm e a rotação é 400 rpm. A temperatura é 28 °C e o pH é 6,75, os dois dentro da faixa do perfil (pH 6,5 a 7,0).</p>
+            <ul>
+                <li>Biomassa inicial X = 0,20 g/L, isto é, 15 g no tanque.</li>
+                <li>Substrato inicial S = 20 g/L, isto é, 1.500 g no tanque.</li>
+                <li>Oxigênio dissolvido parte da saturação de referência, 7,8 mg/L.</li>
+            </ul>
+            <p>Com essa agitação e esse ar, o console estima <strong>kLa ≈ 157 h⁻¹</strong>. A potência de agitação fica em cerca de 122 W e a de aeração em cerca de 114 W, para um cilindro de líquido com cerca de 0,46 m de diâmetro. Essa conta é a correlação de Van’t Riet do console. Ela serve para ler a tela. Ela não é lei de scale-up da planta.</p>
+        </section>
+
+        <section class="card">
+            <h2>O que a tela mostra</h2>
+            <p>O crescimento segue Monod no substrato: µ = 0,10 × S / (0,25 + S), em h⁻¹. No instante inicial, S = 20 g/L e µ ≈ 0,099 h⁻¹. Cada grama de substrato consumida forma 0,42 g de biomassa. O oxigênio é vigiado em paralelo e a hipóxia não reduz µ.</p>
+            <table>
+                <thead>
+                    <tr><th>Hora</th><th>X (g/L)</th><th>S (g/L)</th><th>OD</th><th>µ (h⁻¹)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>0,20</td><td>20,0</td><td>7,8 mg/L · 100%</td><td>0,099</td></tr>
+                    <tr><td>6</td><td>0,36</td><td>19,6</td><td>7,5 mg/L · 96%</td><td>0,099</td></tr>
+                    <tr><td>12</td><td>0,65</td><td>18,9</td><td>7,3 mg/L · 94%</td><td>0,099</td></tr>
+                    <tr><td>24</td><td>2,12</td><td>15,4</td><td>6,2 mg/L · 79%</td><td>0,098</td></tr>
+                    <tr><td>cerca de 40</td><td>8,6</td><td>esgotado</td><td>cerca de 1,2 mg/L · 16%</td><td>0</td></tr>
+                </tbody>
+            </table>
+            <p>Por volta de 38 h o substrato cai abaixo de 1 g/L, que é 5% da carga, e o oxigênio dissolvido cruza 20% da saturação. A tela passa a mostrar substrato baixo e hipóxia. Por volta de 40 h o substrato acaba e X permanece em 8,6 g/L: 15 g de inóculo mais 630 g formados a partir dos 1.500 g de substrato. O rendimento fecha em 0,42 g/g, dentro da tolerância de 1e-6.</p>
+            <p>Depois disso o oxigênio fica perto de 16% da saturação. O consumo de oxigênio continua proporcional à biomassa que já está no tanque, e o aviso de hipóxia permanece. O crescimento, porém, já parou porque não há substrato.</p>
+        </section>
+
+        <section class="card">
+            <h2>Como ler os avisos dessa carga</h2>
+            <ul>
+                <li>Até cerca de 24 h a carga está folgada: substrato alto e oxigênio acima de 70% da saturação. pH e temperatura estão na faixa, então esses dois avisos ficam quietos.</li>
+                <li>Aviso de substrato baixo: S menor que 5% do valor inicial. Nesta carga, cerca de 38 h.</li>
+                <li>Hipóxia: oxigênio dissolvido abaixo de 20% de 7,8 mg/L. O aviso entra no mesmo trecho. µ não é reduzido por causa dele.</li>
+                <li>Substrato esgotado: a curva de X para em 8,6 g/L. <strong>Parar</strong> grava o lote no histórico. <strong>Exportar CSV</strong> grava a série na pasta de laudos.</li>
+            </ul>
+            <p>Se a rotação ou o ar forem a zero, o kLa cai a zero e o aviso de hipóxia aparece cedo. A biomassa continua a de Monod enquanto houver substrato.</p>
+        </section>
+
+        <section class="card">
+            <h2>O que cada símbolo quer dizer</h2>
+            <ul>
+                <li><strong>µ</strong> é a taxa específica de crescimento, em 1/h. µ<sub>máx</sub> deste perfil é 0,10 h⁻¹ e Ks é 0,25 g/L.</li>
+                <li><strong>Yxs</strong> é 0,42 g de biomassa por g de substrato. O motor impõe esse rendimento em cada passo.</li>
+                <li><strong>qO₂</strong> é 0,12 g de O₂ por g de biomassa por hora. OUR = qO₂ × X.</li>
+                <li><strong>kLa</strong> é o coeficiente volumétrico de transferência de oxigênio, em 1/h. OTR = kLa × (saturação − OD).</li>
+                <li><strong>vvm</strong> é o volume de ar por volume de líquido por minuto. 1 vvm em 75 L são 75 L de ar por minuto.</li>
+            </ul>
+            <p>pH e temperatura são vigiados contra o perfil. Eles não alteram µ. Os preços da edição Pro são valores que o operador informa. Não são cotação de mercado.</p>
+        </section>
+
+        <section class="card card-green">
+            <h2>Contraste da edição Pro, na oficina</h2>
+            <p>A Community mantém a vazão de alimentação em zero. Na Pro, a mesma carga pode ir para batelada alimentada. A alimentação de referência do console é 0,5 L/h com 100 g/L de substrato. Em 6 h o volume passa de 75 L para 78 L. A leitura do simulador nesse ponto é X ≈ 0,35 g/L, S ≈ 22,7 g/L e oxigênio ainda perto de 7,5 mg/L. O substrato sobe porque a alimentação entra mais depressa do que o consumo. Na batelada simples, na mesma hora, S já teria caído para cerca de 19,6 g/L.</p>
+            <p>O catálogo da Pro acrescenta <em>B. subtilis</em>, <em>B. thuringiensis</em>, <em>T. harzianum</em> e <em>S. cerevisiae</em>. <em>B. thuringiensis</em> descreve só o crescimento. <em>S. cerevisiae</em> descreve biomassa aeróbia. A Pro não tem preço e esta loja não combina PIX.</p>
+        </section>
+
+        <nav class="back">
+            <a href="manual-bioreator.html">← Manual</a> · <a href="download.html#bioreator40">Edições</a> · <a href="index.html">Loja</a>
+        </nav>
+        <footer class="page-footer">
+            <p><a href="index.html">RU Soberano</a> · <a href="canal-feedback.html">Canal de feedback</a></p>
+            <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
+        </footer>
+    </div>
+    <script src="assets/js/loja.js"></script>
+</body>
+</html>
