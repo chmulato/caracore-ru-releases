@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://ru.caracore.com.br/">
+    <title>Fundamentos do bioprocesso — BioReator 4.0 | Cara Core Informática</title>
+    <meta name="description" content="Cinética de Monod de Bradyrhizobium japonicum no BioReator 4.0. Ferramenta pedagógica e preditiva, sem garantia comercial de rendimento.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ru.css">
+    <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
+    <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
+</head>
+<body class="cc-i-page">
+    <div class="wrapper">
+        <nav class="breadcrumb" aria-label="Navegação">
+            <a href="https://www.caracore.com.br/">Cara Core Informática</a>
+            <span> · </span>
+            <a href="index.html">BioReator 4.0</a>
+            <span> · </span>
+            <span>Fundamentos</span>
+        </nav>
+        <header>
+            <h1>Fundamentos do bioprocesso</h1>
+            <p class="subtitle"><em>Bradyrhizobium japonicum</em> é o organismo da Community. Na soja, a espécie entra na fixação biológica de nitrogênio. Na tela, entra como crescimento aeróbio em substrato carbonado.</p>
+        </header>
+
+        <section class="panel">
+            <h2>O que a curva descreve</h2>
+            <p>A Community integra uma batelada em tanque agitado. A velocidade específica segue Monod. O substrato cai na proporção da biomassa formada. O oxigênio dissolvido fecha o balanço entre a transferência e o consumo da cultura.</p>
+            <p class="formula">μ = μmax · S / (Ks + S)</p>
+            <p class="formula">dX/dt = μ · X</p>
+            <p class="formula">dS/dt = −μ · X / Yxs</p>
+            <p class="formula">dCL/dt = kLa · (CL* − CL) − qO2 · 1000 · X</p>
+            <p>μmax é 0,10 h⁻¹. Ks é 0,25 g/L. Yxs é 0,42 g de biomassa por g de substrato. qO2 é 0,12 g de O₂ por g de biomassa por hora. CL* na carga de referência é 7,8 mg/L. Essas constantes calibram o simulador. Não descrevem meio, inóculo nem protocolo de produção.</p>
+        </section>
+
+        <section class="panel" style="margin-top:16px">
+            <h2>A carga de referência</h2>
+            <p>Tanque de 100 L, fração útil de 75%, volume de trabalho 75 L. Aeração 1 vvm, agitação 400 rpm, temperatura vigiada em 28 °C, pH vigiado em 6,75. Partida com 0,20 g/L de biomassa e 20 g/L de substrato.</p>
+            <p>Por volta de 40 h o substrato se esgota e a biomassa permanece em 8,6 g/L. O erro relativo do rendimento fica abaixo de 10⁻⁶. Depois do esgotamento o oxigênio fica perto de 1,2 mg/L, cerca de 16% da saturação, porque a respiração continua proporcional à biomassa.</p>
+            <p>pH e temperatura não alteram μ. Hipóxia é registrada e não reescala μ. O kLa da agitação e da vazão de ar é uma estimativa de Van’t Riet no console, não uma medida de planta.</p>
+        </section>
+
+        <section class="panel" style="margin-top:16px">
+            <h2>Conformidade técnica</h2>
+            <p>O BioReator 4.0 é ferramenta pedagógica e preditiva. A série da tela não é laudo microbiológico, não é garantia comercial de rendimento e não substitui contagem de viáveis, controle de contaminação nem a identidade da cepa.</p>
+            <p><em>Bacillus thuringiensis</em>, quando aparece no discurso do produto, é só cinética de crescimento. A Community não inclui esporulação nem cristal proteico. A Premium de 18 de junho de 2027 amplia catálogo, batelada alimentada, custos do operador e PDF, sem preço e sem PIX.</p>
+            <p><a href="exemplo-bioreator.html">Ver o exemplo publicado</a> · <a href="manual-tecnico.html">Manual técnico do tanque</a></p>
+        </section>
+        <footer>
+            <p><a href="index.html">Loja</a> · <a href="degustacao-html.html">Degustação</a> · <a href="one-pager-bioinsumos.html">One-pager</a></p>
+            <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
+        </footer>
+    </div>
+</body>
+</html>

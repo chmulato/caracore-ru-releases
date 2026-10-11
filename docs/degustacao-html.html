@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://ru.caracore.com.br/">
+    <title>Degustação — BioReator 4.0 | Cara Core Informática</title>
+    <meta name="description" content="Leitura de batelada no navegador: biomassa, substrato e oxigênio. O histórico e o CSV ficam na Community 1.0.0.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ru.css">
+    <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
+    <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
+</head>
+<body class="cc-i-page">
+    <div class="wrapper">
+        <nav class="breadcrumb" aria-label="Navegação">
+            <a href="https://www.caracore.com.br/">Cara Core Informática</a>
+            <span> · </span>
+            <a href="index.html">BioReator 4.0</a>
+            <span> · </span>
+            <span>Degustação</span>
+        </nav>
+        <header>
+            <h1>Degustação no navegador</h1>
+            <p class="subtitle">Uma batelada de <em>Bradyrhizobium japonicum</em> desenhada aqui. Não grava lote, não exporta CSV e não é a medição da planta.</p>
+        </header>
+
+        <section class="panel bench" aria-label="Controles da leitura">
+            <p>Constantes da Community nesta leitura: μmax 0,10 h⁻¹, Ks 0,25 g/L, Yxs 0,42 g/g, consumo de oxigênio 0,12 g O₂ por g de biomassa por hora. Partida: X 0,20 g/L, S 20 g/L, oxigênio 7,8 mg/L. A vazão de alimentação fica em zero, como na Community. O kLa é o desta página. Na carga de referência do programa, 1 vvm e 400 rpm, o oxigênio depois do esgotamento fica perto de 1,2 mg/L.</p>
+            <label for="hours">Tempo de batelada: <strong id="hours-out">48 h</strong></label>
+            <input id="hours" type="range" min="24" max="72" step="1" value="48">
+            <label for="kla">Aeração da leitura, kLa: <strong id="kla-out">156 h⁻¹</strong></label>
+            <input id="kla" type="range" min="40" max="220" step="1" value="156">
+            <div class="store-cta">
+                <button class="cta-btn cta-btn-primary" id="start" type="button">Iniciar fermentação</button>
+            </div>
+            <div class="canvas-wrap">
+                <canvas id="chart" width="860" height="360" aria-label="Curvas de biomassa, substrato e oxigênio"></canvas>
+            </div>
+            <div class="legend">
+                <span><i style="background:#3fb950"></i>Biomassa X</span>
+                <span><i style="background:#d4a853"></i>Substrato S</span>
+                <span><i style="background:#58a6ff"></i>Oxigênio DO</span>
+                <span id="status">Aguardando início.</span>
+            </div>
+            <p class="end-banner" id="done" hidden>Para registrar históricos locais persistidos e exportar séries completas em CSV, baixe a versão Community 1.0.0 para Windows.</p>
+            <div class="store-cta">
+                <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0.msi">Baixar instalador (.MSI)</a>
+                <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>
+            </div>
+        </section>
+        <footer>
+            <p><a href="index.html">Loja</a> · <a href="exemplo-bioreator.html">Exemplo publicado</a> · <a href="fundamentos-bioprocesso.html">Fundamentos</a></p>
+            <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
+        </footer>
+    </div>
+    <script>
+        (function () {
+            var MU = 0.10, KS = 0.25, Y = 0.42, QO = 0.12, OSAT = 7.8;
+            var hours = document.getElementById("hours");
+            var kla = document.getElementById("kla");
+            var hoursOut = document.getElementById("hours-out");
+            var klaOut = document.getElementById("kla-out");
+            var canvas = document.getElementById("chart");
+            var status = document.getElementById("status");
+            var done = document.getElementById("done");
+            var timer = null;
+
+            function label() {
+                hoursOut.textContent = hours.value + " h";
+                klaOut.textContent = kla.value + " h⁻¹";
+            }
+            hours.addEventListener("input", label);
+            kla.addEventListener("input", label);
+            label();
+
+            function series(totalH, klaValue) {
+                var dt = 0.25;
+                var x = 0.20, s = 20, o = OSAT;
+                var rows = [{ t: 0, x: x, s: s, o: o }];
+                var steps = Math.round(totalH / dt);
+                for (var i = 1; i <= steps; i++) {
+                    var mu = MU * s / (KS + s);
+                    var formed = mu * x * dt;
+                    var consumed = formed / Y;
+                    if (consumed > s) {
+                        consumed = s;
+                        formed = consumed * Y;
+                    }
+                    x += formed;
+                    s -= consumed;
+                    var our = QO * 1000 * x;
+                    var beta = klaValue * OSAT - our;
+                    var eq = beta / klaValue;
+                    o = eq + (o - eq) * Math.exp(-klaValue * dt);
+                    if (o < 0) o = 0;
+                    if (s < 0) s = 0;
+                    rows.push({ t: i * dt, x: x, s: s, o: o });
+                }
+                return rows;
+            }
+
+            function draw(rows, until) {
+                var ctx = canvas.getContext("2d");
+                var w = canvas.width, h = canvas.height;
+                ctx.clearRect(0, 0, w, h);
+                ctx.fillStyle = "#12151a";
+                ctx.fillRect(0, 0, w, h);
+                var pad = 36;
+                function xOf(i) { return pad + (w - pad * 2) * (i / (rows.length - 1)); }
+                function yOf(v, max) { return h - pad - (h - pad * 2) * (v / max); }
+                ctx.strokeStyle = "#373e47";
+                ctx.strokeRect(pad, pad, w - pad * 2, h - pad * 2);
+                function line(key, max, color) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = color;
+                    ctx.lineWidth = 2;
+                    for (var i = 0; i <= until; i++) {
+                        var px = xOf(i), py = yOf(rows[i][key], max);
+                        if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+                    }
+                    ctx.stroke();
+                }
+                line("x", 12, "#3fb950");
+                line("s", 24, "#d4a853");
+                line("o", 8, "#58a6ff");
+                var last = rows[until];
+                status.textContent = last.t.toFixed(1) + " h · X " + last.x.toFixed(2) + " g/L · S " + last.s.toFixed(2) + " g/L · DO " + last.o.toFixed(2) + " mg/L";
+            }
+
+            document.getElementById("start").addEventListener("click", function () {
+                if (timer) cancelAnimationFrame(timer);
+                done.hidden = true;
+                var rows = series(Number(hours.value), Number(kla.value));
+                var frame = 0;
+                var step = Math.max(1, Math.floor(rows.length / 180));
+                function tick() {
+                    frame = Math.min(rows.length - 1, frame + step);
+                    draw(rows, frame);
+                    if (frame < rows.length - 1) timer = requestAnimationFrame(tick);
+                    else done.hidden = false;
+                }
+                tick();
+            });
+        }());
+    </script>
+</body>
+</html>

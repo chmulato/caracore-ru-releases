@@ -1,124 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manual Técnico — Reator PFR e Calibração | RU Soberano | Cara Core Informática</title>
-  <meta name="description" content="Diagrama de fluxo de processo (PFD), instruções de calibração do reator e arquitetura L-H. Cara Core Informática." />
-  <meta name="theme-color" content="#0b1220" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="assets/css/loja.css">
-  <link rel="stylesheet" href="assets/css/evolution-status.css">
-  <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
-  <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="https://ru.caracore.com.br/">
+    <title>Manual técnico — tanque agitado em batelada | BioReator 4.0 | Cara Core Informática</title>
+    <meta name="description" content="Tanque agitado em batelada da Community 1.0.0: Monod, balanço de massa, oxigênio e o que a tela não mede.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ru.css">
+    <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
+    <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
 </head>
-<body class="page-manual">
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Navegação">
-      <a href="index.html">Cara Core Informática</a>
-      <span> · </span>
-      <a href="index.html">Delivery RU — Loja</a>
-      <span> · </span>
-      <span>Manual técnico</span>
-    </nav>
+<body class="cc-i-page">
+    <div class="wrapper">
+        <nav class="breadcrumb" aria-label="Navegação">
+            <a href="https://www.caracore.com.br/">Cara Core Informática</a>
+            <span> · </span>
+            <a href="index.html">BioReator 4.0</a>
+            <span> · </span>
+            <span>Manual técnico</span>
+        </nav>
+        <header>
+            <h1>Manual técnico — tanque agitado em batelada</h1>
+            <p class="subtitle">Community 1.0.0. Um tanque agitado (STR) em batelada, no computador do operador. Sem alimentação.</p>
+        </header>
 
-    <h1>Manual Técnico — Diagrama de Fluxo de Processo e Calibração do Reator</h1>
-    <p class="meta">Cara Core Informática · Reator catalítico PFR · Langmuir-Hinshelwood</p>
+        <section class="panel">
+            <h2>1. O tanque da Community</h2>
+            <p>O volume nominal vai de 50 L a 10.000 L. A fração de trabalho vai de 70% a 80%. A carga de referência usa 100 L e 75% útil, portanto 75 L. A vazão de alimentação é zero. Volume, biomassa e substrato fecham o balanço a cada passo.</p>
+            <p class="formula">μ = μmax · S / (Ks + S)</p>
+            <p class="formula">massa formada = μ · X · V · Δt, limitada pelo substrato disponível</p>
+            <p class="formula">substrato consumido = biomassa formada / Yxs</p>
+            <p>Para <em>Bradyrhizobium japonicum</em>: μmax 0,10 h⁻¹, Ks 0,25 g/L, Yxs 0,42 g/g. A faixa de pH da calibração é 6,5 a 7,0. A temperatura ideal da calibração é 28 °C. pH e temperatura são vigiados e não entram em μ.</p>
+        </section>
 
-    <h2>1. Diagrama de Fluxo de Processo (PFD)</h2>
-    <p class="lead">
-      O processo da unidade piloto é representado pelo fluxo de identidades (feedstream) através do reator PFR,
-      com instrumentação de τ (tempo de residência), θ (cobertura) e conversão X.
-    </p>
-    <div class="pfd-box" role="figure" aria-label="PFD simplificado">
-      <span class="node">Alimentação (F0)</span>
-      <span class="arrow">→</span>
-      <span class="node">Válvula de controle</span>
-      <span class="arrow">→</span>
-      <span class="node">Reator PFR (catalisador)</span>
-      <span class="arrow">→</span>
-      <span class="node">Saída (convertido + residual)</span>
-      <br /><br />
-      <strong>Instrumentos:</strong>
-      <span class="node">τ (holdup/throughput)</span>
-      <span class="node">θ_occupied (sítio)</span>
-      <span class="node">X (conversão)</span>
-      <span class="node">Gibbs (estado)</span>
+        <section class="panel" style="margin-top:16px">
+            <h2>2. Oxigênio</h2>
+            <p>A saturação de referência é 7,8 mg/L. O consumo específico é 0,12 g de O₂ por g de biomassa por hora. No passo, a concentração segue a solução de dCL/dt = β − α·CL, com α = kLa na batelada.</p>
+            <p>O kLa mostrado no console estima a transferência a partir do volume, da rotação e da aeração em vvm (correlação de Van’t Riet). É estimativa do simulador. Hipóxia entra no registro e não reescala μ.</p>
+            <p>Na carga de referência — 1 vvm, 400 rpm, X inicial 0,20 g/L, S inicial 20 g/L — o substrato se esgota por volta de 40 h, a biomassa fica em 8,6 g/L e o oxigênio depois do esgotamento fica perto de 1,2 mg/L. O erro relativo do rendimento fica abaixo de 10⁻⁶.</p>
+        </section>
+
+        <section class="panel" style="margin-top:16px">
+            <h2>3. O que fica no computador</h2>
+            <p>O histórico da Community persiste no computador do operador. A série completa sai em CSV. Não há serviço de nuvem no caminho do lote. O pacote Windows não tem assinatura digital. O instalador é o MSI. A pasta portátil é o ZIP, e o <code>BioReator40.exe</code> fica dentro do ZIP.</p>
+            <p>Contagem de viáveis, contaminação, preparo de meio e identidade da cepa continuam no laboratório. A série da tela não é garantia comercial de rendimento microbiológico.</p>
+            <p>A Premium de 18 de junho de 2027 acrescenta catálogo, batelada alimentada, custos informados pelo operador e PDF. Sem preço, sem PIX e sem arquivo nesta etapa. <em>Bacillus thuringiensis</em> permanece cinética de crescimento.</p>
+            <p><a href="manual-bioreator.html">Manual do operador</a> · <a href="exemplo-bioreator.html">Exemplo de batelada</a> · <a href="fundamentos-bioprocesso.html">Fundamentos</a></p>
+        </section>
+        <footer>
+            <p><a href="index.html">Loja</a> · <a href="download.html#bioreator40">Arquivos</a> · <a href="canal-feedback.html">Canal de feedback</a></p>
+            <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
+        </footer>
     </div>
-    <p>
-      Equação de desempenho: <code>r_auth = k · η · θ_identidades · θ_sítio_livre · regeneração</code>.
-      O PFR opera em regime contínuo; a posição adimensional <em>z</em> varia de 0 (entrada) a 1 (saída).
-    </p>
-
-    <h2>2. Instruções de Calibração do Reator</h2>
-    <p>
-      Antes da operação da unidade piloto, verifique os parâmetros do kernel e a telemetria.
-    </p>
-    <h3>2.1 Parâmetros de calibração</h3>
-    <ul>
-      <li><strong>k</strong> (constante cinética): valor padrão 0,45 min⁻¹; ajuste conforme caracterização do catalisador.</li>
-      <li><strong>η</strong> (eficiência do sítio ativo): 0–1; padrão 0,85.</li>
-      <li><strong>Regeneração</strong>: dependente da ação do operador (tecla B no simulador); calibrar decay temporal conforme procedimento.</li>
-      <li><strong>F0</strong> (fluxo de alimentação): em mol/min ou u.a.; conferir com vazão real ou telemetria.</li>
-    </ul>
-    <h3>2.2 Sequência de calibração</h3>
-    <ol>
-      <li>Carregar <code>parametros.yaml</code> (ou equivalente) com k, η, temperatura de operação e capacidade do reator.</li>
-      <li>Executar ciclo de referência com telemetria ativa; verificar RMSE entre simulação e modelo teórico L-H no Data Sheet.</li>
-      <li>Confirmar que o painel «Cálculo de Incerteza» do console exibe precisão da integração numérica dentro da faixa aceitável.</li>
-      <li>Registrar snapshot de estado após estabilização para rastreabilidade.</li>
-    </ol>
-    <h3>2.3 Limites operacionais</h3>
-    <p>
-      θ_occupied = 1 implica envenenamento do catalisador (r_auth = 0). Manter regeneração efetiva e monitorar Gibbs (Fome / Estável / Crítico).
-    </p>
-
-    <h2>3. Arquitetura de Reatores Bio-Inspirados</h2>
-    <p>
-      A gestão de identidade é modelada como reator catalítico: feedstream, τ, θ e regeneração determinam a conversão.
-      Telemetria, Data Sheet (RMSE) e Snapshot de Estado permitem auditoria e conformidade industrial.
-    </p>
-
-    <h2>4. Motor de Telemetria e Relatório de Operação</h2>
-    <p>
-      O <strong>Relatório de Operação de Unidade Piloto</strong> contém
-      tabelas de balanço de massa, gráficos de seletividade e energia de ativação aparente. Não é um diário do RU;
-      o Estudo de Caso RU aparece apenas como anexo histórico quando aplicável.
-    </p>
-
-    <hr />
-
-    <div class="appendix">
-      <h2>Apêndice — Antropologia Industrial (curiosidades)</h2>
-      <figure class="contexto-epoca" aria-label="Aluno do Prof. Soccol — ambientação RETRO, estudo do Balanço de Massa">
-        <img src="assets/img/caracore_ru.png" alt="Aluno do Prof. Soccol na ambientação RETRO (UFPR 1991): estudo do Balanço de Massa na Engenharia Química — contexto de época e produto Cara Core RU." width="800" height="auto" />
-        <figcaption class="caption">A imagem representa um <strong>aluno do Prof. Soccol</strong> no contexto da <strong>ambientação RETRO</strong> (sala de aula UFPR, 1991) e do <strong>estudo do Balanço de Massa</strong> na Engenharia Química. Cara Core Informática.</figcaption>
-      </figure>
-      <p>
-        A narrativa do <strong>Lord OIDC</strong> e do Restaurante Universitário (RU) é tratada aqui como <em>antropologia industrial</em>:
-        o RU como “melhor laboratório de Engenharia Química” na visão de um professor emérito, a fila como análogo da catálise
-        e da validação OIDC (1991 → 2026). O produto oferece um único executável em dois modos: <strong>sala RETRO</strong> (visor HP48SX, console DOS, Quadro Verde, 5 Atos, estudo do Balanço de Massa do Prof. Soccol — gratuito) e <strong>simulador completo</strong> (Cápsula, R$ 29,90, license.key). Este apêndice é apenas informativo e não faz parte do procedimento de calibração nem do PFD da unidade piloto.
-      </p>
-      <p>
-        Referências à Cena Final, Torre Localhost e licença SOVEREIGN constam em documentação comercial e no dossiê da Cara Core.
-      </p>
-    </div>
-
-    <p class="meta mt2">© Cara Core Informática · Manual Técnico v1.0 · Reator PFR</p>
-
-    <nav class="back">
-      <a href="index.html">← Voltar ao portal</a> · <a href="licenca-uso.html">Licença de uso</a> · <a href="download.html">Download</a>
-    </nav>
-    <footer class="page-footer">
-      <p><a href="index.html">Cara Core Informática</a> · <a href="canal-feedback.html">Canal de feedback</a></p>
-      <p>RU Soberano — R$ 29,90 · Lançamento 18 de junho de 2027. Oficina: caracore-ru · Loja: caracore-ru-releases.</p>
-    </footer>
-  </div>
-  <script src="assets/js/loja.js"></script>
-  <div class="evo-beta-wrap" aria-hidden="true"><span class="evo-beta-badge" title="Garagem">Garagem<span class="evo-beta-tooltip">RU Soberano pronto na garagem · lançamento público 18/06/2027.</span></span></div>
-  <footer class="evo-roadmap-footer" role="contentinfo"><p class="evo-roadmap-title">Próximos passos</p><ul class="evo-roadmap-list"><li>Domínio próprio <span class="evo-roadmap-tag">Março/2026</span></li><li>Integração PIX nativa</li><li>IA para estoque</li></ul></footer>
-  <div class="evo-feedback-fab"><a href="canal-feedback.html" class="evo-feedback-btn" aria-label="Canal de feedback"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Sugira uma melhoria</a></div>
 </body>
 </html>
-
-

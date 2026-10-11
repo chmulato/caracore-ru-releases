@@ -14,7 +14,7 @@ Dois pilares complementares de engenharia:
 | Produto | O que é | Formato | Status |
 |---|---|---|---|
 | **RU Soberano (Didático)** | Estudo do Balanço de Massa do Prof. Soccol (UFPR 1991), visor HP48SX, console DOS, 5 Atos (F1–F5) e Memorial RU. | Executável Windows (Free / R$ 29,90) | Pronto na garagem (18/06/2027) |
-| **BioReator 4.0** | Estação desktop de bioinsumos, no estilo do Minerador 4.0. Community: *Bradyrhizobium japonicum* em batelada, histórico e CSV. Pro sem preço e sem PIX. | Pacote de oficina 1.0.0 (`BioReator40.exe` e `BioReator40-1.0.0.msi`), sem download nesta loja | Garagem |
+| **BioReator 4.0** | Estação desktop de bioinsumos. Community: *Bradyrhizobium japonicum* em batelada, histórico e CSV. Premium sem preço e sem PIX. | Community 1.0.0: MSI e ZIP na release `bioreator-1.0.0`. O EXE fica dentro do ZIP. | Community publicada · Premium em 18/06/2027 |
 
 ## Conteúdo desta loja
 

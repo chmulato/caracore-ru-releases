@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="https://ru.caracore.com.br/">
     <title>BioReator 4.0 — Community agora, Premium em 18/06/2027 | Cara Core Informática</title>
-    <meta name="description" content="Um produto: BioReator 4.0. Community 1.0.0 já se baixa. A Premium chega em 18 de junho de 2027, sem preço e sem PIX.">
+    <meta name="description" content="Um produto: BioReator 4.0. Community 1.0.0 para Windows. Premium em 18 de junho de 2027, sem preço e sem PIX.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,20 +24,130 @@
 
         <header>
             <h1>BioReator 4.0</h1>
-            <p class="subtitle">Acompanhe uma fermentação inteira no seu computador.</p>
+            <p class="subtitle">Duas mesas, um tanque. Quem produz bioinsumo lê a batelada antes de gastar inóculo. Quem estuda lê a mesma curva como cinética e balanço de massa.</p>
         </header>
 
         <section class="store-offer" aria-label="Baixar a Community">
-            <p class="store-kicker">Community 1.0.0 · Windows</p>
+            <p class="store-kicker">Community 1.0.0 · Windows · gratuita</p>
             <div class="store-cta">
                 <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0.msi">Baixar instalador (.MSI)</a>
                 <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>
             </div>
-            <p class="store-next">Premium em 18 de junho de 2027, sem preço e sem PIX. <a href="bioreator.html">Ver o produto</a></p>
+            <p class="store-next">Sem assinatura digital. O EXE fica dentro do ZIP. Premium em 18 de junho de 2027, sem preço e sem PIX. <a href="bioreator.html">Ver o produto</a></p>
         </section>
 
+        <p class="section-label">As duas mesas</p>
+        <div class="desk-grid">
+            <article class="desk">
+                <h2>Mesa do negócio</h2>
+                <p>A biofábrica e o produtor on-farm escolhem volume, carga e tempo antes de abrir o meio e o inóculo. A Community mostra biomassa, substrato e oxigênio no tanque da tela.</p>
+                <p>O ganho é decidir a batelada no computador. O programa não publica economia em porcentagem nem substitui a batelada física.</p>
+            </article>
+            <article class="desk">
+                <h2>Mesa da formação</h2>
+                <p>A sala lê a mesma série como cinética de Monod, consumo de substrato e balanço de oxigênio. O organismo da Community é <em>Bradyrhizobium japonicum</em>.</p>
+                <p>pH e temperatura são vigiados e não alteram μ. Hipóxia entra no registro e não reescala o crescimento.</p>
+            </article>
+        </div>
+
+        <p class="section-label" id="comite">As cinco perguntas que todo comitê faz</p>
+        <ol class="committee">
+            <li class="q-card">
+                <p class="q-n">01</p>
+                <h3>Qual o volume útil e a escala de bancada?</h3>
+                <p>O tanque da Community vai de 50 L a 10.000 L, com fração de trabalho de 70% a 80%. A carga de referência é um tanque de 100 L com 75% útil: 75 L. É a escala da tela, não a da planta.</p>
+            </li>
+            <li class="q-card">
+                <p class="q-n">02</p>
+                <h3>Como ler o oxigênio antes da planta?</h3>
+                <p>A curva de oxigênio dissolvido acompanha biomassa e substrato. A saturação de referência do motor é 7,8 mg/L. A leitura avisa o estresse de oxigênio. A sonda, o meio e o inóculo continuam na bancada.</p>
+            </li>
+            <li class="q-card">
+                <p class="q-n">03</p>
+                <h3>Como auditar a fermentação?</h3>
+                <p>O histórico fica no computador do operador, em SQLite, e a série sai em CSV. Não há nuvem no caminho da batelada. A conta de rendimento da Community fecha com erro relativo abaixo de 10⁻⁶.</p>
+            </li>
+            <li class="q-card">
+                <p class="q-n">04</p>
+                <h3>O que o simulador resolve e o que fica no laboratório?</h3>
+                <p>A tela integra crescimento, substrato e oxigênio. Contagem de viáveis, contaminação, preparo de meio e identidade da cepa continuam presenciais. Não há garantia comercial de rendimento microbiológico.</p>
+            </li>
+            <li class="q-card">
+                <p class="q-n">05</p>
+                <h3>Onde termina a Community e onde começa a Premium?</h3>
+                <p>A Community 1.0.0 é batelada, um organismo, histórico e CSV, e já se baixa. A Premium, em 18 de junho de 2027, acrescenta catálogo, batelada alimentada, custos informados pelo operador e PDF. Sem preço, sem PIX e sem arquivo.</p>
+            </li>
+        </ol>
+
+        <p class="section-label" id="roteiro">Roteiro sugerido · 30–45 minutos</p>
+        <ol class="route">
+            <li class="route-card">
+                <span class="n">1</span>
+                <div>
+                    <h2>One-pager de bioinsumos</h2>
+                    <p>A leitura curta para diretoria de laboratório, produção on-farm e comitê de inovação.</p>
+                    <p><a href="one-pager-bioinsumos.html">Abrir o one-pager</a></p>
+                </div>
+            </li>
+            <li class="route-card">
+                <span class="n">2</span>
+                <div>
+                    <h2>Fundamentos do bioprocesso</h2>
+                    <p>Monod, substrato e oxigênio de <em>Bradyrhizobium japonicum</em>, com as constantes da Community.</p>
+                    <p><a href="fundamentos-bioprocesso.html">Ler os fundamentos</a></p>
+                </div>
+            </li>
+            <li class="route-card">
+                <span class="n">3</span>
+                <div>
+                    <h2>Degustação no navegador</h2>
+                    <p>Uma leitura de batelada em HTML, sem instalar. Não grava histórico nem exporta CSV.</p>
+                    <p><a href="degustacao-html.html">Iniciar a degustação</a></p>
+                </div>
+            </li>
+            <li class="route-card">
+                <span class="n">4</span>
+                <div>
+                    <h2>Community 1.0.0 para Windows</h2>
+                    <p>O instalador é o MSI. A pasta portátil é o ZIP. O <code>BioReator40.exe</code> fica dentro do ZIP.</p>
+                    <div class="store-cta">
+                        <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0.msi">Baixar instalador (.MSI)</a>
+                        <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <p class="section-label">Explorar</p>
+        <nav class="nav-grid" aria-label="Páginas da loja">
+            <a class="nav-card nav-card-download" href="degustacao-html.html">
+                <h3>Degustação</h3>
+                <p>Curvas de biomassa, substrato e oxigênio no navegador.</p>
+            </a>
+            <a class="nav-card" href="one-pager-bioinsumos.html">
+                <h3>One-pager</h3>
+                <p>Community e Premium na mesma tabela, sem preço.</p>
+            </a>
+            <a class="nav-card" href="fundamentos-bioprocesso.html">
+                <h3>Fundamentos</h3>
+                <p>Cinética de Monod e o que a tela não promete.</p>
+            </a>
+            <a class="nav-card" href="download.html#bioreator40">
+                <h3>Arquivos</h3>
+                <p>Tipo, formato, bytes e SHA-256 do MSI e do ZIP.</p>
+            </a>
+            <a class="nav-card" href="canal-feedback.html">
+                <h3>Canal de feedback</h3>
+                <p>Dúvidas e relatos, sem SLA.</p>
+            </a>
+            <a class="nav-card" href="exemplo-bioreator.html">
+                <h3>Exemplo de batelada</h3>
+                <p>A carga de 100 L publicada com a Community.</p>
+            </a>
+        </nav>
+
         <footer>
-            <p><a href="bioreator.html">Produto</a> · <a href="download.html#bioreator40">Arquivos</a> · <a href="canal-feedback.html">Canal de feedback</a></p>
+            <p><a href="bioreator.html">Produto</a> · <a href="manual-bioreator.html">Manual do operador</a> · <a href="manual-tecnico.html">Manual técnico</a> · <a href="canal-feedback.html">Canal de feedback</a></p>
             <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
         </footer>
     </div>
