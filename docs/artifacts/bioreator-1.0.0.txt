@@ -10,7 +10,7 @@ mavenOficina: br.ufpr.caracore:ru-free:1.0.0-SNAPSHOT
 
 Página da release: https://github.com/chmulato/caracore-ru-releases/releases
 Tag: https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.0.0
-O RU Soberano permanece na versão de loja 1.0.0, com lançamento em 18/06/2027.
+Um produto. Community 1.0.0 é a edição que se baixa. Premium do mesmo produto: 18/06/2027, sem arquivo, sem preço e sem PIX.
 
 tipo: instalador
 formato: MSI

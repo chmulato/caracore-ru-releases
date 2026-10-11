@@ -312,3 +312,50 @@ footer .soberania { margin-top: 16px; font-size: 0.8rem; opacity: 0.9; }
 }
 .back a { color: var(--accent-cyan); text-decoration: none; font-weight: 600; }
 .back a:hover { text-decoration: underline; }
+
+/* Uma oferta, um convite, os dois botões na mesma linha. */
+.store-offer { text-align: center; padding: 8px 0 8px; }
+.store-kicker {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--accent-green);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.store-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+.store-cta .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 240px;
+    min-height: 48px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+}
+.store-cta .cta-btn-primary { background: var(--accent-green); color: #0d1117; border: 2px solid var(--accent-green); }
+.store-cta .cta-btn-primary:hover { filter: brightness(1.08); }
+.store-cta .cta-btn-secondary { background: transparent; color: var(--text-primary); border: 2px solid var(--border); }
+.store-cta .cta-btn-secondary:hover { border-color: var(--accent-green); }
+.store-next { margin: 18px auto 0; max-width: 36rem; color: var(--text-secondary); font-size: 0.95rem; }
+.store-next a { color: var(--accent-blue); text-decoration: none; }
+.store-next a:hover { text-decoration: underline; }
+.offer-list { list-style: none; margin: 0; padding: 0; }
+.offer-list li { position: relative; padding: 0.35rem 0 0.35rem 1.6rem; color: var(--text-primary); }
+.offer-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-green); font-weight: 700; }
+.steps { margin: 0; padding-left: 1.2rem; color: var(--text-secondary); }
+.steps li { margin: 0.45rem 0; }
+.steps strong { color: var(--text-primary); }
