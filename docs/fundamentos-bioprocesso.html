@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/ru.css">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
     <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
     <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
 </head>
@@ -28,31 +29,110 @@
             <p class="subtitle"><em>Bradyrhizobium japonicum</em> é o organismo da Community. Na soja, a espécie entra na fixação biológica de nitrogênio. Na tela, entra como crescimento aeróbio em substrato carbonado.</p>
         </header>
 
+        <section class="panel bio-callout">
+            <h2>Versão para lançamento</h2>
+            <p>Esta documentação foi alinhada à Community 1.1.0. A release <code>bioreator-1.1.0</code> está sendo preparada; consulte a <a href="download.html#validacao-1-1">página de download</a> para os arquivos e o estado dos links.</p>
+        </section>
+
         <section class="panel">
-            <h2>O que a curva descreve</h2>
-            <p>A Community integra uma batelada em tanque agitado. A velocidade específica segue Monod. O substrato cai na proporção da biomassa formada. O oxigênio dissolvido fecha o balanço entre a transferência e o consumo da cultura.</p>
+            <h2>Modelo histórico da versão 1.0.0</h2>
+            <p>A versão 1.0.0 integrava uma batelada em tanque agitado com Monod e balanço de oxigênio. A Community 1.1.0 incorpora também fatores configurados de oxigênio, temperatura, pH e lag; seu modelo e parâmetros atuais estão na seção seguinte.</p>
             <p class="formula">μ = μmax · S / (Ks + S)</p>
             <p class="formula">dX/dt = μ · X</p>
             <p class="formula">dS/dt = −μ · X / Yxs</p>
             <p class="formula">dCL/dt = kLa · (CL* − CL) − qO2 · 1000 · X</p>
-            <p>μmax é 0,10 h⁻¹. Ks é 0,25 g/L. Yxs é 0,42 g de biomassa por g de substrato. qO2 é 0,12 g de O₂ por g de biomassa por hora. CL* na carga de referência é 7,8 mg/L. Essas constantes calibram o simulador. Não descrevem meio, inóculo nem protocolo de produção.</p>
+            <p>Estas equações são referências históricas da versão 1.0.0. São modelos de balanço e cinética, não validação de uma cultura industrial.</p>
+        </section>
+
+        <section class="panel" style="margin-top:16px">
+            <h2>Parâmetros históricos 1.0.0</h2>
+            <div class="bio-table-wrap">
+                <table class="bio-table">
+                    <thead><tr><th>Parâmetro</th><th>Valor</th><th>Unidade</th><th>Referência/base</th></tr></thead>
+                    <tbody>
+                        <tr><td>μmax</td><td>0,10</td><td>h⁻¹</td><td>Parâmetro demonstrativo fixado na release 1.0.0 [R5]; a forma de Monod é descrita em [R1, R2]. Não é estimativa experimental de uma cepa.</td></tr>
+                        <tr><td>Ks</td><td>0,25</td><td>g/L</td><td>Parâmetro demonstrativo da release 1.0.0 [R5]; a interpretação da constante de meia saturação segue [R1, R2].</td></tr>
+                        <tr><td>Yx/s</td><td>0,42</td><td>gX/gS</td><td>Rendimento imposto pelo balanço do simulador [R5]; métodos e dependência do meio são discutidos em [R2, R3].</td></tr>
+                        <tr><td>qO₂</td><td>0,12</td><td>gO₂/(gX·h)</td><td>Consumo específico fixo no simulador [R5], não medido pelo programa; o balanço de oxigênio é apresentado em [R2, R3].</td></tr>
+                        <tr><td>CL*</td><td>7,8</td><td>mg/L</td><td>Saturação de referência da carga de exemplo na release 1.0.0 [R5]; varia com condições físicas e meio.</td></tr>
+                        <tr><td>kLa</td><td>0,026 · (P/V)<sup>0,4</sup> · u<sub>s</sub><sup>0,5</sup></td><td>s⁻¹; P/V em W/m³, u<sub>s</sub> em m/s</td><td>Correlação empírica para sistema coalescente de van’t Riet [R4], aplicada pelo simulador [R5].</td></tr>
+                        <tr><td>Carga de referência</td><td>100 L nominal; 75% útil; 1 vvm; 400 rpm; 28 °C; pH 6,75; X₀ 0,20; S₀ 20</td><td>L; %; vvm; rpm; °C; pH; g/L; g/L</td><td>Condições de demonstração da release 1.0.0 [R5], não protocolo de cultivo recomendado.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>A literatura de engenharia [R2, R3] fundamenta as equações e as definições. Ela não é a fonte experimental dos valores μmax, Ks, Yx/s e qO₂ escolhidos para esta simulação. Resultados de crescimento de <em>Bradyrhizobium japonicum</em> dependem de cepa, meio e condições; ver [R6–R8].</p>
+        </section>
+
+        <section class="panel" style="margin-top:16px" id="previa-1-1">
+            <h2>Modelo e parâmetros da versão 1.1.0</h2>
+            <p>A versão acrescenta fatores de limitação por oxigênio, temperatura e pH, uma fase lag e decaimento celular. A cinética do perfil de <em>B. japonicum</em> fica:</p>
+            <p class="formula">μ = μmax · S/(Ks + S) · DO/(KO + DO) · fT(T) · fPH(pH)<sup>1,25</sup> · [1 − exp(−t/8 h)]</p>
+            <p class="formula">dX/dt = μ · X − kd · X; &nbsp; dS/dt = −μ · X / Yx/s</p>
+            <p class="formula">qO₂ = μ / Yx/o + mo; &nbsp; OUR = qO₂ · X</p>
+            <div class="bio-table-wrap">
+                <table class="bio-table">
+                    <thead><tr><th>Parâmetro/configuração</th><th>Valor 1.1.0</th><th>Unidade</th><th>Origem e limite</th></tr></thead>
+                    <tbody>
+                        <tr><td>μmax; Ks; Yx/s</td><td>0,05; 0,25; 0,42</td><td>h⁻¹; g/L; gX/gS</td><td>Valores fixos do perfil 1.1.0 [R11]; as formas de Monod e do balanço seguem [R1–R3]. Não são medições de uma cepa.</td></tr>
+                        <tr><td>KO</td><td>0,15</td><td>mg O₂/L</td><td>Constante demonstrativa de limitação por oxigênio do perfil [R11]; estrutura de saturação discutida em [R2, R3].</td></tr>
+                        <tr><td>Yx/o; mo</td><td>1,1; 0,007</td><td>gX/gO₂; gO₂/(gX·h)</td><td>Parâmetros de manutenção/respiração configurados no perfil [R11]; a relação de Pirt é [R9].</td></tr>
+                        <tr><td>Temperatura mínima; ótima; máxima</td><td>10; 28; 37</td><td>°C</td><td>Pontos cardinais da função do perfil [R11]; forma cardinal fundamentada em [R10].</td></tr>
+                        <tr><td>pH mínimo; ótimo; máximo; expoente</td><td>4,5; 6,8; 9,0; 1,25</td><td>adimensional</td><td>Pontos e expoente configurados no perfil 1.1.0 [R11]; modelo cardinal de referência [R10].</td></tr>
+                        <tr><td>Lag; decaimento kd</td><td>8; 0,003</td><td>h; h⁻¹</td><td>Parâmetros didáticos do perfil 1.1.0 [R11], não ajustados a dados experimentais publicados.</td></tr>
+                        <tr><td>Conversão configurada para UFC</td><td>2,0 × 10⁹</td><td>UFC/mL por g/L de X</td><td>Fator de conversão do perfil [R11]. É uma estimativa do software, não uma contagem de células viáveis.</td></tr>
+                        <tr><td>Carga inicial do perfil</td><td>X₀ = 0,03; S₀ = 10</td><td>g/L; g/L</td><td>Setpoints demonstrativos da versão 1.1.0 [R11]; tanque de 100 L, 75 L úteis, 1 vvm, 400 rpm, 28 °C e pH 6,8.</td></tr>
+                        <tr><td>Transferência de oxigênio</td><td>kLa ≈ 116,8</td><td>h⁻¹</td><td>Estimativa da geometria e setpoints da carga 1.1.0 [R11], usando a correlação de van’t Riet [R4]. A potência aerada é reduzida pelo fator implementado de 0,5.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Os fatores de temperatura e pH são funções cardinais do software; o fator de pH é elevado ao expoente 1,25. A biomassa formada consome substrato pelo rendimento Yx/s e, em seguida, o decaimento é aplicado à biomassa. A batelada encerra automaticamente quando S ≤ 0,001 g/L. Nenhum desses parâmetros deve ser tratado como recomendação de cultivo nem como validação experimental.</p>
+            <p>A versão 1.1.0 termina a carga de referência em 122,6 h (5,1 dias), com X ≈ 3,913 g/L e conversão calculada ≈ 7,83 × 10<sup>9</sup> UFC/mL. O fator configurado não substitui ensaio de viabilidade, calibração por cepa ou validação de processo.</p>
         </section>
 
         <section class="panel" style="margin-top:16px">
             <h2>A carga de referência</h2>
-            <p>Tanque de 100 L, fração útil de 75%, volume de trabalho 75 L. Aeração 1 vvm, agitação 400 rpm, temperatura vigiada em 28 °C, pH vigiado em 6,75. Partida com 0,20 g/L de biomassa e 20 g/L de substrato.</p>
-            <p>Por volta de 40 h o substrato se esgota e a biomassa permanece em 8,6 g/L. O erro relativo do rendimento fica abaixo de 10⁻⁶. Depois do esgotamento o oxigênio fica perto de 1,2 mg/L, cerca de 16% da saturação, porque a respiração continua proporcional à biomassa.</p>
-            <p>pH e temperatura não alteram μ. Hipóxia é registrada e não reescala μ. O kLa da agitação e da vazão de ar é uma estimativa de Van’t Riet no console, não uma medida de planta.</p>
+            <p>Os números deste parágrafo descrevem especificamente a versão histórica 1.0.0: tanque de 100 L, fração útil de 75%, aeração 1 vvm, agitação 400 rpm, pH 6,75 e partida com 0,20 g/L de biomassa e 20 g/L de substrato.</p>
+            <p>Na versão histórica 1.0.0, por volta de 40 h o substrato se esgota e a biomassa permanece em 8,6 g/L. pH e temperatura não alteram μ e a hipóxia não reescala o crescimento. A versão 1.1.0 usa outra carga, outra cinética e outros resultados; veja a seção acima.</p>
+            <p>Em ambas, o kLa é uma estimativa do simulador, não uma medida de planta.</p>
+        </section>
+
+        <section class="panel" style="margin-top:16px">
+            <h2>Escala de tempo: curva didática e produção real</h2>
+            <figure class="bio-figure">
+                <img src="assets/img/comparacao-curva-simulada-literatura.svg" alt="Curva da Community 1.0.0 chega a 8,6 gramas por litro em cerca de 40 horas; ao lado, a janela de 5 a 7 dias relatada para produção de bioinoculantes.">
+                <figcaption>Comparação de escala, não sobreposição de dados experimentais equivalentes. A faixa temporal contextualiza as leituras publicadas até 7 dias [R8] e a duração de produção de bioinoculantes discutida em [R6]; não é uma série temporal digitalizada do mesmo meio, cepa ou tanque.</figcaption>
+            </figure>
+            <p>O lote histórico 1.0.0 termina em aproximadamente 40 h, enquanto processos publicados de produção de bioinoculantes podem operar por 5 a 7 dias. A versão 1.1.0 termina em 122,6 h; consulte sua curva no <a href="exemplo-bioreator.html#previa-1-1">exemplo de batelada</a>. Nenhuma das comparações constitui validação entre sistemas, meios, cepas, escalas ou critérios de colheita equivalentes.</p>
+            <p>Na 1.1.0, X ≈ 3,91 g/L multiplicado pelo fator configurado (2,0 × 10<sup>9</sup> UFC/mL por g/L) resulta em cerca de 7,8 × 10<sup>9</sup> UFC/mL estimadas. É uma conversão do software; nenhuma versão mede UFC nem substitui contagem de viáveis.</p>
         </section>
 
         <section class="panel" style="margin-top:16px">
             <h2>Conformidade técnica</h2>
             <p>O BioReator 4.0 é ferramenta pedagógica e preditiva. A série da tela não é laudo microbiológico, não é garantia comercial de rendimento e não substitui contagem de viáveis, controle de contaminação nem a identidade da cepa.</p>
-            <p><em>Bacillus thuringiensis</em>, quando aparece no discurso do produto, é só cinética de crescimento. A Community não inclui esporulação nem cristal proteico. A Premium de 18 de junho de 2027 amplia catálogo, batelada alimentada, custos do operador e PDF, sem preço e sem PIX.</p>
-            <p><a href="exemplo-bioreator.html">Ver o exemplo publicado</a> · <a href="manual-tecnico.html">Manual técnico do tanque</a></p>
+            <p>A 1.1.0 usa parâmetros demonstrativos e não tem validação experimental publicada; não modela contaminação nem mede viabilidade em laboratório. Como nos demais modelos, a cinética configurada não deve ser tratada como protocolo de cultivo.</p>
+            <p>Qualquer referência a uma versão paga descreve um plano para 2027, não uma função disponível nesta release.</p>
+            <p><a href="exemplo-bioreator.html">Ver o exemplo publicado</a> · <a href="manual-tecnico.html">Manual técnico do tanque</a> · <a href="professores.html">Material para professores</a></p>
+        </section>
+        <section class="panel" style="margin-top:16px" id="bibliografia">
+            <h2>Bibliografia</h2>
+            <ol>
+                <li id="r1">Monod, J. (1949). The growth of bacterial cultures. <em>Annual Review of Microbiology</em>, 3, 371–394. <a href="https://doi.org/10.1146/annurev.mi.03.100149.002103">doi:10.1146/annurev.mi.03.100149.002103</a>.</li>
+                <li id="r2">Shuler, M. L., Kargi, F., &amp; DeLisa, M. P. (2017). <em>Bioprocess Engineering: Basic Concepts</em> (3rd ed.). Pearson.</li>
+                <li id="r3">Doran, P. M. (2013). <em>Bioprocess Engineering Principles</em> (2nd ed.). Academic Press, Elsevier.</li>
+                <li id="r4">van’t Riet, K. (1979). Review of measuring methods and results in nonviscous gas–liquid mass transfer in stirred vessels. <em>Industrial &amp; Engineering Chemistry Process Design and Development</em>, 18(3), 357–364. <a href="https://doi.org/10.1021/i260071a001">doi:10.1021/i260071a001</a>.</li>
+                <li id="r5">Cara Core Informática (2026). <em>BioReator 4.0 Community</em>, versão 1.0.0. Parâmetros didáticos e condições da carga de referência. <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.0.0">Release bioreator-1.0.0</a>.</li>
+                <li id="r6">Vassileva, M., Malusà, E., et al. (2021). Fermentation strategies to improve soil bio-inoculant production and quality. <em>Microorganisms</em>, 9(6), 1254. <a href="https://doi.org/10.3390/microorganisms9061254">doi:10.3390/microorganisms9061254</a>.</li>
+                <li id="r7">Pradella, J. G. C., Oliveira, M. S., Zuccolo, M., Severo, A. C. R., &amp; Bonomi, A. (1994). Improved culture media for growth of <em>Bradyrhizobium japonicum</em>. <em>World Journal of Microbiology and Biotechnology</em>, 10(1), 112–113. <a href="https://doi.org/10.1007/BF00357575">doi:10.1007/BF00357575</a>.</li>
+                <li id="r8">Hafiz, M. H. R., Salehin, A., &amp; Itoh, K. (2021). Growth and competitive infection behaviors of <em>Bradyrhizobium japonicum</em> and <em>Bradyrhizobium elkanii</em> at different temperatures. <em>Horticulturae</em>, 7(3), 41. <a href="https://doi.org/10.3390/horticulturae7030041">doi:10.3390/horticulturae7030041</a>. Figure 1 is reproduced as a crop under CC BY 4.0.</li>
+                <li id="r9">Pirt, S. J. (1965). The maintenance energy of bacteria in growing cultures. <em>Proceedings of the Royal Society of London. Series B, Biological Sciences</em>, 163(991), 224–231. <a href="https://doi.org/10.1098/rspb.1965.0069">doi:10.1098/rspb.1965.0069</a>.</li>
+                <li id="r10">Rosso, L., Lobry, J. R., Bajard, S., &amp; Flandrois, J. P. (1995). Convenient model to describe the combined effects of temperature and pH on microbial growth. <em>Applied and Environmental Microbiology</em>, 61(2), 610–616. <a href="https://doi.org/10.1128/aem.61.2.610-616.1995">doi:10.1128/aem.61.2.610-616.1995</a>.</li>
+                <li id="r11">Cara Core Informática (2026). <em>BioReator 4.0 Community 1.1.0</em>. Perfil e setpoints demonstrativos, não validação experimental. <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.1.0">Release bioreator-1.1.0</a> (a publicar); DOI Zenodo ainda não atribuído.</li>
+            </ol>
         </section>
         <footer>
             <p><a href="index.html">Loja</a> · <a href="degustacao-html.html">Degustação</a> · <a href="one-pager-bioinsumos.html">One-pager</a></p>
+            <p><a href="professores.html">Para professores</a> · <a href="referencia-bioreator.html#citacao">Como citar</a> · <a href="referencia-bioreator.html#licenca">Licença</a> · <a href="referencia-bioreator.html#privacidade">Privacidade local</a></p>
+            <p>Community gratuita hoje; versão paga prevista para 2027.</p>
             <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
         </footer>
     </div>

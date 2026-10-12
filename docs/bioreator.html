@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="https://ru.caracore.com.br/">
     <title>BioReator 4.0 — Acompanhe uma fermentação no seu computador | Cara Core Informática</title>
-    <meta name="description" content="BioReator 4.0: um produto. Community 1.0.0 para baixar. Premium em 18/06/2027, sem preço e sem PIX.">
+    <meta name="description" content="BioReator 4.0 Community 1.1.0 para Windows: batelada simulada com biomassa, substrato, oxigênio e histórico local.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/ru.css">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
     <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
     <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
 </head>
@@ -32,14 +33,14 @@
 
         <section class="store-offer" aria-label="Baixar a Community">
             <div class="store-cta">
-                <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0.msi">Baixar instalador (.MSI)</a>
-                <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>
+                <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.0/BioReator40-1.1.0.msi">Baixar instalador (.MSI)</a>
+                <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.0/BioReator40-1.1.0-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>
             </div>
-            <p class="store-next">Premium em 18 de junho de 2027, sem preço e sem PIX.</p>
+            <p class="store-next">A loja está alinhada à Community 1.1.0. Os links de arquivo ficam ativos após a publicação da release <code>bioreator-1.1.0</code> no GitHub.</p>
         </section>
 
         <section class="hero-cta" aria-labelledby="o-que-encontra">
-            <span class="launch-badge">Community 1.0.0</span>
+            <span class="launch-badge">Community 1.1.0</span>
             <p class="hero-label" id="o-que-encontra">O que você encontra</p>
             <ul class="offer-list">
                 <li>Uma batelada que você conduz do início ao fim</li>
@@ -48,6 +49,39 @@
                 <li>A série exportada em CSV</li>
                 <li>Bradyrhizobium japonicum na edição atual</li>
             </ul>
+        </section>
+
+        <section class="methodology" id="previa-1-1">
+            <div class="card card-differential">
+                <h2>Novidades da versão 1.1.0</h2>
+                <p>A 1.1.0 adiciona limitação por oxigênio, fatores cardinais de temperatura e pH, fase lag, decaimento celular, conversão configurada para UFC/mL e encerramento automático quando o substrato se esgota. Também atualiza a geometria de kLa e a migração do histórico SQLite.</p>
+                <p>Os links de MSI e ZIP apontam para a release prevista no GitHub e passam a funcionar quando ela for publicada.</p>
+                <p><a href="fundamentos-bioprocesso.html#previa-1-1">Parâmetros e equações</a> · <a href="exemplo-bioreator.html#previa-1-1">Curva e CSV didáticos</a></p>
+                <figure class="bio-figure">
+                    <img src="assets/img/bioreator-community-1.1-preview-painel.png" alt="Captura do painel da interface BioReator 4.0 Community 1.1.0, com os setpoints iniciais, temperatura, pH, telemetria e painel do reator.">
+                    <figcaption>Painel da interface 1.1.0, capturado em perfil isolado.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="methodology" id="telas">
+            <div class="card">
+                <h2>Veja o programa</h2>
+                <p>As capturas abaixo mostram os gráficos da versão 1.0.0 e são identificadas como referência histórica; o painel acima é da 1.1.0.</p>
+                <figure class="bio-figure">
+                    <a href="assets/img/bioreator-community-painel.png">
+                        <img src="assets/img/bioreator-community-painel.png" alt="BioReator 4.0 Community 1.0.0 aberto antes da batelada, com painel de tanque à esquerda e gráficos de crescimento, substrato e oxigênio ainda vazios.">
+                    </a>
+                    <figcaption>Painel de configuração da carga, antes de iniciar a batelada.</figcaption>
+                </figure>
+                <figure class="bio-figure">
+                    <a href="assets/img/bioreator-community-graficos.png">
+                        <img src="assets/img/bioreator-community-graficos.png" alt="BioReator 4.0 Community 1.0.0 durante a batelada, em 12,25 horas, com curvas de biomassa, substrato e oxigênio dissolvido.">
+                    </a>
+                    <figcaption>Gráficos ao vivo após 12,25 h simuladas. A escala da tela é 0,05 h de processo a cada 0,2 s.</figcaption>
+                </figure>
+                <p>O histórico é salvo localmente em SQLite. Consulte a <a href="referencia-bioreator.html#privacidade">localização dos dados</a> e os arquivos CSV da versão atual em <a href="download.html#validacao-1-1">Download</a>.</p>
+            </div>
         </section>
 
         <section class="methodology">
@@ -70,21 +104,23 @@
             </div>
             <div class="card card-differential">
                 <h2>Diferenciais</h2>
-                <p>A Community 1.0.0 é a edição atual: um organismo, batelada, histórico e CSV, no computador do operador. A Premium, em 18 de junho de 2027, reúne mais organismos, a batelada alimentada, os custos que você informa e um PDF. A Premium não tem preço, não tem PIX e ainda não tem arquivo. Os números da tela são do simulador.</p>
+                <p>A Community 1.1.0 simula um organismo em batelada, com histórico local e CSV. Uma versão paga está prevista para 2027; seu escopo e condições comerciais ainda não estão definidos. Os números da tela vêm do simulador.</p>
             </div>
         </section>
 
         <section class="methodology" id="edicoes">
             <div class="card">
                 <h2>Edições</h2>
-                <p><strong>Community 1.0.0</strong> é a edição atual, de 10/10/2026, para Windows. O download está na <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.0.0">release bioreator-1.0.0</a>.</p>
-                <p><strong>Premium</strong> é a edição seguinte do mesmo produto, em 18 de junho de 2027. Sem preço, sem PIX e sem arquivo.</p>
+                <p><strong>Community 1.1.0</strong> para Windows x64: <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.1.0">release bioreator-1.1.0</a> (a publicar).</p>
+                <p><strong>Versão paga:</strong> prevista para 2027. O escopo e as condições comerciais ainda podem mudar.</p>
             </div>
         </section>
 
         <footer>
-            <p><a href="index.html">Loja</a> · <a href="download.html#bioreator40">Edições</a> · <a href="canal-feedback.html">Canal de feedback</a></p>
-            <p>Um produto. Community 1.0.0 publicada. Premium em 18/06/2027. Cara Core Informática · CNPJ 23.969.028/0001-37</p>
+            <p><a href="index.html">Loja</a> · <a href="download.html#bioreator40">Download</a> · <a href="canal-feedback.html">Canal de feedback</a> · <a href="professores.html">Para professores</a></p>
+            <p>Community gratuita hoje; versão paga prevista para 2027.</p>
+            <p><a href="referencia-bioreator.html#citacao">Como citar</a> · <a href="referencia-bioreator.html#licenca">Licença</a> · <a href="referencia-bioreator.html#privacidade">Privacidade local</a></p>
+            <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
         </footer>
     </div>
 </body>

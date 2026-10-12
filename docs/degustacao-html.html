@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="https://ru.caracore.com.br/">
     <title>Degustação — BioReator 4.0 | Cara Core Informática</title>
-    <meta name="description" content="Leitura de batelada no navegador: biomassa, substrato e oxigênio. O histórico e o CSV ficam na Community 1.0.0.">
+    <meta name="description" content="Leitura didática da Community 1.1.0 no navegador: biomassa, substrato e oxigênio.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/ru.css">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
     <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
     <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
 </head>
@@ -25,15 +26,20 @@
         </nav>
         <header>
             <h1>Degustação no navegador</h1>
-            <p class="subtitle">Uma batelada de <em>Bradyrhizobium japonicum</em> desenhada aqui. Não grava lote, não exporta CSV e não é a medição da planta.</p>
+            <p class="subtitle">Uma batelada de <em>Bradyrhizobium japonicum</em> desenhada aqui com os parâmetros da versão 1.1.0. Não grava lote, não exporta CSV e não é a medição da planta.</p>
         </header>
 
+        <section class="panel bio-callout">
+            <h2>Modelo desta degustação</h2>
+            <p>Esta leitura usa os parâmetros de referência 1.1.0: Monod limitado por oxigênio, fatores cardinais de temperatura e pH, fase lag e decaimento celular. É uma visualização didática no navegador; o aplicativo mantém o histórico SQLite e exporta o CSV.</p>
+        </section>
+
         <section class="panel bench" aria-label="Controles da leitura">
-            <p>Constantes da Community nesta leitura: μmax 0,10 h⁻¹, Ks 0,25 g/L, Yxs 0,42 g/g, consumo de oxigênio 0,12 g O₂ por g de biomassa por hora. Partida: X 0,20 g/L, S 20 g/L, oxigênio 7,8 mg/L. A vazão de alimentação fica em zero, como na Community. O kLa é o desta página. Na carga de referência do programa, 1 vvm e 400 rpm, o oxigênio depois do esgotamento fica perto de 1,2 mg/L.</p>
-            <label for="hours">Tempo de batelada: <strong id="hours-out">48 h</strong></label>
-            <input id="hours" type="range" min="24" max="72" step="1" value="48">
-            <label for="kla">Aeração da leitura, kLa: <strong id="kla-out">156 h⁻¹</strong></label>
-            <input id="kla" type="range" min="40" max="220" step="1" value="156">
+            <p>Parâmetros: μmax 0,05 h⁻¹, Ks 0,25 g/L, Yx/s 0,42 g/g, KO 0,15 mg/L, Yx/o 1,1 gX/gO₂, manutenção 0,007 gO₂/(gX·h), lag 8 h e kd 0,003 h⁻¹. Partida: X 0,03 g/L, S 10 g/L e oxigênio 7,8 mg/L. T = 28 °C e pH = 6,8; batelada sem alimentação. O controle kLa desta página é ajustável e parte de 116,8 h⁻¹.</p>
+            <label for="hours">Tempo máximo da leitura: <strong id="hours-out">144 h</strong></label>
+            <input id="hours" type="range" min="24" max="168" step="1" value="144">
+            <label for="kla">kLa da leitura: <strong id="kla-out">116,8 h⁻¹</strong></label>
+            <input id="kla" type="range" min="40" max="220" step="0.001" value="116.801">
             <div class="store-cta">
                 <button class="cta-btn cta-btn-primary" id="start" type="button">Iniciar fermentação</button>
             </div>
@@ -46,20 +52,27 @@
                 <span><i style="background:#58a6ff"></i>Oxigênio DO</span>
                 <span id="status">Aguardando início.</span>
             </div>
-            <p class="end-banner" id="done" hidden>Para registrar históricos locais persistidos e exportar séries completas em CSV, baixe a versão Community 1.0.0 para Windows.</p>
+            <p class="end-banner" id="done" hidden>Para registrar o histórico local e exportar a série completa em CSV, use a Community 1.1.0 para Windows.</p>
             <div class="store-cta">
-                <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0.msi">Baixar instalador (.MSI)</a>
-                <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.0.0/BioReator40-1.0.0-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>
+                <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.0/BioReator40-1.1.0.msi">Baixar instalador (.MSI)</a>
+                <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.0/BioReator40-1.1.0-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>
             </div>
         </section>
         <footer>
-            <p><a href="index.html">Loja</a> · <a href="exemplo-bioreator.html">Exemplo publicado</a> · <a href="fundamentos-bioprocesso.html">Fundamentos</a></p>
+            <p><a href="index.html">Loja</a> · <a href="exemplo-bioreator.html">Exemplo publicado</a> · <a href="fundamentos-bioprocesso.html">Fundamentos e referências</a> · <a href="professores.html">Para professores</a></p>
+            <p>Community gratuita hoje; versão paga prevista para 2027.</p>
+            <p><a href="referencia-bioreator.html#citacao">Como citar</a> · <a href="referencia-bioreator.html#licenca">Licença</a> · <a href="referencia-bioreator.html#privacidade">Privacidade local</a></p>
             <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
         </footer>
     </div>
     <script>
         (function () {
-            var MU = 0.10, KS = 0.25, Y = 0.42, QO = 0.12, OSAT = 7.8;
+            var MU = 0.05, KS = 0.25, YXS = 0.42, KO = 0.15;
+            var YXO = 1.1, MO = 0.007, KD = 0.003, LAG = 8, OSAT = 7.8;
+            var TMIN = 10, TOPT = 28, TMAX = 37;
+            var PHMIN = 4.5, PHOPT = 6.8, PHMAX = 9, PHEXP = 1.25;
+            var TEMPERATURE = 28, PH = 6.8, DT = 0.05, TELEMETRY_STEPS = 5;
+            var SUBSTRATE_END = 0.001, X0 = 0.03, S0 = 10;
             var hours = document.getElementById("hours");
             var kla = document.getElementById("kla");
             var hoursOut = document.getElementById("hours-out");
@@ -71,34 +84,52 @@
 
             function label() {
                 hoursOut.textContent = hours.value + " h";
-                klaOut.textContent = kla.value + " h⁻¹";
+                klaOut.textContent = Number(kla.value).toFixed(1).replace(".", ",") + " h⁻¹";
             }
             hours.addEventListener("input", label);
             kla.addEventListener("input", label);
             label();
 
+            function cardinalFactor(value, minimum, optimum, maximum) {
+                if (!Number.isFinite(value) || value <= minimum || value >= maximum) return 0;
+                if (value === optimum) return 1;
+                var numerator = (value - maximum) * Math.pow(value - minimum, 2);
+                var denominator = (optimum - minimum) * (
+                    (optimum - minimum) * (value - optimum)
+                    - (optimum - maximum) * (optimum + minimum - 2 * value)
+                );
+                if (denominator === 0) return 0;
+                return Math.max(0, Math.min(1, numerator / denominator));
+            }
+
             function series(totalH, klaValue) {
-                var dt = 0.25;
-                var x = 0.20, s = 20, o = OSAT;
+                var x = X0, s = S0, o = OSAT;
                 var rows = [{ t: 0, x: x, s: s, o: o }];
-                var steps = Math.round(totalH / dt);
-                for (var i = 1; i <= steps; i++) {
-                    var mu = MU * s / (KS + s);
-                    var formed = mu * x * dt;
-                    var consumed = formed / Y;
+                var steps = Math.ceil(totalH / DT);
+                for (var i = 1; i <= steps && s > SUBSTRATE_END; i++) {
+                    var mu = MU * s / (KS + s) * o / (KO + o)
+                        * cardinalFactor(TEMPERATURE, TMIN, TOPT, TMAX)
+                        * Math.pow(cardinalFactor(PH, PHMIN, PHOPT, PHMAX), PHEXP)
+                        * (1 - Math.exp(-((i - 1) * DT) / LAG));
+                    var formed = mu * x * DT;
+                    var consumed = formed / YXS;
                     if (consumed > s) {
                         consumed = s;
-                        formed = consumed * Y;
+                        formed = consumed * YXS;
                     }
-                    x += formed;
-                    s -= consumed;
-                    var our = QO * 1000 * x;
-                    var beta = klaValue * OSAT - our;
-                    var eq = beta / klaValue;
-                    o = eq + (o - eq) * Math.exp(-klaValue * dt);
+                    var qO2 = mu / YXO + MO;
+                    var ourMgPerLh = qO2 * 1000 * x;
+                    var alpha = klaValue;
+                    var beta = klaValue * OSAT - ourMgPerLh;
+                    var equilibrium = beta / alpha;
+                    o = equilibrium + (o - equilibrium) * Math.exp(-alpha * DT);
                     if (o < 0) o = 0;
-                    if (s < 0) s = 0;
-                    rows.push({ t: i * dt, x: x, s: s, o: o });
+                    x = (x + formed) * Math.exp(-KD * DT);
+                    s = Math.max(0, s - consumed);
+                    var elapsed = i * DT;
+                    if (i % TELEMETRY_STEPS === 0 || s <= SUBSTRATE_END || i === steps) {
+                        rows.push({ t: elapsed, x: x, s: s, o: o });
+                    }
                 }
                 return rows;
             }
@@ -124,8 +155,8 @@
                     }
                     ctx.stroke();
                 }
-                line("x", 12, "#3fb950");
-                line("s", 24, "#d4a853");
+                line("x", 5, "#3fb950");
+                line("s", 10, "#d4a853");
                 line("o", 8, "#58a6ff");
                 var last = rows[until];
                 status.textContent = last.t.toFixed(1) + " h · X " + last.x.toFixed(2) + " g/L · S " + last.s.toFixed(2) + " g/L · DO " + last.o.toFixed(2) + " mg/L";

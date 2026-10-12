@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" role="img" aria-labelledby="title desc">
+  <title id="title">Biomassa simulada e escala de tempo publicada para inoculantes</title>
+  <desc id="desc">A curva do simulador chega a 8,6 gramas por litro em cerca de 40 horas e permanece constante. Uma faixa separada marca 5 a 7 dias, intervalo de referência de leituras e produção de bioinoculantes; não é uma curva experimental digitalizada.</desc>
+  <rect width="900" height="390" rx="12" fill="#252a30"/>
+  <text x="54" y="38" fill="#e6edf3" font-family="Arial, sans-serif" font-size="20" font-weight="700">Simulação da Community × referência de duração publicada</text>
+  <text x="54" y="63" fill="#8b949e" font-family="Arial, sans-serif" font-size="13">Crescimento do modelo em g/L; a literatura é mostrada como janela temporal, sem misturar escalas</text>
+  <rect x="659" y="88" width="173" height="218" fill="#d4a853" opacity=".13"/>
+  <line x1="659" y1="88" x2="659" y2="306" stroke="#d4a853" stroke-width="2" stroke-dasharray="6 5"/>
+  <line x1="832" y1="88" x2="832" y2="306" stroke="#d4a853" stroke-width="2" stroke-dasharray="6 5"/>
+  <g stroke="#373e47" stroke-width="1">
+    <line x1="80" y1="306" x2="832" y2="306"/>
+    <line x1="80" y1="252" x2="832" y2="252"/>
+    <line x1="80" y1="197" x2="832" y2="197"/>
+    <line x1="80" y1="143" x2="832" y2="143"/>
+    <line x1="80" y1="88" x2="832" y2="88"/>
+  </g>
+  <g fill="#8b949e" font-family="Arial, sans-serif" font-size="12" text-anchor="end">
+    <text x="69" y="310">0</text>
+    <text x="69" y="256">2</text>
+    <text x="69" y="201">4</text>
+    <text x="69" y="147">6</text>
+    <text x="69" y="92">8</text>
+  </g>
+  <g fill="#8b949e" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">
+    <text x="80" y="327">0</text>
+    <text x="187" y="327">24</text>
+    <text x="294" y="327">48</text>
+    <text x="402" y="327">72</text>
+    <text x="509" y="327">96</text>
+    <text x="617" y="327">120</text>
+    <text x="724" y="327">144</text>
+    <text x="832" y="327">168</text>
+  </g>
+  <text x="456" y="350" fill="#8b949e" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">Tempo (h)</text>
+  <text x="25" y="197" fill="#8b949e" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" transform="rotate(-90 25 197)">Biomassa simulada X (g/L)</text>
+  <polyline points="80,301 107,296 134,288 187,248 250,84 259,72 832,72" fill="none" stroke="#3fb950" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#3fb950">
+    <circle cx="80" cy="301" r="4"/>
+    <circle cx="107" cy="296" r="4"/>
+    <circle cx="134" cy="288" r="4"/>
+    <circle cx="187" cy="248" r="4"/>
+    <circle cx="250" cy="84" r="4"/>
+    <circle cx="259" cy="72" r="4"/>
+  </g>
+  <text x="278" y="101" fill="#3fb950" font-family="Arial, sans-serif" font-size="13" font-weight="700">≈ 8,6 g/L em ≈ 40 h</text>
+  <text x="746" y="119" fill="#d4a853" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">5–7 dias</text>
+  <text x="746" y="138" fill="#d4a853" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">(120–168 h)</text>
+  <line x1="80" y1="374" x2="112" y2="374" stroke="#3fb950" stroke-width="4"/>
+  <text x="120" y="378" fill="#e6edf3" font-family="Arial, sans-serif" font-size="12">Modelo Community 1.0.0</text>
+  <rect x="310" y="367" width="28" height="14" fill="#d4a853" opacity=".35"/>
+  <text x="348" y="378" fill="#e6edf3" font-family="Arial, sans-serif" font-size="12">Janela de duração relatada para produção de bioinoculantes (referência R6)</text>
+</svg>

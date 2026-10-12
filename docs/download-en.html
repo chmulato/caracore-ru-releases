@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://ru.caracore.com.br/">
+    <title>Download — BioReator 4.0 | Cara Core Informática</title>
+    <meta name="description" content="BioReator 4.0 Community 1.1.0 Windows release files, system requirements, SmartScreen guidance and SHA-256 checksums.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/ru.css">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
+</head>
+<body class="cc-i-page">
+    <div class="wrapper">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">BioReator 4.0</a>
+            <span> · </span>
+            <span>Download</span>
+        </nav>
+        <header>
+            <h1>Download — BioReator 4.0</h1>
+            <p class="subtitle">Community 1.1.0 for Windows x64. This page is prepared for the release; its GitHub download links become active when the release is published. The application interface is in Portuguese.</p>
+        </header>
+
+        <main class="bio-content">
+            <section>
+                <h2>Files</h2>
+                <p><a href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.0/BioReator40-1.1.0.msi">Download the MSI installer</a> or <a href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.0/BioReator40-1.1.0-windows-x64.zip">the portable ZIP</a>. The executable is inside the ZIP and needs the bundled runtime files beside it. The links work after the GitHub release is published.</p>
+                <p>MSI: 72,671,232 bytes · SHA-256 <code>2bb046569776c3b1b55875c234205fe3c6ec20b1996f0c4dd4ae85749f5129ba</code>.</p>
+                <p>ZIP: 73,588,339 bytes · SHA-256 <code>0b67407604245766d1e68b7e6ab14a6f0dcece839fd08d8992af7cc573bc9d3b</code>.</p>
+                <p>Launcher inside the ZIP: <code>BioReator40.exe</code>, 524,800 bytes · SHA-256 <code>13f2ba7161cbdb6842dc6a05657e25ae50cf3c7dbb544791fc4b6a6e910883b2</code>.</p>
+            </section>
+
+            <section>
+                <h2>Version 1.1.0 notes</h2>
+                <p>The workshop measurement recorded a 4,467 ms window-ready time and 174 MB idle working set. These exceed internal targets of 2,500 ms and 120 MB; they are measurements on that machine, not universal system requirements.</p>
+                <p>Version 1.1.0 adds oxygen, temperature and pH effects, lag and decay, a configured CFU/mL estimate, and automatic batch termination. See the <a href="fundamentos-bioprocesso.html#previa-1-1">Portuguese model notes</a> and <a href="exemplo-bioreator.html#previa-1-1">sample trajectory</a>.</p>
+            </section>
+
+            <section>
+                <h2>Requirements and platforms</h2>
+                <ul>
+                    <li>Windows 10 or later, 64-bit. Linux and macOS packages are not available; no release date has been announced.</li>
+                    <li>The MSI and ZIP include the Java runtime; installing Java separately is not required.</li>
+                    <li>4 GB of RAM is recommended for Windows and the application together. This is a practical recommendation, not a universal measured minimum.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Windows SmartScreen</h2>
+                <p>The release is not code-signed, so Windows may show “Windows protected your PC” or an unknown-publisher warning. Keep SmartScreen enabled.</p>
+                <ol>
+                    <li>Download only from the GitHub release linked above.</li>
+                    <li>Check that the file size and SHA-256 match the values on the <a href="download.html#arquivos">Portuguese download page</a>.</li>
+                    <li>If SmartScreen blocks the verified installer, select <strong>More info</strong>, confirm the displayed file name, then select <strong>Run anyway</strong>. If that option is absent or the publisher/file name differs, cancel and contact support.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Local data and license</h2>
+                <p>Batch history is stored locally in SQLite under <code>%APPDATA%\CaraCore\BioReator40</code>; exported CSV files are stored under <code>%LOCALAPPDATA%\CaraCore\BioReator40\laudos</code>. The simulator does not upload batch history to a cloud service.</p>
+                <p>The Community is proprietary software. A free download does not grant institutional classroom use or redistribution rights. Read the <a href="referencia-bioreator.html#licenca">license terms</a> before use.</p>
+            </section>
+
+            <section>
+                <h2>English version</h2>
+                <p>This is an English version of the download and setup information. The application interface and the rest of the technical documentation remain in Portuguese for now; no English release date has been announced.</p>
+                <p><a href="download.html">Português (Brasil)</a> · <a href="manual-tecnico.html">Technical manual (Portuguese)</a></p>
+            </section>
+        </main>
+
+        <footer class="bio-footer">
+            <p><a href="index.html">Store</a> · <a href="download.html">Português (Brasil)</a> · <a href="canal-feedback.html">Feedback</a></p>
+            <p>Community is free today; a paid edition is planned for 2027.</p>
+            <p><a href="referencia-bioreator.html#citacao">How to cite</a> · <a href="referencia-bioreator.html#licenca">License</a> · <a href="referencia-bioreator.html#privacidade">Local privacy</a></p>
+        </footer>
+    </div>
+</body>
+</html>

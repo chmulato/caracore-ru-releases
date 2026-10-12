@@ -1,0 +1,100 @@
+.bio-footer {
+    margin-top: 2rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--border, #373e47);
+}
+
+.bio-footer p {
+    margin: 0.4rem 0;
+}
+
+.bio-footer a,
+.bio-content a {
+    color: var(--accent-blue, #58a6ff);
+}
+
+.bio-content {
+    margin-top: 1.5rem;
+}
+
+.bio-content section,
+.bio-content .bio-card {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border, #373e47);
+    border-radius: 8px;
+    background: var(--bg-card, #252a30);
+}
+
+.bio-content h2,
+.bio-content h3 {
+    margin-bottom: 0.75rem;
+}
+
+.bio-content p,
+.bio-content li {
+    line-height: 1.65;
+}
+
+.bio-content ul,
+.bio-content ol {
+    padding-left: 1.4rem;
+}
+
+.bio-table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.bio-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bio-table th,
+.bio-table td {
+    padding: 0.65rem;
+    border: 1px solid var(--border, #373e47);
+    text-align: left;
+    vertical-align: top;
+}
+
+.bio-table th {
+    background: var(--bg-elevated, #2d333b);
+}
+
+.bio-figure {
+    margin: 1rem 0;
+}
+
+.bio-figure img,
+.bio-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.bio-figure figcaption {
+    margin-top: 0.5rem;
+    color: var(--text-secondary, #8b949e);
+    font-size: 0.9rem;
+}
+
+.bio-callout {
+    padding: 0.9rem 1rem;
+    border-left: 4px solid var(--accent-gold, #d4a853);
+    background: var(--bg-elevated, #2d333b);
+}
+
+.bio-download-link {
+    display: inline-block;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .bio-content section,
+    .bio-content .bio-card {
+        padding: 1rem;
+    }
+}

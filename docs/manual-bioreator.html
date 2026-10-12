@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="https://ru.caracore.com.br/">
     <title>Manual do operador — BioReator 4.0 | Cara Core Informática</title>
-    <meta name="description" content="Manual da Community 1.0.0 do BioReator 4.0. A Premium chega em 18/06/2027, sem preço e sem PIX.">
+    <meta name="description" content="Manual da versão Community 1.1.0 do BioReator 4.0 para Windows.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/loja.css">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
     <link rel="stylesheet" href="assets/css/evolution-status.css">
     <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
     <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
@@ -21,45 +22,46 @@
         </nav>
         <header>
             <h1>Manual do operador — BioReator 4.0</h1>
-            <p>Community <strong>1.0.0</strong>, Windows x64. O instalador e a pasta portátil estão na <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.0.0">release bioreator-1.0.0</a>.</p>
+            <p>Community <strong>1.1.0</strong>, Windows x64. O instalador e a pasta portátil serão publicados na <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.1.0">release bioreator-1.1.0</a>.</p>
         </header>
 
+        <section class="card bio-callout">
+            <h2>Referência de desempenho</h2>
+            <p>Na máquina usada para validar o pacote, a janela ficou pronta em 4.467 ms e o processo ocioso usou 174 MB. Esses resultados superam as metas internas de tempo de inicialização e memória, mas não são requisitos mínimos universais. A cinética e os parâmetros desta edição estão em <a href="fundamentos-bioprocesso.html#previa-1-1">Fundamentos</a>.</p>
+        </section>
+
         <section class="card">
-            <p>Os preços que a Premium pede são valores informados pelo operador. Não são cotação de mercado. O perfil de <em>Bacillus thuringiensis</em> descreve o crescimento e não descreve esporulação, cristal proteico nem rendimento de toxina.</p>
-            <p>O pacote que se baixa abre na edição <strong>Community</strong>. A <strong>Premium</strong> é a edição seguinte, em 18/06/2027, sem preço e sem PIX. A carga de referência está no <a href="exemplo-bioreator.html">exemplo de batelada</a>.</p>
+            <p>O pacote disponível abre na versão <strong>Community</strong>. A carga de referência está no <a href="exemplo-bioreator.html">exemplo de batelada</a>. Uma versão paga está prevista para 2027; seu escopo pode mudar.</p>
         </section>
 
         <section class="card">
             <h2>Community</h2>
             <ol>
                 <li>O título da janela mostra Community. Uma segunda janela avisa que o programa já está aberto.</li>
-                <li>O perfil permanece em <em>Bradyrhizobium japonicum</em> e o regime em batelada. O tanque aceita 50 L a 10.000 L, com fração de trabalho de 70% a 80%. A carga de referência é 100 L, 75%, 1 vvm, 400 rpm, X = 0,2 g/L e S = 20 g/L.</li>
-                <li>pH e temperatura são vigiados contra o perfil. O crescimento segue Monod no substrato. Aeração e rotação entram pelo kLa. A hipóxia é registrada e não reduz µ.</li>
-                <li><strong>Iniciar batelada</strong> acompanha biomassa, substrato e oxigênio. <strong>Parar</strong> grava o lote no histórico local do operador.</li>
-                <li><strong>Exportar CSV</strong> grava a série na pasta de laudos. Custos e PDF ficam desligados.</li>
+                <li>O perfil padrão é <em>Bradyrhizobium japonicum</em> e o regime é batelada. O tanque aceita 50 L a 10.000 L, com fração de trabalho de 70% a 80%. A carga de referência é 100 L, 75%, 1 vvm, 400 rpm, X = 0,03 g/L e S = 10 g/L.</li>
+                <li>Oxigênio, temperatura e pH entram em fatores de limitação do crescimento; fase lag e decaimento também fazem parte do perfil configurado.</li>
+                <li><strong>Iniciar batelada</strong> acompanha biomassa, substrato e oxigênio. O lote encerra automaticamente quando S ≤ 0,001 g/L; também pode ser parado manualmente.</li>
+                <li>O histórico fica no computador em SQLite. O CSV exportado inclui a coluna <code>viable_CFU_ml</code>, calculada por um fator configurado e não medida.</li>
             </ol>
-        </section>
-
-        <section class="card">
-            <h2>Premium</h2>
-            <p>O catálogo (<em>B. subtilis</em>, <em>B. thuringiensis</em>, <em>T. harzianum</em>, <em>S. cerevisiae</em>), a batelada alimentada, a conta do lote e o PDF de uma página. Data: 18/06/2027. Sem preço, sem PIX e sem arquivo.</p>
         </section>
 
         <section class="card">
             <h2>Leitura da tela</h2>
             <ul>
-                <li>Substrato esgotado, ou menos de 5% da carga inicial.</li>
+                <li>Substrato baixo quando S fica abaixo de 5% da carga inicial; término automático quando S ≤ 0,001 g/L.</li>
                 <li>Hipóxia: oxigênio dissolvido abaixo de 20% da saturação.</li>
-                <li>pH fora da faixa do perfil, ou temperatura a mais de 2 °C do ideal. A cinética não muda por causa disso.</li>
+                <li>pH e temperatura fora dos pontos configurados reduzem o fator cardinal de crescimento; são parâmetros do modelo, não recomendação operacional.</li>
                 <li>Desvio estequiométrico: o rendimento da biomassa saiu da tolerância de 1e-6.</li>
             </ul>
         </section>
 
         <nav class="back">
-            <a href="bioreator.html">← Produto</a> · <a href="download.html#bioreator40">Edições</a> · <a href="index.html">Loja</a>
+            <a href="bioreator.html">← Produto</a> · <a href="download.html#bioreator40">Download</a> · <a href="professores.html">Para professores</a> · <a href="index.html">Loja</a>
         </nav>
         <footer class="page-footer">
             <p><a href="index.html">Loja</a> · <a href="canal-feedback.html">Canal de feedback</a></p>
+            <p>Community gratuita hoje; versão paga prevista para 2027.</p>
+            <p><a href="referencia-bioreator.html#citacao">Como citar</a> · <a href="referencia-bioreator.html#licenca">Licença</a> · <a href="referencia-bioreator.html#privacidade">Privacidade local</a></p>
             <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
         </footer>
     </div>

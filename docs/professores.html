@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://ru.caracore.com.br/">
+    <title>Para professores — BioReator 4.0</title>
+    <meta name="description" content="Exercícios de cinética de Monod, rendimento, transferência de oxigênio e leitura crítica do BioReator 4.0.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/ru.css">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
+</head>
+<body class="cc-i-page">
+    <div class="wrapper">
+        <nav class="breadcrumb" aria-label="Navegação">
+            <a href="index.html">BioReator 4.0</a>
+            <span> · </span>
+            <span>Para professores</span>
+        </nav>
+        <header>
+            <h1>Para professores</h1>
+            <p class="subtitle">Quatro exercícios com gabarito para discutir a batelada simulada da Community 1.1.0.</p>
+        </header>
+
+        <main class="bio-content">
+            <section>
+                <h2>Material de aula</h2>
+                <p>O CSV é uma amostra reduzida de pontos selecionados da trajetória 1.1.0: tanque de 100 L, 75 L úteis, X₀ = 0,03 g/L, S₀ = 10 g/L, 1 vvm e 400 rpm.</p>
+                <a class="bio-download-link" href="assets/data/exemplo-bioreator-community-1.1.0.csv" download>Baixar CSV didático da versão 1.1.0</a>
+                <p>Separador <code>;</code>, decimal com ponto. As colunas seguem o exportador, incluindo <code>viable_CFU_ml</code>, calculada por fator configurado, não medida. Os arquivos de lançamento ficam disponíveis após a publicação da release.</p>
+            </section>
+
+            <section>
+                <h2>Exercícios</h2>
+                <ol>
+                    <li><strong>Taxa específica média.</strong> Usando t = 24 h, X = 0,061072 g/L e t = 96 h, X = 1,489210 g/L, estime a inclinação de ln X em função do tempo. Compare com µmax = 0,05 h⁻¹ e explique por que essa inclinação líquida não é igual a µmax.</li>
+                    <li><strong>Rendimento e decaimento.</strong> Na carga completa, o motor registra 314,971101 g de biomassa formada, 23,778444 g de biomassa decaída e 749,931194 g de substrato consumido. Calcule Yx/s usando formação bruta, depois feche Xfinal = X₀ + Xformada − Xmorta para V = 75 L.</li>
+                    <li><strong>Temperatura no modelo.</strong> Compare X em 120 h a 28 °C (3,905375 g/L) e 35 °C (0,207733 g/L), mantendo os demais setpoints e pH = 6,8. Calcule a razão e explique o efeito do fator cardinal. O resultado é uma recomendação experimental?</li>
+                    <li><strong>Fator de UFC.</strong> Para X = 3,912569 g/L e fator do perfil de 2,0 × 10⁹ UFC/mL por g/L, calcule a UFC/mL exibida. Cite duas razões pelas quais esse número não substitui contagem de viáveis.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Gabarito resumido</h2>
+                <ol>
+                    <li>µ̄ = [ln(1,489210) − ln(0,061072)] / (96 − 24) ≈ <strong>0,0444 h⁻¹</strong>. É a taxa líquida média do intervalo, influenciada por lag, oxigênio, temperatura, pH e morte; não é uma medida de µmax.</li>
+                    <li>Yx/s = 314,971101 / 749,931194 ≈ <strong>0,42 g/g</strong>. Em 75 L, Xfinal ≈ 0,03 + 314,971101/75 − 23,778444/75 = <strong>3,9126 g/L</strong>.</li>
+                    <li>Razão X₂₈/X₃₅ = 3,905375 / 0,207733 ≈ <strong>18,8</strong>. A função cardinal reduz µ a 35 °C; é comportamento do modelo parametrizado, não previsão validada nem recomendação de operação.</li>
+                    <li>X × fator = 3,912569 × 2,0 × 10⁹ ≈ <strong>7,83 × 10⁹ UFC/mL</strong>. Viabilidade depende, entre outros fatores, de cepa, agregação e condição fisiológica; o software não faz plaqueamento nem mede UFC.</li>
+                </ol>
+            </section>
+        </main>
+
+        <footer class="bio-footer">
+            <p><a href="index.html">Loja</a> · <a href="fundamentos-bioprocesso.html">Fundamentos</a> · <a href="download.html">Download</a></p>
+            <p>Community gratuita hoje; versão paga prevista para 2027.</p>
+            <p><a href="referencia-bioreator.html#citacao">Como citar</a> · <a href="referencia-bioreator.html#licenca">Licença</a> · <a href="referencia-bioreator.html#privacidade">Privacidade local</a></p>
+        </footer>
+    </div>
+</body>
+</html>

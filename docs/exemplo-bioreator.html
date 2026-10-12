@@ -8,6 +8,7 @@
     <meta name="description" content="Exemplo da carga de referência do BioReator 4.0: Bradyrhizobium em batelada, 100 L, e a leitura de biomassa, substrato e oxigênio.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/loja.css">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
     <link rel="stylesheet" href="assets/css/evolution-status.css">
     <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
     <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
@@ -23,11 +24,36 @@
         </nav>
         <header>
             <h1>Exemplo de batelada — BioReator 4.0</h1>
-            <p>Carga de referência da edição <strong>Community</strong>, pacote de oficina 1.0.0. Os números são a leitura do simulador, não uma medição de planta.</p>
+            <p>Carga de referência da edição <strong>Community 1.1.0</strong>. Os números são a leitura do simulador, não uma medição de planta. A release está sendo preparada para publicação.</p>
         </header>
 
+        <section class="card bio-callout" id="previa-1-1">
+            <h2>Trajetória da versão 1.1.0</h2>
+            <p>Setpoints: tanque de 100 L, 75 L úteis, 1 vvm, 400 rpm, X₀ = 0,03 g/L, S₀ = 10 g/L, 28 °C e pH 6,8. O lote termina automaticamente em 122,6 h (5,1 dias), quando S ≈ 0,000917 g/L; X final ≈ 3,912569 g/L.</p>
+            <figure class="bio-figure">
+                <img src="assets/img/comparacao-curva-bioreator-1.1.0.svg" alt="Trajetória simulada da versão 1.1.0: biomassa cresce de 0,03 para cerca de 3,91 gramas por litro e o lote termina em 122,6 horas; a faixa sombreada marca 5 a 7 dias de referência.">
+                <figcaption>Curva calculada pela versão 1.1.0. O lote simulado encerra no início da faixa de 5–7 dias; a faixa é contexto de duração, não validação nem série experimental comparável. A curva publicada de referência está <a href="#curva-publicada">em seção separada abaixo</a>: ela mede OD660, em outro meio e outras condições. Os parâmetros do perfil são demonstrativos, não medições experimentais.</figcaption>
+            </figure>
+            <div class="bio-table-wrap">
+                <table class="bio-table">
+                    <thead><tr><th>Tempo (h)</th><th>X (g/L)</th><th>S (g/L)</th><th>OD (mg/L)</th><th>OD (% sat.)</th><th>UFC/mL estimada</th></tr></thead>
+                    <tbody>
+                        <tr><td>0</td><td>0,030000</td><td>10,000000</td><td>7,800000</td><td>100,0000</td><td>6,000000 × 10⁷</td></tr>
+                        <tr><td>24</td><td>0,061072</td><td>9,919067</td><td>7,774789</td><td>99,6768</td><td>1,221443 × 10⁸</td></tr>
+                        <tr><td>48</td><td>0,175652</td><td>9,627710</td><td>7,724447</td><td>99,0314</td><td>3,513042 × 10⁸</td></tr>
+                        <tr><td>72</td><td>0,513008</td><td>8,770453</td><td>7,579427</td><td>97,1721</td><td>1,026017 × 10⁹</td></tr>
+                        <tr><td>96</td><td>1,489210</td><td>6,288780</td><td>7,166167</td><td>91,8739</td><td>2,978419 × 10⁹</td></tr>
+                        <tr><td>120</td><td>3,905375</td><td>0,090836</td><td>7,149505</td><td>91,6603</td><td>7,810751 × 10⁹</td></tr>
+                        <tr><td>122,6 · fim</td><td>3,912569</td><td>0,000917</td><td>7,559477</td><td>96,9164</td><td>7,825138 × 10⁹</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>A UFC/mL é apenas X multiplicado pelo fator configurado no perfil (2,0 × 10⁹ UFC/mL por g/L); não é contagem de células viáveis. A série não demonstra produtividade nem equivalência com a curva publicada.</p>
+            <a class="bio-download-link" href="assets/data/exemplo-bioreator-community-1.1.0.csv" download>Baixar CSV didático da versão 1.1.0</a>
+        </section>
+
         <section class="card">
-            <h2>A carga que a Community abre</h2>
+            <h2>Referência histórica: carga da versão 1.0.0</h2>
             <p>O perfil fica em <em>Bradyrhizobium japonicum</em> e o regime em batelada. O tanque tem 100 L, com 75% de volume de trabalho: <strong>75 L</strong> de caldo. A aeração é 1 vvm e a rotação é 400 rpm. A temperatura é 28 °C e o pH é 6,75, os dois dentro da faixa do perfil (pH 6,5 a 7,0).</p>
             <ul>
                 <li>Biomassa inicial X = 0,20 g/L, isto é, 15 g no tanque.</li>
@@ -35,6 +61,20 @@
                 <li>Oxigênio dissolvido parte da saturação de referência, 7,8 mg/L.</li>
             </ul>
             <p>Com essa agitação e esse ar, o console estima <strong>kLa ≈ 157 h⁻¹</strong>. A potência de agitação fica em cerca de 122 W e a de aeração em cerca de 114 W, para um cilindro de líquido com cerca de 0,46 m de diâmetro. Essa conta é a correlação de Van’t Riet do console. Ela serve para ler a tela. Ela não é lei de scale-up da planta.</p>
+        </section>
+
+        <section class="card">
+            <h2>Figura publicada e contexto histórico da versão 1.0.0</h2>
+            <figure class="bio-figure">
+                <img src="assets/img/figura-publicada-b-japonicum-hafiz-2021.png" alt="Curvas publicadas de OD660 ao longo de sete dias, a 20 graus Celsius, para cepas de Bradyrhizobium em dois locais; ambos os painéis incluem cepas de B. japonicum.">
+                <figcaption id="curva-publicada">Curva publicada: OD660 em meio líquido YM, com leituras diárias por 7 dias a 20 °C. Recorte dos painéis de 20 °C da Figura 1 de Hafiz et al. (2021); a identificação das cepas e dos símbolos consta na legenda do artigo. <a href="https://doi.org/10.3390/horticulturae7030041">doi:10.3390/horticulturae7030041</a>. Figura licenciada sob <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+            </figure>
+            <figure class="bio-figure">
+                <img src="assets/img/comparacao-curva-simulada-literatura.svg" alt="A curva simulada chega a 8,6 gramas por litro em aproximadamente 40 horas; a literatura é representada por uma janela de 5 a 7 dias, sem dados experimentais sobrepostos.">
+                <figcaption>Curva simulada da versão pública 1.0.0: biomassa em g/L, com a faixa temporal de referência sombreada. A comparação não coloca as séries na mesma escala: o estudo mede OD660, usa outras cepas e condições; o simulador calcula biomassa de uma carga de referência e não é validado pelo estudo. Consulte [R6–R8] em <a href="fundamentos-bioprocesso.html#bibliografia">Fundamentos</a>.</figcaption>
+            </figure>
+            <p>A carga do programa termina em cerca de 40 h. A curva publicada acompanha crescimento por 7 dias, e revisões de produção de bioinoculantes descrevem ciclos que podem levar vários dias [R6, R8]. A diferença é explícita: esta Community usa uma cinética simplificada e não representa a duração de um protocolo de produção.</p>
+            <p>O resultado final de 8,6 g/L corresponde, como aproximação, a <strong>cerca de 1 × 10<sup>10</sup> UFC/mL</strong> sob uma hipótese de 0,86 pg de massa seca por UFC. Isso é uma conversão ilustrativa, não uma contagem de viáveis: a relação depende de cepa, meio, agregação e viabilidade e não é calculada pelo programa.</p>
         </section>
 
         <section class="card">
@@ -76,20 +116,33 @@
                 <li><strong>kLa</strong> é o coeficiente volumétrico de transferência de oxigênio, em 1/h. OTR = kLa × (saturação − OD).</li>
                 <li><strong>vvm</strong> é o volume de ar por volume de líquido por minuto. 1 vvm em 75 L são 75 L de ar por minuto.</li>
             </ul>
-            <p>pH e temperatura são vigiados contra o perfil. Eles não alteram µ. Os preços da Premium são valores que o operador informa. Não são cotação de mercado.</p>
+            <p>pH e temperatura são vigiados contra o perfil, mas não alteram µ nesta versão. Consulte os <a href="fundamentos-bioprocesso.html#bibliografia">parâmetros e suas referências</a>.</p>
         </section>
 
-        <section class="card card-green">
-            <h2>Contraste da Premium, em 18/06/2027</h2>
-            <p>A Community mantém a vazão de alimentação em zero. Na Premium, a mesma carga pode ir para batelada alimentada. A alimentação de referência do console é 0,5 L/h com 100 g/L de substrato. Em 6 h o volume passa de 75 L para 78 L. A leitura do simulador nesse ponto é X ≈ 0,35 g/L, S ≈ 22,7 g/L e oxigênio ainda perto de 7,5 mg/L. O substrato sobe porque a alimentação entra mais depressa do que o consumo. Na batelada simples, na mesma hora, S já teria caído para cerca de 19,6 g/L.</p>
-            <p>O catálogo da Premium acrescenta <em>B. subtilis</em>, <em>B. thuringiensis</em>, <em>T. harzianum</em> e <em>S. cerevisiae</em>. <em>B. thuringiensis</em> descreve só o crescimento. <em>S. cerevisiae</em> descreve biomassa aeróbia. A Premium chega em 18/06/2027, sem preço e sem PIX.</p>
+        <section class="card">
+            <h2>Limites desta curva</h2>
+            <ul>
+                <li>Não há fase lag nem morte celular.</li>
+                <li>Ao esgotar o substrato, o OD não volta a subir: o consumo de oxigênio permanece proporcional à biomassa.</li>
+                <li>Hipóxia é registrada, mas não reduz µ. pH e temperatura são avisos e não alteram a cinética nesta versão.</li>
+                <li>O programa não simula contagem de viáveis, contaminação, preparo de meio ou identidade da cepa.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Arquivo CSV</h2>
+            <p>O CSV da versão atual usa separador ponto e vírgula, decimal com ponto e acrescenta a estimativa configurada de UFC/mL. Cabeçalho:</p>
+            <p><code>t_h;X_g_L;S_g_L;P_g_L;DO_mg_L;DO_pct;volume_L;kLa_1_h;OUR_g_L_h;OTR_g_L_h;mode;viable_CFU_ml</code></p>
+            <p><a href="assets/data/exemplo-bioreator-community-1.1.0.csv" download>Baixar CSV 1.1.0</a> · <a href="assets/data/exemplo-bioreator-community-1.0.0.csv" download>CSV histórico 1.0.0</a> · <a href="professores.html">Exercícios e gabarito para professores</a></p>
         </section>
 
         <nav class="back">
-            <a href="manual-bioreator.html">← Manual</a> · <a href="download.html#bioreator40">Edições</a> · <a href="index.html">Loja</a>
+            <a href="manual-bioreator.html">← Manual</a> · <a href="fundamentos-bioprocesso.html">Fundamentos</a> · <a href="download.html#bioreator40">Download</a> · <a href="index.html">Loja</a>
         </nav>
         <footer class="page-footer">
-            <p><a href="index.html">Loja</a> · <a href="canal-feedback.html">Canal de feedback</a></p>
+            <p><a href="index.html">Loja</a> · <a href="canal-feedback.html">Canal de feedback</a> · <a href="professores.html">Para professores</a></p>
+            <p><a href="referencia-bioreator.html#citacao">Como citar</a> · <a href="referencia-bioreator.html#licenca">Licença</a> · <a href="referencia-bioreator.html#privacidade">Privacidade local</a></p>
+            <p>Community gratuita hoje; versão paga prevista para 2027.</p>
             <p>Cara Core Informática · CNPJ 23.969.028/0001-37</p>
         </footer>
     </div>
