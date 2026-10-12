@@ -8,7 +8,7 @@
 
 /* Apply only when page opts in with cc-i-page to avoid product visual drift */
 body.cc-i-page {
-  color: var(--cc-i-text);
+  color: var(--text-primary, #e6edf3);
 }
 
 body.cc-i-page .cc-i-topbar {

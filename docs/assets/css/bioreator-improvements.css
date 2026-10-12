@@ -57,6 +57,7 @@
     border: 1px solid var(--border, #373e47);
     text-align: left;
     vertical-align: top;
+    color: var(--text-primary, #e6edf3);
 }
 
 .bio-table th {
