@@ -11,6 +11,11 @@ body.cc-i-page {
   color: var(--text-primary, #e6edf3);
 }
 
+body.cc-i-page a,
+body.cc-i-page a:visited {
+  color: var(--accent-blue, #58a6ff);
+}
+
 body.cc-i-page .cc-i-topbar {
   max-width: 980px;
   margin: 16px auto 0;
