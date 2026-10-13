@@ -24,32 +24,32 @@
         </nav>
         <header>
             <h1>Exemplo de batelada — BioReator 4.0</h1>
-            <p>Carga de referência da edição <strong>Community 1.1.0</strong>, publicada em 12/10/2026. Os números são a leitura do simulador, não uma medição de planta.</p>
+            <p>Carga de referência da edição <strong>Community 1.1.1</strong>, publicada em 13/10/2026. Os números são a leitura do simulador, não uma medição de planta.</p>
         </header>
 
         <section class="card bio-callout" id="previa-1-1">
-            <h2>Trajetória da versão 1.1.0</h2>
-            <p>Setpoints: tanque de 100 L, 75 L úteis, 1 vvm, 400 rpm, X₀ = 0,03 g/L, S₀ = 10 g/L, 28 °C e pH 6,8. O lote termina automaticamente em 122,6 h (5,1 dias), quando S ≈ 0,000917 g/L; X final ≈ 3,912569 g/L.</p>
+            <h2>Trajetória da versão 1.1.1</h2>
+            <p>Setpoints: tanque de 100 L, 75 L úteis, 1 vvm, 400 rpm, X₀ = 0,03 g/L, S₀ = 10 g/L, 28 °C e pH 6,8. O kLa estimado é 131,045 h⁻¹. O lote termina automaticamente em 122,55 h (5,11 dias) por esgotamento do substrato (S = 0,000985 g/L); X viável final = 3,913056 g/L e X total = 4,229586 g/L.</p>
             <figure class="bio-figure">
-                <img src="assets/img/comparacao-curva-bioreator-1.1.0.svg" alt="Trajetória simulada da versão 1.1.0: biomassa cresce de 0,03 para cerca de 3,91 gramas por litro e o lote termina em 122,6 horas; a faixa sombreada marca 5 a 7 dias de referência.">
-                <figcaption>Curva calculada pela versão 1.1.0. O lote simulado encerra no início da faixa de 5–7 dias; a faixa é contexto de duração, não validação nem série experimental comparável. A curva publicada de referência está <a href="#curva-publicada">em seção separada abaixo</a>: ela mede OD660, em outro meio e outras condições. Os parâmetros do perfil são demonstrativos, não medições experimentais.</figcaption>
+                <img src="assets/img/comparacao-curva-bioreator-1.1.1.svg" alt="Trajetória simulada da versão 1.1.1: biomassa viável cresce de 0,03 para 3,91 gramas por litro e o lote termina em 122,55 horas por esgotamento do substrato; a faixa sombreada marca 5 a 7 dias de referência.">
+                <figcaption>Curva calculada pela versão 1.1.1. O lote simulado encerra no início da faixa de 5–7 dias; a faixa é contexto de duração, não validação nem série experimental comparável. A curva publicada de referência está <a href="#curva-publicada">em seção separada abaixo</a>: ela mede OD660, em outro meio e outras condições. Os parâmetros do perfil são demonstrativos, não medições experimentais.</figcaption>
             </figure>
             <div class="bio-table-wrap">
                 <table class="bio-table">
-                    <thead><tr><th>Tempo (h)</th><th>X (g/L)</th><th>S (g/L)</th><th>OD (mg/L)</th><th>OD (% sat.)</th><th>UFC/mL estimada</th></tr></thead>
+                    <thead><tr><th>Tempo (h)</th><th>X viável (g/L)</th><th>X total (g/L)</th><th>S (g/L)</th><th>OD (mg/L)</th><th>OD (% sat.)</th><th>UFC/mL estimada</th><th>Motivo do fim</th></tr></thead>
                     <tbody>
-                        <tr><td>0</td><td>0,030000</td><td>10,000000</td><td>7,800000</td><td>100,0000</td><td>6,000000 × 10⁷</td></tr>
-                        <tr><td>24</td><td>0,061072</td><td>9,919067</td><td>7,774789</td><td>99,6768</td><td>1,221443 × 10⁸</td></tr>
-                        <tr><td>48</td><td>0,175652</td><td>9,627710</td><td>7,724447</td><td>99,0314</td><td>3,513042 × 10⁸</td></tr>
-                        <tr><td>72</td><td>0,513008</td><td>8,770453</td><td>7,579427</td><td>97,1721</td><td>1,026017 × 10⁹</td></tr>
-                        <tr><td>96</td><td>1,489210</td><td>6,288780</td><td>7,166167</td><td>91,8739</td><td>2,978419 × 10⁹</td></tr>
-                        <tr><td>120</td><td>3,905375</td><td>0,090836</td><td>7,149505</td><td>91,6603</td><td>7,810751 × 10⁹</td></tr>
-                        <tr><td>122,6 · fim</td><td>3,912569</td><td>0,000917</td><td>7,559477</td><td>96,9164</td><td>7,825138 × 10⁹</td></tr>
+                        <tr><td>0</td><td>0,030000</td><td>0,030000</td><td>10,000000</td><td>7,800000</td><td>100,0000</td><td>6,000000 × 10⁷</td><td>—</td></tr>
+                        <tr><td>24</td><td>0,061072</td><td>0,063992</td><td>9,919066</td><td>7,777529</td><td>99,7119</td><td>1,221447 × 10⁸</td><td>—</td></tr>
+                        <tr><td>48</td><td>0,175655</td><td>0,186365</td><td>9,627702</td><td>7,732657</td><td>99,1366</td><td>3,513102 × 10⁸</td><td>—</td></tr>
+                        <tr><td>72</td><td>0,513039</td><td>0,546441</td><td>8,770378</td><td>7,603381</td><td>97,4792</td><td>1,026078 × 10⁹</td><td>—</td></tr>
+                        <tr><td>96</td><td>1,489489</td><td>1,589001</td><td>6,288093</td><td>7,234864</td><td>92,7547</td><td>2,978978 × 10⁹</td><td>—</td></tr>
+                        <tr><td>120</td><td>3,905962</td><td>4,192506</td><td>0,089271</td><td>7,224597</td><td>92,6230</td><td>7,811923 × 10⁹</td><td>—</td></tr>
+                        <tr><td>122,55 · fim</td><td>3,913056</td><td>4,229586</td><td>0,000985</td><td>7,585206</td><td>97,2462</td><td>7,826112 × 10⁹</td><td>SUBSTRATE_DEPLETED</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p>A UFC/mL é apenas X multiplicado pelo fator configurado no perfil (2,0 × 10⁹ UFC/mL por g/L); não é contagem de células viáveis. A série não demonstra produtividade nem equivalência com a curva publicada.</p>
-            <a class="bio-download-link" href="assets/data/exemplo-bioreator-community-1.1.0.csv" download>Baixar CSV didático da versão 1.1.0</a>
+            <p>X viável é a biomassa atual; X total acrescenta a biomassa morta acumulada por volume. A UFC/mL é apenas X viável multiplicado pelo fator configurado (2,0 × 10⁹ UFC/mL por g/L); não é contagem laboratorial. O OD mínimo foi 6,635468 mg/L (85,07% da saturação) em 115,85 h. A série não demonstra produtividade nem equivalência com a curva publicada.</p>
+            <a class="bio-download-link" href="assets/data/exemplo-bioreator-community-1.1.1.csv" download>Baixar CSV didático da versão 1.1.1</a>
         </section>
 
         <section class="card">
@@ -79,61 +79,62 @@
 
         <section class="card">
             <h2>O que a tela mostra</h2>
-            <p>O crescimento segue Monod no substrato: µ = 0,10 × S / (0,25 + S), em h⁻¹. No instante inicial, S = 20 g/L e µ ≈ 0,099 h⁻¹. Cada grama de substrato consumida forma 0,42 g de biomassa. O oxigênio é vigiado em paralelo e a hipóxia não reduz µ.</p>
+            <p>Na versão 1.1.1, Monod é combinado com os fatores configurados de oxigênio, temperatura, pH e lag; a biomassa também sofre decaimento: µ = µ<sub>max</sub> × S/(Ks + S) × DO/(KO + DO) × fT × fPH<sup>1,25</sup> × [1 − exp(−t/8 h)] e dX/dt = µX − 0,003X. Cada grama de substrato consumida forma 0,42 g de biomassa antes do decaimento.</p>
             <table>
                 <thead>
-                    <tr><th>Hora</th><th>X (g/L)</th><th>S (g/L)</th><th>OD</th><th>µ (h⁻¹)</th></tr>
+                    <tr><th>Hora</th><th>X viável (g/L)</th><th>X total (g/L)</th><th>S (g/L)</th><th>OD (mg/L · % sat.)</th><th>Observação</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>0</td><td>0,20</td><td>20,0</td><td>7,8 mg/L · 100%</td><td>0,099</td></tr>
-                    <tr><td>6</td><td>0,36</td><td>19,6</td><td>7,5 mg/L · 96%</td><td>0,099</td></tr>
-                    <tr><td>12</td><td>0,65</td><td>18,9</td><td>7,3 mg/L · 94%</td><td>0,099</td></tr>
-                    <tr><td>24</td><td>2,12</td><td>15,4</td><td>6,2 mg/L · 79%</td><td>0,098</td></tr>
-                    <tr><td>cerca de 40</td><td>8,6</td><td>esgotado</td><td>cerca de 1,2 mg/L · 16%</td><td>0</td></tr>
+                    <tr><td>0</td><td>0,030000</td><td>0,030000</td><td>10,000000</td><td>7,800000 · 100,0000%</td><td>Início da batelada</td></tr>
+                    <tr><td>24</td><td>0,061072</td><td>0,063992</td><td>9,919066</td><td>7,777529 · 99,7119%</td><td>—</td></tr>
+                    <tr><td>48</td><td>0,175655</td><td>0,186365</td><td>9,627702</td><td>7,732657 · 99,1366%</td><td>—</td></tr>
+                    <tr><td>72</td><td>0,513039</td><td>0,546441</td><td>8,770378</td><td>7,603381 · 97,4792%</td><td>—</td></tr>
+                    <tr><td>96</td><td>1,489489</td><td>1,589001</td><td>6,288093</td><td>7,234864 · 92,7547%</td><td>—</td></tr>
+                    <tr><td>120</td><td>3,905962</td><td>4,192506</td><td>0,089271</td><td>7,224597 · 92,6230%</td><td>Substrato abaixo de 5% de S₀</td></tr>
+                    <tr><td>122,55</td><td>3,913056</td><td>4,229586</td><td>0,000985</td><td>7,585206 · 97,2462%</td><td>Fim: SUBSTRATE_DEPLETED</td></tr>
                 </tbody>
             </table>
-            <p>Por volta de 38 h o substrato cai abaixo de 1 g/L, que é 5% da carga, e o oxigênio dissolvido cruza 20% da saturação. A tela passa a mostrar substrato baixo e hipóxia. Por volta de 40 h o substrato acaba e X permanece em 8,6 g/L: 15 g de inóculo mais 630 g formados a partir dos 1.500 g de substrato. O rendimento fecha em 0,42 g/g, dentro da tolerância de 1e-6.</p>
-            <p>Depois disso o oxigênio fica perto de 16% da saturação. O consumo de oxigênio continua proporcional à biomassa que já está no tanque, e o aviso de hipóxia permanece. O crescimento, porém, já parou porque não há substrato.</p>
+            <p>O OD mínimo foi 6,635468 mg/L (85,07% da saturação) em 115,85 h. Nesta carga, o substrato cruza o limiar de 5% de S₀ antes do término; ao alcançar S ≤ 0,001 g/L, o lote termina por <code>SUBSTRATE_DEPLETED</code>. A diferença X total − X viável representa a biomassa morta acumulada por litro.</p>
         </section>
 
         <section class="card">
             <h2>Como ler os avisos dessa carga</h2>
             <ul>
-                <li>Até cerca de 24 h a carga está folgada: substrato alto e oxigênio acima de 70% da saturação. pH e temperatura estão na faixa, então esses dois avisos ficam quietos.</li>
-                <li>Aviso de substrato baixo: S menor que 5% do valor inicial. Nesta carga, cerca de 38 h.</li>
-                <li>Hipóxia: oxigênio dissolvido abaixo de 20% de 7,8 mg/L. O aviso entra no mesmo trecho. µ não é reduzido por causa dele.</li>
-                <li>Substrato esgotado: a curva de X para em 8,6 g/L. <strong>Parar</strong> grava o lote no histórico. <strong>Exportar CSV</strong> grava a série na pasta de laudos.</li>
+                <li>Substrato baixo é indicado quando S fica abaixo de 5% do valor inicial; hipóxia é indicada abaixo de 20% da saturação de 7,8 mg/L.</li>
+                <li>Os fatores de oxigênio, temperatura e pH limitam o crescimento conforme o perfil configurado; os avisos não são recomendações de operação.</li>
+                <li>O motor encerra quando S ≤ 0,001 g/L (<code>SUBSTRATE_DEPLETED</code>), quando o OD sobe pelo menos 15 pontos percentuais em até uma hora com S &lt; 5% de S₀ (<code>DO_SPIKE</code>), após 12 h de crescimento estagnado depois do lag (<code>STALLED</code>) ou ao atingir 240 h (<code>MAX_TIME</code>). O primeiro critério atingido prevalece.</li>
+                <li>O marcador de fim aparece nos gráficos; o motivo também é gravado no histórico SQLite e na última linha do CSV. <strong>Exportar CSV</strong> grava a série na pasta de laudos.</li>
             </ul>
-            <p>Se a rotação ou o ar forem a zero, o kLa cai a zero e o aviso de hipóxia aparece cedo. A biomassa continua a de Monod enquanto houver substrato.</p>
+            <p>Se a rotação ou o ar forem a zero, kLa cai a zero e o oxigênio limita o crescimento; o limite de 240 h evita que lotes sem esgotamento do substrato permaneçam em execução indefinidamente.</p>
         </section>
 
         <section class="card">
             <h2>O que cada símbolo quer dizer</h2>
             <ul>
-                <li><strong>µ</strong> é a taxa específica de crescimento, em 1/h. µ<sub>máx</sub> deste perfil é 0,10 h⁻¹ e Ks é 0,25 g/L.</li>
+                <li><strong>µ</strong> é a taxa específica de crescimento, em 1/h. µ<sub>máx</sub> deste perfil é 0,05 h⁻¹ e Ks é 0,25 g/L.</li>
                 <li><strong>Yxs</strong> é 0,42 g de biomassa por g de substrato. O motor impõe esse rendimento em cada passo.</li>
-                <li><strong>qO₂</strong> é 0,12 g de O₂ por g de biomassa por hora. OUR = qO₂ × X.</li>
-                <li><strong>kLa</strong> é o coeficiente volumétrico de transferência de oxigênio, em 1/h. OTR = kLa × (saturação − OD).</li>
+                <li><strong>qO₂</strong> segue Pirt: µ/1,1 + 0,007 gO₂/(gX·h). OUR = qO₂ × X.</li>
+                <li><strong>kLa</strong> é o coeficiente volumétrico de transferência de oxigênio, em 1/h. Nesta carga o valor estimado é 131,045 h⁻¹; OTR = kLa × (saturação − OD).</li>
+                <li><strong>X viável</strong> é a biomassa atual; <strong>X total</strong> inclui a biomassa morta acumulada por volume.</li>
                 <li><strong>vvm</strong> é o volume de ar por volume de líquido por minuto. 1 vvm em 75 L são 75 L de ar por minuto.</li>
             </ul>
-            <p>pH e temperatura são vigiados contra o perfil, mas não alteram µ nesta versão. Consulte os <a href="fundamentos-bioprocesso.html#bibliografia">parâmetros e suas referências</a>.</p>
+            <p>Temperatura e pH alteram os fatores de crescimento configurados. Consulte os <a href="fundamentos-bioprocesso.html#previa-1-1">parâmetros e suas referências</a>.</p>
         </section>
 
         <section class="card">
             <h2>Limites desta curva</h2>
             <ul>
-                <li>Não há fase lag nem morte celular.</li>
-                <li>Ao esgotar o substrato, o OD não volta a subir: o consumo de oxigênio permanece proporcional à biomassa.</li>
-                <li>Hipóxia é registrada, mas não reduz µ. pH e temperatura são avisos e não alteram a cinética nesta versão.</li>
-                <li>O programa não simula contagem de viáveis, contaminação, preparo de meio ou identidade da cepa.</li>
+                <li>O perfil inclui fase lag, decaimento e fatores de limitação por oxigênio, temperatura e pH; são parâmetros didáticos, não validados experimentalmente.</li>
+                <li>A execução tem limite padrão de 240 h. Um lote encerrado por <code>MAX_TIME</code> ou <code>STALLED</code> não representa esgotamento do substrato.</li>
+                <li>O modelo não representa contaminação, preparo de meio nem identidade da cepa, e não realiza contagem laboratorial de células viáveis.</li>
             </ul>
         </section>
 
         <section class="card">
             <h2>Arquivo CSV</h2>
-            <p>O CSV da versão atual usa separador ponto e vírgula, decimal com ponto e acrescenta a estimativa configurada de UFC/mL. Cabeçalho:</p>
-            <p><code>t_h;X_g_L;S_g_L;P_g_L;DO_mg_L;DO_pct;volume_L;kLa_1_h;OUR_g_L_h;OTR_g_L_h;mode;viable_CFU_ml</code></p>
-            <p><a href="assets/data/exemplo-bioreator-community-1.1.0.csv" download>Baixar CSV 1.1.0</a> · <a href="assets/data/exemplo-bioreator-community-1.0.0.csv" download>CSV histórico 1.0.0</a> · <a href="professores.html">Exercícios e gabarito para professores</a></p>
+            <p>O CSV 1.1.1 mantém a ordem das colunas existentes e acrescenta ao final X viável, X total, <code>end_reason</code> e <code>application_version</code>. Usa separador ponto e vírgula e decimal com ponto.</p>
+            <p><code>t_h;X_g_L;S_g_L;P_g_L;DO_mg_L;DO_pct;volume_L;kLa_1_h;OUR_g_L_h;OTR_g_L_h;mode;viable_CFU_ml;X_viable_g_L;X_total_g_L;end_reason;application_version</code></p>
+            <p><a href="assets/data/exemplo-bioreator-community-1.1.1.csv" download>Baixar CSV 1.1.1</a> · <a href="assets/data/exemplo-bioreator-community-1.1.0.csv" download>CSV histórico 1.1.0</a> · <a href="assets/data/exemplo-bioreator-community-1.0.0.csv" download>CSV histórico 1.0.0</a> · <a href="professores.html">Exercícios e gabarito para professores</a></p>
         </section>
 
         <nav class="back">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="https://ru.caracore.com.br/">
     <title>Manual técnico — tanque agitado em batelada | BioReator 4.0 | Cara Core Informática</title>
-    <meta name="description" content="Tanque agitado em batelada da Community 1.1.0: cinética, Euler explícito, oxigênio, kLa e limites do modelo.">
+    <meta name="description" content="Tanque agitado em batelada da Community 1.1.1: cinética, Euler explícito, oxigênio, kLa e limites do modelo.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,17 +26,17 @@
         </nav>
         <header>
             <h1>Manual técnico — tanque agitado em batelada</h1>
-            <p class="subtitle">Community 1.1.0. Um tanque agitado (STR) em batelada, no computador do operador. Sem alimentação.</p>
+            <p class="subtitle">Community 1.1.1. Um tanque agitado (STR) em batelada, no computador do operador. Sem alimentação.</p>
         </header>
 
         <section class="panel bio-callout" id="metodo-1-1">
-            <h2>Método da versão 1.1.0</h2>
+            <h2>Método da versão 1.1.1</h2>
             <p>A cinética do perfil <em>B. japonicum</em> multiplica Monod pelos fatores de oxigênio, temperatura, pH e lag; X também sofre decaimento celular.</p>
             <p class="formula">μ = μMonod · fO₂ · fT · fPH<sup>1,25</sup> · [1 − exp(−t/8 h)]; &nbsp; dX/dt = μX − 0,003X</p>
             <p>fT e fPH usam a função cardinal de [R10], igual a zero nos limites, a um no ótimo e limitada ao intervalo [0, 1]: <span class="formula">g(z) = ((z − zmax)(z − zmin)²) / ((zopt − zmin)((zopt − zmin)(z − zopt) − (zopt − zmax)(zopt + zmin − 2z)))</span>. Para temperatura, os pontos são 10/28/37 °C; para pH, 4,5/6,8/9,0, com expoente 1,25.</p>
-            <p>O consumo de oxigênio segue Pirt, qO₂ = μ/1,1 + 0,007 gO₂/(gX·h). A batelada encerra automaticamente quando S ≤ 0,001 g/L e o CSV inclui a conversão configurada para UFC/mL. O histórico SQLite recebe migração aditiva entre versões.</p>
+            <p>O consumo de oxigênio segue Pirt, qO₂ = μ/1,1 + 0,007 gO₂/(gX·h). O motor encerra a batelada pelo primeiro critério atingido: S ≤ 0,001 g/L (<code>SUBSTRATE_DEPLETED</code>), subida de pelo menos 15 pontos percentuais no OD em até 1 h com S &lt; 5% de S₀ (<code>DO_SPIKE</code>), crescimento estagnado por 12 h após o lag (<code>STALLED</code>) ou tempo máximo configurável, padrão 240 h (<code>MAX_TIME</code>). O motivo fica no histórico e no CSV. O histórico SQLite recebe migração aditiva para user_version 3.</p>
             <p>O passo permanece Δt = 0,05 h: a formação de biomassa e o consumo de substrato usam a taxa avaliada no início do passo; a morte aplica o fator exp(−kd·Δt) à biomassa após a formação. O oxigênio continua com solução analítica exata por passo. A telemetria da interface é publicada a cada 0,25 h simuladas; o relógio de integração avança 0,05 h a cada 0,2 s.</p>
-            <p>O kLa mantém a correlação de van’t Riet [R4], com potência de agitação aerada reduzida pelo fator 0,5. A geometria usa o volume total para estimar o diâmetro do tanque e o volume útil para calcular a altura real do líquido; para os setpoints padrão, kLa ≈ 116,801 h⁻¹. Referências e parâmetros completos em <a href="fundamentos-bioprocesso.html#previa-1-1">Fundamentos · versão 1.1.0</a>.</p>
+            <p>O kLa mantém a correlação de van’t Riet [R4], com potência de agitação aerada reduzida pelo fator 0,5. O diâmetro do tanque é estimado pelo volume nominal, a altura real do líquido pelo volume de trabalho, e P/V usa a potência dividida pelo volume líquido (V<sub>trabalho</sub> = V<sub>total</sub> × fração de trabalho). Para os setpoints padrão, kLa ≈ 131,045 h⁻¹. Referências e parâmetros completos em <a href="fundamentos-bioprocesso.html#previa-1-1">Fundamentos · versão 1.1.1</a>.</p>
         </section>
 
         <section class="panel">
@@ -45,7 +45,7 @@
             <p class="formula">μ = μmax · S / (Ks + S)</p>
             <p class="formula">massa formada = μ · X · V · Δt, limitada pelo substrato disponível</p>
             <p class="formula">substrato consumido = biomassa formada / Yxs</p>
-            <p>Este conjunto de equações descreve a versão 1.0.0. Na versão atual, consulte o modelo 1.1.0 acima.</p>
+            <p>Este conjunto de equações descreve a versão 1.0.0. Na versão atual, consulte o modelo 1.1.1 acima.</p>
         </section>
 
         <section class="panel" style="margin-top:16px">
@@ -56,7 +56,7 @@
         </section>
 
         <section class="panel" style="margin-top:16px">
-            <h2>3. Método numérico e relógio da tela</h2>
+            <h2>1. Método numérico e relógio da tela</h2>
             <p>O passo de integração é Δt = 0,05 h (3 min simulados). Biomassa e substrato usam Euler explícito, avaliando μ no início do passo; o substrato é limitado a zero e a biomassa formada é limitada pelo substrato disponível:</p>
             <p class="formula">m<sub>X,formada</sub> = min(μ<sub>n</sub> X<sub>n</sub> V Δt, Yx/s S<sub>n</sub> V)</p>
             <p class="formula">X<sub>n+1</sub> = (X<sub>n</sub> + m<sub>X,formada</sub>/V) · exp(−kd·Δt); &nbsp; S<sub>n+1</sub> = S<sub>n</sub> − m<sub>X,formada</sub>/(Yx/s·V)</p>
@@ -65,20 +65,20 @@
         </section>
 
         <section class="panel" style="margin-top:16px">
-            <h2>4. Estimativa de kLa e geometria</h2>
+            <h2>2. Estimativa de kLa e geometria</h2>
             <p>Para meio coalescente, a versão aplica a correlação empírica de van’t Riet [R4]:</p>
             <p class="formula">kLa = 0,026 · (P/V)<sup>0,4</sup> · u<sub>s</sub><sup>0,5</sup></p>
             <p>Na equação, kLa é calculado em s⁻¹, P/V em W/m³ e u<sub>s</sub> em m/s; o resultado é convertido para h⁻¹ multiplicando por 3600. A constante 0,026 e os expoentes pertencem à correlação empírica citada, não são universais para qualquer caldo.</p>
-            <p>A potência de agitação usa P = Np·ρ·n³·Di⁵, com número de potência de Rushton Np = 5, densidade assumida ρ = 1000 kg/m³ e Di = D/3. A geometria nominal usa razão altura/diâmetro igual a 1 e volume total do tanque para estimar D; a altura efetiva do líquido é recalculada a partir do volume de trabalho. A potência de aeração é uma estimativa ideal com queda de pressão de 0,5 bar e eficiência assumida de 55% [R5]. São hipóteses geométricas e energéticas do simulador, não especificações de projeto.</p>
-            <p>Referências: [R4] van’t Riet, 1979; [R5] parâmetros implementados na release <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.1.0">BioReator 4.0 Community 1.1.0</a>. Ver a <a href="fundamentos-bioprocesso.html#bibliografia">bibliografia e os limites dos parâmetros</a>.</p>
+            <p>A potência de agitação usa P = Np·ρ·n³·Di⁵, com número de potência de Rushton Np = 5, densidade assumida ρ = 1000 kg/m³ e Di = D/3. A geometria nominal usa a razão altura/diâmetro <code>ASPECT_RATIO</code> (1,0 no perfil atual) e o volume total do tanque para estimar D; a altura efetiva do líquido é recalculada a partir do volume de trabalho. Para calcular P/V, divide-se P pelo volume líquido de trabalho, não pelo volume total do tanque. A potência de aeração é uma estimativa ideal com queda de pressão de 0,5 bar e eficiência assumida de 55% [R5]. São hipóteses geométricas e energéticas do simulador, não especificações de projeto.</p>
+            <p>Referências: [R4] van’t Riet, 1979; [R5] parâmetros implementados na release <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.1.1">BioReator 4.0 Community 1.1.1</a>. Ver a <a href="fundamentos-bioprocesso.html#bibliografia">bibliografia e os limites dos parâmetros</a>.</p>
         </section>
 
         <section class="panel" style="margin-top:16px">
-            <h2>5. O que fica no computador</h2>
+            <h2>3. O que fica no computador</h2>
             <p>O histórico da Community persiste no computador do operador. A série completa sai em CSV. Não há serviço de nuvem no caminho do lote. O pacote Windows não tem assinatura digital. O instalador é o MSI. A pasta portátil é o ZIP, e o <code>BioReator40.exe</code> fica dentro do ZIP.</p>
             <p>O histórico SQLite fica em <code>%APPDATA%\CaraCore\BioReator40</code>; os CSVs exportados ficam em <code>%LOCALAPPDATA%\CaraCore\BioReator40\laudos</code>.</p>
             <p>Contagem de viáveis, contaminação, preparo de meio e identidade da cepa continuam no laboratório. A série da tela não é garantia comercial de rendimento microbiológico.</p>
-            <p>A versão 1.1.0 inclui aproximações configuradas para fase lag, morte celular e limitação de crescimento por oxigênio, pH e temperatura. Parâmetros não foram validados experimentalmente; o modelo não simula contaminação nem mede viabilidade. A recuperação do OD após o esgotamento depende do consumo específico de oxigênio usado pelo perfil.</p>
+            <p>A versão 1.1.1 inclui aproximações configuradas para fase lag, morte celular e limitação de crescimento por oxigênio, pH e temperatura. Parâmetros não foram validados experimentalmente; o modelo não simula contaminação nem mede viabilidade. A recuperação do OD após o esgotamento depende do consumo específico de oxigênio usado pelo perfil.</p>
             <p>A versão paga está prevista para 2027; escopo e condições comerciais ainda podem mudar. <em>Bacillus thuringiensis</em> permanece apenas uma cinética de crescimento no material que descreve a edição futura.</p>
             <p><a href="manual-bioreator.html">Manual do operador</a> · <a href="exemplo-bioreator.html">Exemplo de batelada</a> · <a href="fundamentos-bioprocesso.html">Fundamentos</a> · <a href="professores.html">Para professores</a></p>
         </section>

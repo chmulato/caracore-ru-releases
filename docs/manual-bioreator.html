@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="https://ru.caracore.com.br/">
     <title>Manual do operador — BioReator 4.0 | Cara Core Informática</title>
-    <meta name="description" content="Manual da versão Community 1.1.0 do BioReator 4.0 para Windows.">
+    <meta name="description" content="Manual da versão Community 1.1.1 do BioReator 4.0 para Windows.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/loja.css">
     <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
@@ -22,12 +22,12 @@
         </nav>
         <header>
             <h1>Manual do operador — BioReator 4.0</h1>
-            <p>Community <strong>1.1.0</strong>, Windows x64. O instalador e a pasta portátil serão publicados na <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.1.0">release bioreator-1.1.0</a>.</p>
+            <p>Community <strong>1.1.1</strong>, Windows x64. O instalador e a pasta portátil estão publicados na <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.1.1">release bioreator-1.1.1</a>.</p>
         </header>
 
         <section class="card bio-callout">
             <h2>Referência de desempenho</h2>
-            <p>Na máquina usada para validar o pacote, a janela ficou pronta em 4.467 ms e o processo ocioso usou 174 MB. Esses resultados superam as metas internas de tempo de inicialização e memória, mas não são requisitos mínimos universais. A cinética e os parâmetros desta edição estão em <a href="fundamentos-bioprocesso.html#previa-1-1">Fundamentos</a>.</p>
+            <p>Na medição do pacote 1.1.1, a janela ficou pronta em 3.811 ms e o processo ocioso usou 183,3 MB; ambos os valores ficaram acima das metas internas de 2.500 ms e 120 MB. A medição da versão 1.1.0 (4.467 ms e 174 MB) também ficou acima dessas metas. São medições desta máquina, não requisitos mínimos universais. A cinética e os parâmetros desta edição estão em <a href="fundamentos-bioprocesso.html#previa-1-1">Fundamentos</a>.</p>
         </section>
 
         <section class="card">
@@ -39,18 +39,19 @@
             <ol>
                 <li>O título da janela mostra Community. Uma segunda janela avisa que o programa já está aberto.</li>
                 <li>O perfil padrão é <em>Bradyrhizobium japonicum</em> e o regime é batelada. O tanque aceita 50 L a 10.000 L, com fração de trabalho de 70% a 80%. A carga de referência é 100 L, 75%, 1 vvm, 400 rpm, X = 0,03 g/L e S = 10 g/L.</li>
-                <li>Oxigênio, temperatura e pH entram em fatores de limitação do crescimento; fase lag e decaimento também fazem parte do perfil configurado.</li>
-                <li><strong>Iniciar batelada</strong> acompanha biomassa, substrato e oxigênio. O lote encerra automaticamente quando S ≤ 0,001 g/L; também pode ser parado manualmente.</li>
-                <li>O histórico fica no computador em SQLite. O CSV exportado inclui a coluna <code>viable_CFU_ml</code>, calculada por um fator configurado e não medida.</li>
+                <li>Oxigênio, temperatura e pH entram em fatores de limitação do crescimento; fase lag e decaimento também fazem parte do perfil configurado. A tela apresenta X viável e X total, que inclui a biomassa morta acumulada por volume.</li>
+                <li><strong>Iniciar batelada</strong> acompanha biomassa, substrato e oxigênio. O lote termina quando S ≤ 0,001 g/L, quando há subida de OD ≥ 15 pontos percentuais em até 1 h com S &lt; 5% de S₀, após 12 h de crescimento estagnado depois do lag ou ao atingir o limite de tempo (240 h por padrão). O primeiro critério atingido encerra o lote; também pode ser parado manualmente.</li>
+                <li>O histórico fica no computador em SQLite. O motivo de fim é registrado. O CSV exportado preserva as colunas existentes e acrescenta X viável, X total, <code>end_reason</code> e <code>application_version</code> ao final. <code>viable_CFU_ml</code> é calculada por um fator configurado e não medida.</li>
             </ol>
         </section>
 
         <section class="card">
             <h2>Leitura da tela</h2>
             <ul>
-                <li>Substrato baixo quando S fica abaixo de 5% da carga inicial; término automático quando S ≤ 0,001 g/L.</li>
+                <li>Substrato baixo quando S fica abaixo de 5% da carga inicial.</li>
                 <li>Hipóxia: oxigênio dissolvido abaixo de 20% da saturação.</li>
                 <li>pH e temperatura fora dos pontos configurados reduzem o fator cardinal de crescimento; são parâmetros do modelo, não recomendação operacional.</li>
+                <li>O marcador de fim aparece nos gráficos. O CSV e o histórico armazenam o motivo: <code>SUBSTRATE_DEPLETED</code>, <code>DO_SPIKE</code>, <code>STALLED</code> ou <code>MAX_TIME</code>.</li>
                 <li>Desvio estequiométrico: o rendimento da biomassa saiu da tolerância de 1e-6.</li>
             </ul>
         </section>

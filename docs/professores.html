@@ -19,34 +19,35 @@
         </nav>
         <header>
             <h1>Para professores</h1>
-            <p class="subtitle">Quatro exercícios com gabarito para discutir a batelada simulada da Community 1.1.0.</p>
+            <p class="subtitle">Quatro exercícios com gabarito para discutir a batelada simulada da Community 1.1.1.</p>
         </header>
 
         <main class="bio-content">
             <section>
                 <h2>Material de aula</h2>
-                <p>O CSV é uma amostra reduzida de pontos selecionados da trajetória 1.1.0: tanque de 100 L, 75 L úteis, X₀ = 0,03 g/L, S₀ = 10 g/L, 1 vvm e 400 rpm.</p>
-                <a class="bio-download-link" href="assets/data/exemplo-bioreator-community-1.1.0.csv" download>Baixar CSV didático da versão 1.1.0</a>
-                <p>Separador <code>;</code>, decimal com ponto. As colunas seguem o exportador, incluindo <code>viable_CFU_ml</code>, calculada por fator configurado, não medida. Os arquivos de lançamento ficam disponíveis após a publicação da release.</p>
+                <p>O CSV contém pontos amostrados da trajetória real do motor 1.1.1: tanque de 100 L, 75 L úteis, X₀ = 0,03 g/L, S₀ = 10 g/L, 1 vvm e 400 rpm. X final = 3,913056 g/L; X total = 4,229586 g/L; término em 122,55 h por esgotamento do substrato.</p>
+                <a class="bio-download-link" href="assets/data/exemplo-bioreator-community-1.1.1.csv" download>Baixar CSV didático da versão 1.1.1</a>
+                <p>Separador <code>;</code>, decimal com ponto. As colunas seguem o exportador; X viável e X total, motivo do fim e versão são acrescentados ao final. <code>viable_CFU_ml</code> é calculada por fator configurado, não medida.</p>
+                <p>O uso institucional, inclusive em aula, requer autorização/licença institucional por escrito. Consulte a <a href="referencia-bioreator.html#licenca">licença da Community</a> e solicite autorização pelo <a href="mailto:suporte@caracore.com.br">suporte@caracore.com.br</a>.</p>
             </section>
 
             <section>
                 <h2>Exercícios</h2>
                 <ol>
-                    <li><strong>Taxa específica média.</strong> Usando t = 24 h, X = 0,061072 g/L e t = 96 h, X = 1,489210 g/L, estime a inclinação de ln X em função do tempo. Compare com µmax = 0,05 h⁻¹ e explique por que essa inclinação líquida não é igual a µmax.</li>
-                    <li><strong>Rendimento e decaimento.</strong> Na carga completa, o motor registra 314,971101 g de biomassa formada, 23,778444 g de biomassa decaída e 749,931194 g de substrato consumido. Calcule Yx/s usando formação bruta, depois feche Xfinal = X₀ + Xformada − Xmorta para V = 75 L.</li>
-                    <li><strong>Temperatura no modelo.</strong> Compare X em 120 h a 28 °C (3,905375 g/L) e 35 °C (0,207733 g/L), mantendo os demais setpoints e pH = 6,8. Calcule a razão e explique o efeito do fator cardinal. O resultado é uma recomendação experimental?</li>
-                    <li><strong>Fator de UFC.</strong> Para X = 3,912569 g/L e fator do perfil de 2,0 × 10⁹ UFC/mL por g/L, calcule a UFC/mL exibida. Cite duas razões pelas quais esse número não substitui contagem de viáveis.</li>
+                    <li><strong>Taxa específica média.</strong> Usando t = 24 h, X = 0,061072 g/L e t = 96 h, X = 1,489489 g/L, estime a inclinação de ln X em função do tempo. Compare com µmax = 0,05 h⁻¹ e explique por que essa inclinação líquida não é igual a µmax.</li>
+                    <li><strong>Rendimento e decaimento.</strong> Na carga completa, use os valores do CSV para biomassa formada, biomassa decaída e substrato consumido. Calcule Yx/s usando a formação bruta, depois feche o balanço entre X₀, X formada, biomassa morta e X viável para V = 75 L.</li>
+                    <li><strong>Temperatura no modelo.</strong> Compare X em 120 h a 28 °C (3,905962 g/L) e 35 °C (0,207736 g/L), mantendo os demais setpoints e pH = 6,8. Calcule a razão e explique o efeito do fator cardinal. O resultado é uma recomendação experimental? Observe que o lote a 35 °C encerra em 240 h por <code>MAX_TIME</code>.</li>
+                    <li><strong>Fator de UFC.</strong> Para X viável = 3,913056 g/L e fator do perfil de 2,0 × 10⁹ UFC/mL por g/L, calcule a UFC/mL exibida. Cite duas razões pelas quais esse número não substitui contagem de viáveis.</li>
                 </ol>
             </section>
 
             <section>
                 <h2>Gabarito resumido</h2>
                 <ol>
-                    <li>µ̄ = [ln(1,489210) − ln(0,061072)] / (96 − 24) ≈ <strong>0,0444 h⁻¹</strong>. É a taxa líquida média do intervalo, influenciada por lag, oxigênio, temperatura, pH e morte; não é uma medida de µmax.</li>
-                    <li>Yx/s = 314,971101 / 749,931194 ≈ <strong>0,42 g/g</strong>. Em 75 L, Xfinal ≈ 0,03 + 314,971101/75 − 23,778444/75 = <strong>3,9126 g/L</strong>.</li>
-                    <li>Razão X₂₈/X₃₅ = 3,905375 / 0,207733 ≈ <strong>18,8</strong>. A função cardinal reduz µ a 35 °C; é comportamento do modelo parametrizado, não previsão validada nem recomendação de operação.</li>
-                    <li>X × fator = 3,912569 × 2,0 × 10⁹ ≈ <strong>7,83 × 10⁹ UFC/mL</strong>. Viabilidade depende, entre outros fatores, de cepa, agregação e condição fisiológica; o software não faz plaqueamento nem mede UFC.</li>
+                    <li>µ̄ = [ln(1,489489) − ln(0,061072)] / (96 − 24) ≈ <strong>0,0444 h⁻¹</strong>. É a taxa líquida média do intervalo, influenciada por lag, oxigênio, temperatura, pH e morte; não é uma medida de µmax.</li>
+                    <li>Da carga completa: biomassa formada ≈ 314,969 g, biomassa morta ≈ 23,740 g e substrato consumido ≈ 749,926 g. Yx/s ≈ <strong>0,42 g/g</strong>. Para 75 L, Xtotal = 0,03 + 314,969/75 ≈ <strong>4,229586 g/L</strong> e Xviável = Xtotal − 23,740/75 ≈ <strong>3,913056 g/L</strong>; diferenças pequenas decorrem do arredondamento do CSV.</li>
+                    <li>Razão X₂₈/X₃₅ = 3,905962 / 0,207736 ≈ <strong>18,8</strong>. A função cardinal reduz µ a 35 °C; é comportamento do modelo parametrizado, não previsão validada nem recomendação de operação.</li>
+                    <li>X × fator = 3,913056 × 2,0 × 10⁹ ≈ <strong>7,83 × 10⁹ UFC/mL</strong>. Viabilidade depende, entre outros fatores, de cepa, agregação e condição fisiológica; o software não faz plaqueamento nem mede UFC.</li>
                 </ol>
             </section>
         </main>
