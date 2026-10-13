@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="https://ru.caracore.com.br/">
     <title>Degustação — BioReator 4.0 | Cara Core Informática</title>
-    <meta name="description" content="Leitura didática da Community 1.1.1 no navegador: biomassa, substrato e oxigênio.">
+    <meta name="description" content="Leitura didática no navegador com os parâmetros principais da Community 1.1.1: biomassa, substrato e oxigênio.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/ru.css">
-    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css?v=1.1.1-mobile">
     <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
     <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css?v=1.1.2">
 </head>
@@ -26,20 +26,20 @@
         </nav>
         <header>
             <h1>Degustação no navegador</h1>
-            <p class="subtitle">Uma batelada de <em>Bradyrhizobium japonicum</em> desenhada aqui com parâmetros da versão 1.1.1. Não grava lote, não exporta CSV e não é a medição da planta.</p>
+            <p class="subtitle">Uma batelada de <em>Bradyrhizobium japonicum</em> desenhada aqui com os parâmetros principais da versão 1.1.1. Não grava lote, não exporta CSV e não é a medição da planta.</p>
         </header>
 
         <section class="panel bio-callout">
             <h2>Modelo desta degustação</h2>
-            <p>Esta leitura usa os parâmetros de referência 1.1.1: Monod limitado por oxigênio, fatores cardinais de temperatura e pH, fase lag e decaimento celular. É uma visualização didática simplificada no navegador; não implementa o histórico SQLite, a exportação CSV nem todos os critérios de fim de lote do aplicativo.</p>
+            <p>Esta leitura usa os parâmetros de referência 1.1.1: Monod limitado por oxigênio, fatores cardinais de temperatura e pH, fase lag, decaimento celular e kLa padrão de 131,0455 h⁻¹. É uma visualização didática no navegador; não reproduz a biomassa viável/total, os critérios de término ou o campo <code>end_reason</code> do aplicativo. O aplicativo mantém o histórico SQLite e exporta o CSV.</p>
         </section>
 
         <section class="panel bench" aria-label="Controles da leitura">
-            <p>Parâmetros: μmax 0,05 h⁻¹, Ks 0,25 g/L, Yx/s 0,42 g/g, KO 0,15 mg/L, Yx/o 1,1 gX/gO₂, manutenção 0,007 gO₂/(gX·h), lag 8 h e kd 0,003 h⁻¹. Partida: X 0,03 g/L, S 10 g/L e oxigênio 7,8 mg/L. T = 28 °C e pH = 6,8; batelada sem alimentação. O controle kLa desta página é ajustável e parte de 131,045 h⁻¹.</p>
+            <p>Parâmetros: μmax 0,05 h⁻¹, Ks 0,25 g/L, Yx/s 0,42 g/g, KO 0,15 mg/L, Yx/o 1,1 gX/gO₂, manutenção 0,007 gO₂/(gX·h), lag 8 h e kd 0,003 h⁻¹. Partida: X 0,03 g/L, S 10 g/L e oxigênio 7,8 mg/L. T = 28 °C e pH = 6,8; batelada sem alimentação. O controle kLa parte do valor padrão 1.1.1, 131,0455 h⁻¹, e pode ser ajustado para leitura didática.</p>
             <label for="hours">Tempo máximo da leitura: <strong id="hours-out">144 h</strong></label>
             <input id="hours" type="range" min="24" max="168" step="1" value="144">
-            <label for="kla">kLa da leitura: <strong id="kla-out">131,0 h⁻¹</strong></label>
-            <input id="kla" type="range" min="40" max="220" step="0.001" value="131.045">
+            <label for="kla">kLa da leitura: <strong id="kla-out">131,0455 h⁻¹</strong></label>
+            <input id="kla" type="range" min="40" max="220" step="0.001" value="131.0455">
             <div class="store-cta">
                 <button class="cta-btn cta-btn-primary" id="start" type="button">Iniciar fermentação</button>
             </div>
@@ -52,7 +52,7 @@
                 <span><i style="background:#58a6ff"></i>Oxigênio DO</span>
                 <span id="status">Aguardando início.</span>
             </div>
-            <p class="end-banner" id="done" hidden>Para registrar o histórico local, os motivos de fim do lote e exportar a série completa em CSV, use a Community 1.1.1 para Windows.</p>
+            <p class="end-banner" id="done" hidden>Para registrar o histórico local e exportar a série completa em CSV, use a Community 1.1.1 para Windows.</p>
             <div class="store-cta">
                 <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.1/BioReator40-1.1.1.msi">Baixar instalador (.MSI)</a>
                 <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.1/BioReator40-1.1.1-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>

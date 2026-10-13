@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="https://ru.caracore.com.br/">
     <title>BioReator 4.0 — Acompanhe uma fermentação no seu computador | Cara Core Informática</title>
-    <meta name="description" content="BioReator 4.0 Community 1.1.1 para Windows: batelada simulada com biomassa, substrato, oxigênio e histórico local.">
+    <meta name="description" content="BioReator 4.0 Community 1.1.1 para Windows: batelada simulada com biomassa viável/total, substrato, oxigênio e histórico local.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/ru.css">
-    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css?v=1.1.1-mobile">
     <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
     <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css?v=1.1.2">
 </head>
@@ -36,7 +36,7 @@
                 <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.1/BioReator40-1.1.1.msi">Baixar instalador (.MSI)</a>
                 <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.1/BioReator40-1.1.1-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>
             </div>
-            <p class="store-next">A Community 1.1.1 está publicada no GitHub; confira os arquivos e hashes na <a href="download.html#arquivos">página de download</a>.</p>
+            <p class="store-next">A release 1.1.1 está publicada. Consulte os arquivos, hashes e requisitos na <a href="download.html#arquivos">página de download</a>.</p>
         </section>
 
         <section class="hero-cta" aria-labelledby="o-que-encontra">
@@ -53,13 +53,13 @@
 
         <section class="methodology" id="previa-1-1">
             <div class="card card-differential">
-                <h2>Correções da versão 1.1.1</h2>
-                <p>A 1.1.1 corrige o cálculo de kLa pelo volume líquido, registra os critérios de fim de lote, inclui biomassa viável/total no painel e no CSV e atualiza a versão e o histórico SQLite. O perfil <em>B. japonicum</em> mantém os parâmetros validados da edição anterior.</p>
-                <p>A release Community 1.1.1 está publicada no GitHub. Consulte a <a href="download.html">página de download</a> para os arquivos e seus hashes SHA-256.</p>
+                <h2>Novidades da versão 1.1.1</h2>
+                <p>A 1.1.1 calcula P/V com volume líquido e atualiza o kLa da carga padrão para 131,0455 h⁻¹. O painel e o CSV distinguem X viável e total; o primeiro dos critérios de término atingido fica registrado no campo <code>end_reason</code>.</p>
+                <p>Os artefatos foram gerados em 13/10/2026 e estão disponíveis na release oficial. Consulte a <a href="download.html">página de download</a> para os hashes e requisitos.</p>
                 <p><a href="fundamentos-bioprocesso.html#previa-1-1">Parâmetros e equações</a> · <a href="exemplo-bioreator.html#previa-1-1">Curva e CSV didáticos</a></p>
                 <figure class="bio-figure">
-                    <img src="assets/img/bioreator-community-1.1.1-painel.png" alt="Captura real do painel da interface BioReator 4.0 Community 1.1.1, com os setpoints iniciais, kLa estimado, biomassa viável e total e painel do reator.">
-                    <figcaption>Painel da interface 1.1.1, capturado em perfil Windows isolado.</figcaption>
+                    <img src="assets/img/bioreator-community-1.1.1-painel.png" alt="Captura real do painel inicial do BioReator 4.0 Community 1.1.1, com kLa estimado em 131 por hora, setpoints padrão e campos de biomassa viável e total.">
+                    <figcaption>Painel inicial real da versão 1.1.1, capturado no pacote Windows.</figcaption>
                 </figure>
             </div>
         </section>
@@ -67,14 +67,14 @@
         <section class="methodology" id="telas">
             <div class="card">
                 <h2>Veja o programa</h2>
-                <p>Capturas reais da versão 1.1.1: painel de configuração e lote concluído com marcador de fim. O histórico é gravado localmente em SQLite; a edição Community não possui uma tela de listagem dos lotes.</p>
+                <p>A captura abaixo mostra a batelada real do pacote 1.1.1 encerrada por esgotamento do substrato, com o marcador de fim nos gráficos.</p>
                 <figure class="bio-figure">
-                    <a href="assets/img/bioreator-community-1.1.1-graficos.png">
-                        <img src="assets/img/bioreator-community-1.1.1-graficos.png" alt="BioReator 4.0 Community 1.1.1 após concluir a batelada padrão, com curvas de biomassa viável, biomassa total, substrato, oxigênio dissolvido e marcador de fim.">
+                    <a href="assets/img/bioreator-community-1.1.1-final.png">
+                        <img src="assets/img/bioreator-community-1.1.1-final.png" alt="Captura real do BioReator 4.0 Community 1.1.1 ao fim da batelada de referência, com curvas e marcador SUBSTRATE_DEPLETED aos 122,55 h.">
                     </a>
-                    <figcaption>Batelada padrão concluída; o marcador e o motivo de término também ficam registrados no lote local.</figcaption>
+                    <figcaption>Fim da batelada de referência: S = 0,000985 g/L; o rótulo indica <code>SUBSTRATE_DEPLETED</code>. Captura feita após execução de 122,55 h simuladas.</figcaption>
                 </figure>
-                <p>O histórico é salvo localmente em SQLite. Consulte a <a href="referencia-bioreator.html#privacidade">localização dos dados</a> e os arquivos CSV da versão atual em <a href="download.html#arquivos">Download</a>.</p>
+                <p>O histórico é salvo localmente em SQLite, mas a interface desta versão não oferece uma tela de consulta/listagem de lotes; por isso não há captura de histórico visual. Consulte a <a href="referencia-bioreator.html#privacidade">localização e privacidade dos dados</a> e a amostra CSV da versão 1.1.1 em <a href="download.html#arquivos">Download</a>.</p>
             </div>
         </section>
 
@@ -105,7 +105,7 @@
         <section class="methodology" id="edicoes">
             <div class="card">
                 <h2>Edições</h2>
-                <p><strong>Community 1.1.1</strong> para Windows x64: <a href="https://github.com/chmulato/caracore-ru-releases/releases/tag/bioreator-1.1.1">release bioreator-1.1.1</a>, publicada em 13/10/2026.</p>
+                <p><strong>Community 1.1.1</strong> para Windows x64: artefatos gerados em 13/10/2026; release oficial publicada.</p>
                 <p><strong>Versão paga:</strong> prevista para 2027. O escopo e as condições comerciais ainda podem mudar.</p>
             </div>
         </section>

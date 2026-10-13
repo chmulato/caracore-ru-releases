@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="https://ru.caracore.com.br/">
     <title>Download — BioReator 4.0 | Cara Core Informática</title>
-    <meta name="description" content="Arquivos de lançamento da Community 1.1.1 para Windows, requisitos, SmartScreen e hashes SHA-256.">
+    <meta name="description" content="Arquivos da Community 1.1.1 para Windows, requisitos, SmartScreen e hashes SHA-256.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/loja.css">
-    <link rel="stylesheet" href="assets/css/bioreator-improvements.css">
+    <link rel="stylesheet" href="assets/css/loja.css?v=1.1.1-mobile">
+    <link rel="stylesheet" href="assets/css/bioreator-improvements.css?v=1.1.1-mobile">
   <link rel="stylesheet" href="/assets/css/caracore-core-typography.css">
   <link rel="stylesheet" href="/assets/css/caracore-institutional-components.css">
 </head>
@@ -27,7 +27,7 @@
 
         <header>
             <h1>Download — BioReator 4.0</h1>
-            <p>Community 1.1.1 para Windows x64. A release oficial <code>bioreator-1.1.1</code> foi publicada em 13/10/2026; instalador e ZIP portátil estão disponíveis abaixo.</p>
+            <p>Community 1.1.1 para Windows x64. Os artefatos foram gerados em 13/10/2026 e a release oficial já está publicada no GitHub.</p>
         </header>
 
         <section class="store-offer" id="bioreator40" aria-label="Baixar a Community">
@@ -36,22 +36,14 @@
                 <a class="cta-btn cta-btn-primary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.1/BioReator40-1.1.1.msi">Baixar instalador (.MSI)</a>
                 <a class="cta-btn cta-btn-secondary" href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.1/BioReator40-1.1.1-windows-x64.zip">Baixar pasta portátil (.ZIP)</a>
             </div>
-            <p class="store-next">Os nomes, tamanhos e hashes abaixo correspondem aos pacotes da release oficial no GitHub. O EXE fica dentro do ZIP; os pacotes não têm assinatura digital. <a href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.1/SHA256SUMS.txt">Baixar SHA256SUMS.txt</a>.</p>
+            <p class="store-next">Os nomes, tamanhos e hashes abaixo foram conferidos nos arquivos publicados; o EXE fica dentro do ZIP e os pacotes não têm assinatura digital.</p>
         </section>
 
         <section class="card bio-callout" id="validacao-1-1">
             <h2>Notas da versão 1.1.1</h2>
-            <p>Os arquivos abaixo foram conferidos nos pacotes publicados na release oficial <code>bioreator-1.1.1</code>.</p>
-            <ul>
-                <li><strong>A1:</strong> P/V do kLa usa o volume líquido de trabalho e altura real do líquido; carga padrão: 131,045 h⁻¹.</li>
-                <li><strong>A2:</strong> limite de tempo configurável (240 h por padrão) e encerramento por crescimento estagnado.</li>
-                <li><strong>A3:</strong> encerramento por subida rápida do OD sob baixo substrato, com marcador no gráfico e motivo registrado.</li>
-                <li><strong>A4:</strong> X viável e X total visíveis no painel e no CSV.</li>
-                <li><strong>A5:</strong> JAR, metadados e versão da aplicação atualizados para 1.1.1.</li>
-                <li><strong>A6:</strong> caminhos do ZIP usam barras normais (<code>/</code>).</li>
-            </ul>
-            <p>Na medição do pacote 1.1.1, a janela ficou pronta em 3.832 ms e o processo ocioso usou 190,2 MB. Ambos os valores ficaram acima das metas internas de 2.500 ms e 120 MB; são medições daquela máquina, não requisitos mínimos universais. O self-check empacotado terminou com código 0.</p>
-            <p>Os parâmetros validados do perfil <em>B. japonicum</em> foram mantidos. Consulte os <a href="fundamentos-bioprocesso.html#previa-1-1">fundamentos e parâmetros</a> e o <a href="exemplo-bioreator.html#previa-1-1">exemplo de batelada recalculado</a>.</p>
+            <p>Os nomes, tamanhos e hashes correspondem aos arquivos publicados na release oficial 1.1.1.</p>
+            <p>Na máquina de validação, a janela ficou pronta em 3.832 ms e o processo ocioso usou 190,2 MB. Ambos ficaram acima (piores que) das metas internas de 2.500 ms e 120 MB; são medições daquela máquina, não requisitos mínimos universais.</p>
+            <p>A 1.1.1 calcula P/V com o volume líquido e inclui biomassa viável/total, os critérios de fim e <code>end_reason</code>. O kLa padrão é 131,0455 h⁻¹; veja os <a href="fundamentos-bioprocesso.html#previa-1-1">fundamentos e parâmetros</a>, o <a href="manual-tecnico.html#criterios-fim">manual dos critérios</a> e o <a href="exemplo-bioreator.html#previa-1-1">exemplo de batelada</a>.</p>
         </section>
 
         <section class="card" id="arquivos">
@@ -59,11 +51,11 @@
             <p><strong>Instalador · MSI</strong><br><code>BioReator40-1.1.1.msi</code> · 72.675.328 bytes<br>SHA-256 <code>6eb0dd01006304d78c74f185345711bc8d4e135b03443d2ab583379338b04b21</code></p>
             <p><strong>Pasta portátil · ZIP</strong><br><code>BioReator40-1.1.1-windows-x64.zip</code> · 73.592.557 bytes<br>SHA-256 <code>b36d18a0fae828f359db3c2a6509ad519849e560487d0ebbfaa3c3c85e09e1d7</code></p>
             <p style="margin-top: 1rem;"><strong>Lançador · EXE</strong><br><code>BioReator40.exe</code> · 524.800 bytes · SHA-256 <code>88eb22c17b547ded71aed275021bfbbd4121b171cbaba4373dfdca96c11a609a</code><br>Fica dentro do ZIP. Não é um download separado.</p>
-            <p><strong>Checksums:</strong> <a href="https://github.com/chmulato/caracore-ru-releases/releases/download/bioreator-1.1.1/SHA256SUMS.txt"><code>SHA256SUMS.txt</code></a>, com os hashes dos arquivos publicados.</p>
+            <p><strong>Checksums</strong><br><a href="assets/data/SHA256SUMS-1.1.1.txt" download>Baixar SHA256SUMS.txt da versão 1.1.1</a>. O mesmo arquivo acompanha os artefatos da release.</p>
             <ul style="margin: 0.5rem 0 1rem 1.5rem; line-height: 1.6;">
                 <li><strong>Community:</strong> <em>Bradyrhizobium japonicum</em>, batelada, gráficos ao vivo, histórico em AppData e CSV. É a edição do pacote local.</li>
                 <li><strong>Edição paga planejada:</strong> prevista para 2027. O escopo e as condições comerciais ainda não estão publicados.</li>
-                <li><strong>Tanque 1.1.1:</strong> 50 L a 10.000 L, fração de trabalho de 70% a 80%. Crescimento por Monod com fatores configurados de oxigênio, temperatura, pH e fase lag; o perfil também aplica decaimento celular e critérios múltiplos de fim de lote.</li>
+                <li><strong>Tanque 1.1.1:</strong> 50 L a 10.000 L, fração de trabalho de 70% a 80%. Crescimento por Monod com fatores configurados de oxigênio, temperatura, pH e fase lag; o perfil também aplica decaimento celular.</li>
             </ul>
             <p>O guia de batelada e de leitura da tela está no <a href="manual-bioreator.html">manual do operador</a>. A carga de 100 L, com biomassa, substrato e oxigênio ao longo das horas, está no <a href="exemplo-bioreator.html">exemplo de batelada</a>. Dúvidas pelo <a href="canal-feedback.html">canal de feedback</a>, sem SLA.</p>
         </section>
