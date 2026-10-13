@@ -46,6 +46,14 @@
     margin: 1rem 0;
 }
 
+.page-download code,
+.bio-content code,
+.cc-i-page code,
+.cc-i-page a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 .bio-table {
     width: 100%;
     border-collapse: collapse;

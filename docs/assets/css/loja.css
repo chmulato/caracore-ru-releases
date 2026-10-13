@@ -56,6 +56,11 @@ body.page-licenca .breadcrumb span { color: var(--text-secondary); }
 body.page-download .wrapper { max-width: 720px; }
 body.page-licenca .wrapper { max-width: 720px; }
 body.page-canal .wrapper { max-width: 640px; }
+body.page-download code,
+body.page-download a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
 
 /* ========== Index ========== */
 .hero-cover { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 40px 36px; margin-bottom: 32px; border-left: 4px solid var(--accent-gold); }
